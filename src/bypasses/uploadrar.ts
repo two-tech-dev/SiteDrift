@@ -8,7 +8,6 @@ export default class Uploadrar extends BypassDefinition {
 
     execute() {
         (document.querySelector('.mngez-free-download') as HTMLElement | null)?.click();
-  // @ts-ignore
         document.querySelector('#direct_link > a:nth-child(1)').click();
         (document.querySelector('#downloadbtn.downloadbtn') as HTMLElement | null)?.click();
     }

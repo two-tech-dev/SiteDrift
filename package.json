@@ -4,10 +4,13 @@
     "@crxjs/vite-plugin": "^2.0.0-beta.33",
     "@types/chrome": "^0.1.42",
     "@types/node": "^25.6.2",
+    "@typescript-eslint/eslint-plugin": "^8.59.2",
+    "@typescript-eslint/parser": "^8.59.2",
     "@vitejs/plugin-vue": "^6.0.6",
     "ejs": "^3.1.9",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-vue": "^10.9.1",
     "fs-extra": "^11.1.1",
     "prettier": "^2.8.7",
     "typescript": "^6.0.3",
@@ -20,6 +23,6 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint"
+    "lint": "eslint 'src/**/*.{ts,vue}'"
   }
 }

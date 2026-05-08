@@ -1,18 +1,15 @@
-name: Pull_req
+name: Pull Request Build
 
 on: pull_request
 
 jobs:
-  Chromium:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-        with:
-          # pulls all commits (needed for commits to version)
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
           cache: 'npm'
@@ -20,38 +17,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Make package
-        run: node ./scripts/build.js chromium nover
+      - name: Build extension
+        run: npm run build
 
-      - name: Upload Package Artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload Chromium artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: FastForward_chromium
-          path: build/dist
-          if-no-files-found: error
-
-  Firefox:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Make package
-        run: node ./scripts/build.js firefox nover
-
-      - name: Upload Package Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: FastForward_firefox
-          path: build/dist
+          name: SiteDrift_chromium
+          path: dist/
           if-no-files-found: error

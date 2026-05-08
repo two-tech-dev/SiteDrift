@@ -7,9 +7,19 @@ export default class Getwallpapers extends BypassDefinition {
   }
 
   execute() {
-  // @ts-ignore
-    window.setInterval = f => setInterval(f, 1)
+    (window as any).setInterval = ((f) => setInterval(f, 1)) as any;
   }
 }
 
-export const matches = ['getwallpapers.com', 'https://sammobile.com', "https://ydfile.com", "https://mobilemodsapk.com", "https://dlandroid.com", "https://download.modsofapk.com", "https://zedge.net ", "https://fex.net", "https://k2s.cc", " https://u.to"];
+export const matches = [
+  'getwallpapers.com',
+  'sammobile.com',
+  'ydfile.com',
+  'mobilemodsapk.com',
+  'dlandroid.com',
+  'download.modsofapk.com',
+  'zedge.net',
+  'fex.net',
+  'k2s.cc',
+  'u.to',
+];

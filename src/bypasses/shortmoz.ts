@@ -7,8 +7,7 @@ export default class Shortmoz extends BypassDefinition {
     }
 
     execute() {
-  // @ts-ignore
-        window.setInterval = f => setTimeout(f,1)
+        (window as any).setInterval = (f => setTimeout(f,1)) as any
         this.helpers.awaitElement("a.btn.redirect[href^='http']", a =>
             this.helpers.safelyNavigate(a.href))
     }

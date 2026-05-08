@@ -20,7 +20,6 @@ function escapeHtml(str) {
 
 function showError(err) {
   console.error(err);
-  // @ts-ignore
   trackerInfoElement.textContent = brws.i18n.getMessage('trackerBypassedError');
   trackerInfoElement.classList.add('text-warn');
   setTimeout(() => {
@@ -31,7 +30,6 @@ function showError(err) {
 
 function updateTrackerMessage(url) {
   const trackerInfoElement = document.getElementById('tracker-info');
-  // @ts-ignore
   const msg = brws.i18n.getMessage(
     'beforeNavigateDestination',
     `
@@ -50,7 +48,6 @@ function updateTrackerMessage(url) {
   trackerInfoElement.textContent = '';
   trackerInfoElement.appendChild(newDiv);
 
-  // @ts-ignore
   brws.storage.local.get('options').then((result) => {
     if (!result.options.optionInstantNavigationTrackers) return;
     window.location.replace(url);
@@ -63,7 +60,6 @@ async function resolveTracker(url) {
   if (urlObj.host === 'out.reddit.com') {
     const newUrl = urlObj.searchParams.get('url');
     if (newUrl) updateTrackerMessage(newUrl);
-  // @ts-ignore
     else showError();
   }
 
@@ -75,7 +71,6 @@ async function resolveTracker(url) {
     if (data.success && data.resolved_url) {
       updateTrackerMessage(data.resolved_url);
     } else {
-  // @ts-ignore
       showError();
     }
   } catch (err) {

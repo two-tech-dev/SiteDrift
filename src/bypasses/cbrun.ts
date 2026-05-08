@@ -1,16 +1,15 @@
-import BypassDefinition from './BypassDefinition'
+import BypassDefinition from './BypassDefinition';
 
 export default class Cbrun extends BypassDefinition {
-    constructor() {
-        super()
+  constructor() {
+    super();
+  }
+  execute() {
+    const a = document.querySelector('a.btn') as HTMLAnchorElement | null;
+    if (a) {
+      this.helpers.safelyNavigate(a.href);
     }
-    execute() {
-        const a = document.querySelector('a.btn')
-        if (a) {
-  // @ts-ignore
-            this.helpers.safelyNavigate(a.href)
-        }
-    }
+  }
 }
 
-export const matches = ['cb.run', 'cb.click']
+export const matches = ['cb.run', 'cb.click'];

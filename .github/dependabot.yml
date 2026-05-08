@@ -1,18 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    on:
-      push:
-      pull_request:
-        types: [opened]
-    directory: ".github/workflows"
+  - package-ecosystem: 'github-actions'
+    directory: '.github/workflows'
     schedule:
-      interval: "weekly"
-  - package-ecosystem: "npm"
-    on:
-      push:
-      pull_request:
-        types: [opened]
-    directory: "/"
+      interval: 'weekly'
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'

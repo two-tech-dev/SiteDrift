@@ -9,9 +9,7 @@ export default class Filehorse extends BypassDefinition {
     execute() {
         this.helpers.ensureDomLoaded(() => {
             this.helpers.ifElement("a#download_url[href]", addr => {
-  // @ts-ignore
                 if (typeof timerx == "number"){
-  // @ts-ignore
                     clearTimeout(timerx)
                 }
                 this.helpers.safelyAssign(addr.href)

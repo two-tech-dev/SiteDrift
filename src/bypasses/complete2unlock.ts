@@ -1,37 +1,39 @@
-import BypassDefinition from './BypassDefinition'
+import BypassDefinition from './BypassDefinition';
 
 export default class Complete2unlock extends BypassDefinition {
-    constructor() {
-        super()
-    }
+  constructor() {
+    super();
+  }
 
-    execute() {
-        const timer = setInterval(() => {
-            const link_success_button = document.getElementById('link-success-button')
-            if (!link_success_button) return
+  execute() {
+    const timer = setInterval(() => {
+      const link_success_button = document.getElementById(
+        'link-success-button'
+      );
+      if (!link_success_button) return;
 
-            const unlock_panels = document.querySelectorAll('.unlockpanel')
+      const unlock_panels = document.querySelectorAll('.unlockpanel');
 
-            if (0 === unlock_panels.length) return
+      if (0 === unlock_panels.length) return;
 
-            clearInterval(timer)
-            // override the window open method, no more annoying popups
-  // @ts-ignore
-            window.open = () => { }
+      clearInterval(timer)(
+        // override the window open method, no more annoying popups
+        window as any
+      ).open = () => {};
 
-  // @ts-ignore
-            unlock_panels.forEach(panel => panel.click())
+      unlock_panels.forEach((panel) => (panel as HTMLElement).click());
 
-            const is_button_enabled_timer = setInterval(() => {
-                if (link_success_button.hasAttribute('disabled')) return
+      const is_button_enabled_timer = setInterval(() => {
+        if ((link_success_button as HTMLButtonElement).hasAttribute('disabled'))
+          return;
 
-                clearInterval(is_button_enabled_timer)
-                link_success_button.click()
-            }, 100)
-        }, 300)
+        clearInterval(is_button_enabled_timer);
+        (link_success_button as HTMLElement).click();
+      }, 100);
+    }, 300);
 
-        setInterval(() => clearInterval(timer), 30000)
-    }
+    setInterval(() => clearInterval(timer), 30000);
+  }
 }
 
-export const matches = ['complete2unlock.com']
+export const matches = ['complete2unlock.com'];

@@ -7,8 +7,7 @@ export default class Onelinefix extends BypassDefinition {
     }
 
     execute() {
-  // @ts-ignore
-        window.setTimeout = f => setTimeout(f,1)
+        (window as any).setTimeout = (f => setTimeout(f,1)) as any
         this.helpers.awaitElement("#res > center > button.btn[onclick]", but => but.onclick())
     }
 }

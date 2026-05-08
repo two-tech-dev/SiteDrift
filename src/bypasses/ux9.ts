@@ -7,7 +7,6 @@ export default class Ux9 extends BypassDefinition {
   }
 
   execute() {
-  // @ts-ignore
     this.helpers.safelyAssign(window.ux_secure.fullUrl);
   }
 }

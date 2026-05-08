@@ -7,8 +7,7 @@ export default class Longfiles extends BypassDefinition {
     }
 
     execute() {
-  // @ts-ignore
-        window.setTimeout = f => this.helpers.setTimeout(f, 1)
+        (window as any).setTimeout = (f => this.helpers.setTimeout(f, 1)) as any
     }
 }
 

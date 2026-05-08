@@ -7,7 +7,6 @@ export default class Enlacito extends BypassDefinition {
     }
 
     execute() {
-  // @ts-ignore
         this.helpers.safelyNavigate(window.DYykkzwP)
     }
 }

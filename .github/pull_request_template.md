@@ -1,7 +1,10 @@
-Fix(es): 
-<!-- A brief description of what you did -->
+## Description
 
-<!--Add an x to mark as done-->
-- [ ] I made sure there are no unnecessary changes in the code;
-- [ ] Tested on Chromium (Includes Opera, Brave, Vivaldi, Edge, etc);
-- [ ] Tested on Firefox.
+<!-- What does this PR do? -->
+
+## Checklist
+
+- [ ] No unnecessary changes in the code
+- [ ] Tested on Chromium (Chrome, Edge, Brave, etc.)
+- [ ] Commit messages are descriptive
+- [ ] Added site to `docs/Bypassed.md` (if adding a new bypass)

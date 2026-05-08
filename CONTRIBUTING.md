@@ -1,32 +1,49 @@
-<div align="center">
-<img src="https://avatars.githubusercontent.com/u/88992224?s=200&v=4" width="128" />
-<h1> SiteDrift </h1>
-<p> Don't waste your time with compliance. SiteDrift automatically skips annoying link shorteners. </p>
-
-
-
-[<img src="https://img.shields.io/github/actions/workflow/status/2Tech Studio (2tech.studio) (prev FastForward)/sitedrift/main.yml?branch=main&label=Builds&style=for-the-badge" />](https://github.com/2Tech Studio (2tech.studio) (prev FastForward)/SiteDrift/blob/main/.github/workflows/main.yml)
-<a href="https://discord.gg/RSAf7b5njt" target="_blank"> <img alt="Discord" src="https://img.shields.io/discord/876622516607656006?label=Our%20Discord&logo=discord&style=for-the-badge"> </a>
-<br> <br>
-<a href="https://github.com/2Tech Studio (2tech.studio) (prev FastForward)/SiteDrift#why-is-sitedrift-no-longer-on-the-chrome-web-store"><img src="https://user-images.githubusercontent.com/585534/107280622-91a8ea80-6a26-11eb-8d07-77c548b28665.png" alt="Get SiteDrift on Chromium based browsers" width="126px"></a>
-<a href="https://microsoftedge.microsoft.com/addons/detail/sitedrift/ldcclmkclhomnpcnccgbgleikchbnecl"><img src="https://user-images.githubusercontent.com/585534/107280673-a5ece780-6a26-11eb-9cc7-9fa9f9f81180.png" alt="Get SiteDrift on Microsoft Edge" width="126px"></a>
-<a href="https://addons.mozilla.org/firefox/addon/2Tech Studio (2tech.studio) (prev FastForward)/"><img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" alt="Get SiteDrift for Firefox" width="126px"></a> 
-</div>
-
 # Contributing to SiteDrift
-Thanks for taking the time to contribute to SiteDrift, it is volunteers like you who make this project possible.
 
-## Contributing bypasses
+Thanks for taking the time to contribute! Volunteers like you make this project possible.
 
-### Making the bypass
-Initially, you may use the custom bypasses section on the extension's settings page to test out and formulate your bypass, but after that we recommend using a code editor like [VSCode](https://code.visualstudio.com/download)/[Codium](https://vscodium.com/#install).
+## Ways to Contribute
 
-### Submitting a Pull Request
+- **Add or fix a bypass** — see [Adding a Bypass](#adding-a-bypass)
+- **Report a bug** — open a GitHub issue
+- **Improve documentation** — PRs welcome
 
-When submitting a pull please take care that:
-- Your code follows [the code style](docs/CODE_STYLE.md#code-style)
-- Commit messages should be descriptive
-- If it's a small change [squash all your commits](docs/Git_CLI.md#squashing-commits)
-- Follow the pull request template
+## Adding a Bypass
 
-Consider joining the [Discord](https://discord.gg/RSAf7b5njt) so that we can discuss the PR in real time.
+1. Create a new file in `src/bypasses/` following the existing pattern:
+
+```typescript
+import BypassDefinition from './BypassDefinition';
+
+export default class MySite extends BypassDefinition {
+  constructor() {
+    super();
+    this.ensure_dom = true; // set true if you need the DOM to be ready
+  }
+
+  execute() {
+    // your bypass logic here
+    this.helpers.safelyNavigate(/* destination url */);
+  }
+}
+
+export const matches = ['example.com'];
+```
+
+2. Add the site to [docs/Bypassed.md](./docs/Bypassed.md).
+3. Test your bypass in an unpacked extension load (see [docs/INSTALLING.md](./docs/INSTALLING.md)).
+
+## Code Style
+
+See [docs/CODE_STYLE.md](./docs/CODE_STYLE.md).
+
+## Submitting a Pull Request
+
+Before submitting:
+
+- [ ] Code follows the style guide
+- [ ] Tested on Chromium (Chrome, Edge, Brave, etc.)
+- [ ] Commit messages are descriptive
+- [ ] No unrelated changes included
+
+Consider joining the [Discord](https://discord.gg/DYeCKWP3jB) to discuss your PR before or while working on it.

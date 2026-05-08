@@ -7,8 +7,7 @@ export default class Curseforge extends BypassDefinition {
   }
 
   execute() {
-  // @ts-ignore
-    window.setInterval = f => setInterval(f, 100)
+    (window as any).setInterval = (f => setInterval(f, 100)) as any
   }
 }
 

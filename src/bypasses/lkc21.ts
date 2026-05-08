@@ -7,8 +7,7 @@ export default class Lkc21 extends BypassDefinition {
   }
 
   execute() {
-  // @ts-ignore
-    window.setTimeout = f => setTimeout(f, 100)
+    (window as any).setTimeout = (f => setTimeout(f, 100)) as any
   }
 }
 

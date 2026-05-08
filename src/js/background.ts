@@ -49,7 +49,6 @@ function firstrun(details) {
     brws.storage.local.set({ version: brws.runtime.getManifest().version });
     brws.runtime.openOptionsPage(); //required for loading default options, to do: implement a better way
     brws.declarativeNetRequest.updateDynamicRules({
-  // @ts-ignore
       addRules: constants.beforeNavigateRules,
       removeRuleIds: constants.beforeNavigateRules.map((rule) => rule.id),
     });
@@ -87,7 +86,6 @@ function reEnableCrowdBypassStartup() {
     if (result.tempDisableCrowd === 'true') {
       brws.storage.local.get(['options']).then((result) => {
         let opt = result.options;
-  // @ts-ignore
         opt.optionCrowdBypass = true;
         brws.storage.local.set({ options: opt });
       });
@@ -104,7 +102,6 @@ brws.alarms.onAlarm.addListener((alarm) => {
     ) {
       brws.storage.local.get(['options']).then((result) => {
         let opt = result.options;
-  // @ts-ignore
         opt.optionCrowdBypass = true;
         brws.storage.local.set({ options: opt });
         brws.storage.local.set({ tempDisableCrowd: 'false' });
@@ -124,7 +121,6 @@ brws.runtime.onStartup.addListener(() => {
 brws.runtime.onMessage.addListener((request, _, sendResponse) => {
   (async () => {
     let options = await getOptions();
-  // @ts-ignore
     if (options.optionCrowdBypass === false) {
       return;
     }
@@ -177,7 +173,6 @@ brws.storage.onChanged.addListener(() => {
     if (typeof options === 'undefined') {
       return;
     }
-  // @ts-ignore
     if (options.optionBlockIpLoggers === false) {
       brws.declarativeNetRequest.updateEnabledRulesets({
         disableRulesetIds: ['ipLoggerRuleset'],
@@ -187,7 +182,6 @@ brws.storage.onChanged.addListener(() => {
         enableRulesetIds: ['ipLoggerRuleset'],
       });
     }
-  // @ts-ignore
     if (options.optionTrackerBypass === false) {
       brws.declarativeNetRequest.updateEnabledRulesets({
         disableRulesetIds: ['trackerRuleset'],

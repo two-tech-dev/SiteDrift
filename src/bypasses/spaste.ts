@@ -12,7 +12,6 @@ export default class Spaste extends BypassDefinition {
       let item = document.querySelector('#currentCapQue').textContent;
       document.querySelectorAll('.markAnswer').forEach(as => {
         if (as.querySelector('img').getAttribute('src').toLowerCase().indexOf(item) > -1) {
-  // @ts-ignore
           as.click();
         }
       });

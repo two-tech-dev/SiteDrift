@@ -7,15 +7,14 @@ export default class Onelink extends BypassDefinition {
   }
 
   execute() {
-  // @ts-ignore
-    window.setInterval = f => setInterval(f, 1);
-    let b = document.getElementById('go_next');
-  // @ts-ignore
+    (window as any).setInterval = ((f) => setInterval(f, 1)) as any;
+    const b = document.getElementById('go_next') as HTMLAnchorElement | null;
     if (b && this.helpers.isGoodLink(b.href)) {
-  // @ts-ignore
       this.helpers.safelyAssign(b.href);
     } else {
-      this.helpers.ifElement('#download', b => this.helpers.safelyNavigate(b.href));
+      this.helpers.ifElement('#download', (el: HTMLAnchorElement) =>
+        this.helpers.safelyNavigate(el.href)
+      );
     }
   }
 }

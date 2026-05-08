@@ -6,13 +6,15 @@ export default class Manualsbooks extends BypassDefinition {
   }
 
   execute() {
-    // Wait for 2 seconds
-
-  // @ts-ignore
-    newElement.parentNode.replaceChild(downloadButton, newElement), clearInterval(id);
-    this.helpers.safelyNavigate(this.helpers.parseTarget(document.getElementById("download")))
-
+    this.helpers.ensureDomLoaded(() => {
+      const downloadEl = document.getElementById(
+        'download'
+      ) as HTMLAnchorElement | null;
+      if (downloadEl) {
+        this.helpers.safelyNavigate(downloadEl.href);
+      }
+    });
   }
 }
 
-export const matches = ['manualsbooks.com']
+export const matches = ['manualsbooks.com'];

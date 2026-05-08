@@ -1,15 +1,25 @@
 {
   "type": "module",
   "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.33",
+    "@types/chrome": "^0.1.42",
+    "@types/node": "^25.6.2",
+    "@vitejs/plugin-vue": "^6.0.6",
     "ejs": "^3.1.9",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
     "fs-extra": "^11.1.1",
     "prettier": "^2.8.7",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.11",
+    "vue": "^3.5.34",
+    "vue-tsc": "^3.2.8",
     "web-ext": "^7.6.2"
   },
   "scripts": {
-    "lint": "eslint",
-    "build": "node ./scripts/build.js"
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint"
   }
 }

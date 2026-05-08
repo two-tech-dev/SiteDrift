@@ -8,7 +8,7 @@ export default class Softpedia extends BypassDefinition {
 
   execute() {
     this.helpers.ifElement('meta[http-equiv=\'refresh\'][content]', m => {
-      let c = m.content.replace('; url=', ';url=');
+      const c = m.content.replace('; url=', ';url=');
       if (c.indexOf(';url=') > -1) {
         this.helpers.safelyAssign(c.split(';url=')[1]);
       }

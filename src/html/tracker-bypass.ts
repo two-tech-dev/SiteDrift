@@ -5,7 +5,7 @@ const trackerInfoElement = document.getElementById('tracker-info');
 
 // Get tracker URL from search parameter
 const urlParams = new URLSearchParams(window.location.search);
-let trackerUrl = urlParams.get('url');
+const trackerUrl = urlParams.get('url');
 if (!trackerUrl) showError('no url param found');
 
 function escapeHtml(str) {

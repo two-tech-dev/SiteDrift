@@ -5,7 +5,7 @@ export default class Shortenbuddy extends BypassDefinition {
     super()
   }
   execute () {
-    let url = location.href.replace('links.', '')
+    const url = location.href.replace('links.', '')
     this.helpers.safelyAssign(url)
   }
 }

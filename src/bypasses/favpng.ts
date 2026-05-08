@@ -9,10 +9,10 @@ export default class Favpng extends BypassDefinition {
   execute() {
     const scripts = document.getElementsByTagName('script');
     for (let i = 0; i < scripts.length; i++) {
-      let script = scripts[i];
+      const script = scripts[i];
       if (script.textContent.includes('https://download.favpng.com/api_download.php?')) {
-        let startIndex = script.textContent.indexOf('https://download.favpng.com/api_download.php?');
-        let endIndex = script.textContent.indexOf('"', startIndex);
+        const startIndex = script.textContent.indexOf('https://download.favpng.com/api_download.php?');
+        const endIndex = script.textContent.indexOf('"', startIndex);
         this.helpers.safelyNavigate(script.textContent.substring(startIndex, endIndex));
       }
     }

@@ -8,12 +8,12 @@ export default class Filepuma extends BypassDefinition {
 
   execute() {
     // Find the last script in the page
-    let scripts = document.getElementsByTagName('script');
-    let lastScript = scripts[scripts.length - 1];
+    const scripts = document.getElementsByTagName('script');
+    const lastScript = scripts[scripts.length - 1];
     // Get the script's source
-    let scriptSrc = lastScript.innerHTML;
+    const scriptSrc = lastScript.innerHTML;
     // Find the first location.href in the script and get the value of location.href
-    let url = scriptSrc.split('location.href = "')[1].split('"')[0];
+    const url = scriptSrc.split('location.href = "')[1].split('"')[0];
     alert(url)
 
   }

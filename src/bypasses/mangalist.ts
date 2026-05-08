@@ -8,7 +8,7 @@ export default class Mangalist extends BypassDefinition {
 
     execute() {
         this.helpers.awaitElement("#btt > button.btn.btn-primary.text-center[onclick^='window.location.assign(']", b => {
-            let o = b.getAttribute('onclick')
+            const o = b.getAttribute('onclick')
             this.helpers.safelyNavigate(o.substring(24, o.length - 3))
         })
     }

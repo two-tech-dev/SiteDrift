@@ -13,7 +13,7 @@ function getExtBaseURL() {
 }
 
 async function injectScript() {
-  let options = await getOptions();
+  const options = await getOptions();
   if (
     options &&
     options.whitelist &&
@@ -22,7 +22,7 @@ async function injectScript() {
     console.log('SiteDrift: Site whitelisted');
     return;
   }
-  let script = document.createElement('script');
+  const script = document.createElement('script');
   script.src =
     brws.runtime.getURL('injection_script.js') +
     '?' +
@@ -35,7 +35,7 @@ async function injectScript() {
 
 //ff + first 10 characters of SHA256 of sitedrift to prevent collisions
 document.addEventListener('ff53054c0e13_crowdQuery', async (event: Event) => {
-  let data = (event as CustomEvent).detail;
+  const data = (event as CustomEvent).detail;
   const response = await chrome.runtime.sendMessage({
     type: 'crowdQuery',
     detail: data,
@@ -47,9 +47,9 @@ document.addEventListener('ff53054c0e13_crowdQuery', async (event: Event) => {
 });
 
 function matchDomains(inputString, domains) {
-  let domainList = domains.split('\n');
-  for (let domain of domainList) {
-    let regex = new RegExp('^' + domain.replace(/\*/g, '[^.]+') + '$');
+  const domainList = domains.split('\n');
+  for (const domain of domainList) {
+    const regex = new RegExp('^' + domain.replace(/\*/g, '[^.]+') + '$');
     if (regex.test(inputString)) {
       return true;
     }
@@ -58,14 +58,14 @@ function matchDomains(inputString, domains) {
 }
 
 document.addEventListener('ff53054c0e13_crowdContribute', (event: Event) => {
-  let data = (event as CustomEvent).detail;
+  const data = (event as CustomEvent).detail;
   chrome.runtime.sendMessage({
     type: 'crowdContribute',
     detail: data,
   });
 });
 document.addEventListener('ff53054c0e13_followAndContribute', (event: Event) => {
-  let data = (event as CustomEvent).detail;
+  const data = (event as CustomEvent).detail;
   chrome.runtime.sendMessage({
     type: 'followAndContribute',
     detail: data,

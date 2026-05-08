@@ -9,7 +9,7 @@ export default class Spaste extends BypassDefinition {
   execute() {
     this.helpers.insertInfoBox('Please complete the captcha to continue');
     const doTheThing = f => setTimeout(() => {
-      let item = document.querySelector('#currentCapQue').textContent;
+      const item = document.querySelector('#currentCapQue').textContent;
       document.querySelectorAll('.markAnswer').forEach(as => {
         if (as.querySelector('img').getAttribute('src').toLowerCase().indexOf(item) > -1) {
           as.click();

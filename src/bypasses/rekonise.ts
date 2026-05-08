@@ -6,9 +6,9 @@ export default class Rekonise extends BypassDefinition {
     }
 
     execute() {
-        let xhr = new XMLHttpRequest()
+        const xhr = new XMLHttpRequest()
         xhr.onload = () => {
-            let data = JSON.parse(xhr.responseText)
+            const data = JSON.parse(xhr.responseText)
             this.helpers.safelyNavigate(data.url)
         }
         xhr.open(

@@ -86,13 +86,13 @@ export default class LootLink extends BypassDefinition {
 
   decryptData(encodedData) {
     let final = '';
-    let combinationLink = atob(encodedData);
-    let key = combinationLink.substring(0, 5);
-    let enc_link = combinationLink.substring(5);
+    const combinationLink = atob(encodedData);
+    const key = combinationLink.substring(0, 5);
+    const enc_link = combinationLink.substring(5);
     for (let i = 0; i < enc_link.length; i++) {
-      let enc_char = enc_link.charCodeAt(i);
-      let keyAtOffset = key.charCodeAt(i % key.length);
-      let charcode = enc_char ^ keyAtOffset;
+      const enc_char = enc_link.charCodeAt(i);
+      const keyAtOffset = key.charCodeAt(i % key.length);
+      const charcode = enc_char ^ keyAtOffset;
       final += String.fromCharCode(charcode);
     }
 

@@ -10,8 +10,8 @@ export default class Acortalink extends BypassDefinition {
     function rot13(str) {
       const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
       const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-      let index = (x) => input.indexOf(x);
-      let translate = (x) => (index(x) > -1 ? output[index(x)] : x);
+      const index = (x) => input.indexOf(x);
+      const translate = (x) => (index(x) > -1 ? output[index(x)] : x);
       return str.split('').map(translate).join('');
     }
     // Triggered on example.com and subdomains (e.g. www.example.com)

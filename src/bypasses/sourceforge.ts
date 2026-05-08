@@ -6,8 +6,8 @@ export default class Sourceforge extends BypassDefinition {
     }
 
     execute() {
-        var button = document.createElement('button')
-        var downloaded = false
+        const button = document.createElement('button')
+        let downloaded = false
         button.className = 'direct-download'
         button.style.display = 'none'
         document.documentElement.appendChild(button)
@@ -21,7 +21,7 @@ export default class Sourceforge extends BypassDefinition {
             writable: false
         })
         this.helpers.ensureDomLoaded(() => {
-            let buttonTimer = setInterval(() => {
+            const buttonTimer = setInterval(() => {
                 if (downloaded) {
                     button.click()
                     clearInterval(buttonTimer)

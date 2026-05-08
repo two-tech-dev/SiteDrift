@@ -19,7 +19,7 @@ function escapeHtml(unsafe) {
 }
 
 function updateDestinationMessage() {
-  let msg = brws.i18n.getMessage(
+  const msg = brws.i18n.getMessage(
     'crowdBypassedInfo',
     `<br><a href="${escapeHtml(
       targetUrl
@@ -30,7 +30,7 @@ function updateDestinationMessage() {
 
 tempDisableCrowdButton.addEventListener('click', () => {
   brws.storage.local.get(['options']).then((result) => {
-    let opt = result.options;
+    const opt = result.options;
     if (!opt.optionCrowdBypass) {
       return;
     }

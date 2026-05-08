@@ -25,7 +25,7 @@
           <h2 data-message="options">Options</h2>
           <div class="option">
             <label class="ffInput">
-              <input type="checkbox" v-model="options.navigationDelayToggle" />
+              <input v-model="options.navigationDelayToggle" type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <span data-message="optionsNavigationDelay" for="option-navigation-delay">Bypass countdowns</span>
@@ -34,7 +34,7 @@
           <hr /><br />
           <div class="option">
             <label class="ffInput">
-              <input type="checkbox" v-model="options.optionTrackerBypass" />
+              <input v-model="options.optionTrackerBypass" type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <span data-message="optionsTrackerBypass" for="option-tracker-bypass">Bypass trackers</span> (<a href="https://unshorten.me/privacy-policy" target="_blank" data-message="privacyPolicy" class="link">Privacy Policy</a>)
@@ -42,7 +42,7 @@
           </div>
           <div class="indentedOption">
             <label class="ffInput">
-              <input type="checkbox" v-model="options.optionInstantNavigationTrackers" />
+              <input v-model="options.optionInstantNavigationTrackers" type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <span data-message="optionsInstantNavigationTrackers" for="option-instant-navigation-trackers">Instant navigation for trackers</span>
@@ -51,7 +51,7 @@
           <hr /><br />
           <div class="option">
             <label class="ffInput">
-              <input type="checkbox" v-model="options.optionBlockIpLoggers" />
+              <input v-model="options.optionBlockIpLoggers" type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <span data-message="optionsBlockIPLoggers" for="option-block-ip-loggers">Block IP loggers</span>
@@ -60,7 +60,7 @@
           <hr /><br />
           <div class="option">
             <label class="ffInput">
-              <input type="checkbox" v-model="options.optionCrowdBypass" />
+              <input v-model="options.optionCrowdBypass" type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <span data-message="optionsCrowdBypass" for="option-crowd-bypass">Crowd Bypass</span> (<a href="https://github.com/2Tech Studio (2tech.studio) (prev FastForward)/SiteDrift/blob/master/PRIVACY.md#crowd-bypass" target="_blank" data-message="privacyPolicy" class="link">Privacy Policy</a>)
@@ -71,7 +71,7 @@
           </div>
           <div class="indentedOption">
             <label class="ffInput">
-              <input type="checkbox" v-model="options.optionCrowdOpenDelayToggle" />
+              <input v-model="options.optionCrowdOpenDelayToggle" type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <span data-message="optionsCrowdAutoOpen" for="option-crowd-open-delay">Auto-open crowd-bypassed links</span>
@@ -79,7 +79,7 @@
           </div>
           <div class="indentedOption">
             <label class="ffInput">
-              <input type="checkbox" v-model="options.optionCrowdCloseDelayToggle" />
+              <input v-model="options.optionCrowdCloseDelayToggle" type="checkbox" />
               <span class="checkmark"></span>
             </label>
             <span data-message="optionsCrowdAutoClose" for="option-crowd-close-delay">Auto-close crowd-bypassed links</span>
@@ -91,9 +91,9 @@
           <p data-message="optionsWhitelistDescription" v-html="whitelistDesc"></p>
           <textarea
             id="whitelist"
+            v-model="options.whitelist"
             class="ffInput"
             spellcheck="false"
-            v-model="options.whitelist"
             :class="{ invalid: isInvalid }"
           ></textarea>
         </section>

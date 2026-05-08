@@ -9,14 +9,14 @@ export default class Shortly extends BypassDefinition {
         if (location.pathname.substr(0, 3) === "/r/") {
             document.getElementById = () => ({
                 submit: () => {
-                    let f = document.querySelector("form")
+                    const f = document.querySelector("form")
                     f.action = "/link#" + document.querySelector("input[name='id']").value
                     f.submit()
                 }
             })
         }
         else if (location.pathname === "/link") {
-            let xhr = new XMLHttpRequest()
+            const xhr = new XMLHttpRequest()
             xhr.onload = () => this.helpers.safelyNavigate(xhr.responseText)
             xhr.open("POST", "https://www.shortly.xyz/getlink.php", true)
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")

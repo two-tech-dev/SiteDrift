@@ -8,7 +8,7 @@ export default class Oracle extends BypassDefinition {
 
     execute() {
         document.querySelectorAll("[data-file]").forEach(e => {
-            let link = e.getAttribute("data-file"),
+            const link = e.getAttribute("data-file"),
                 jre8 = RegExp("download.oracle.com/otn/java/jdk/8u([0-9]*)-b([0-9]*)/([a-z0-9]{32})/(.*)$", "g").exec(link)
             if (jre8 && jre8[3]){
                  os_type = RegExp("8u[0-9]*-([^-]*)-").exec(jre8[4])[1]

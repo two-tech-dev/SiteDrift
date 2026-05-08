@@ -17,7 +17,7 @@ export default class Get2clickblogspot extends BypassDefinition {
     window.addEventListener('load', () => {
       //The url will look like this https://get-click2.blogspot.com/2019/01/0xc60f.live?m=1
       //return the part of the url that is after the date, in this case it is 0xc60f.live?m=1
-      let url = location.href.replace(/.*\/\d+\/(.*)/, '$1');
+      const url = location.href.replace(/.*\/\d+\/(.*)/, '$1');
       this.helpers.safelyNavigate(url);
     });
   }

@@ -11,7 +11,7 @@ export default class Uiz extends BypassDefinition {
         this.helpers.ensureDomLoaded(() => {
             const regHere = /.*window\.location\.href = "(http[^"]+)";.*/
             document.querySelectorAll("script").forEach(script => {
-                let match = regHere.exec(script.textContent)
+                const match = regHere.exec(script.textContent)
                 if (match && match[1]){
                     this.helpers.crowdPath(bypassClipboard)
                     this.helpers.contributeAndNavigate(match[1])

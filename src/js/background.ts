@@ -56,13 +56,13 @@ function firstrun(details) {
 }
 
 function preflight(details) {
-  let url = new URL(details.url);
+  const url = new URL(details.url);
   if (url.hostname !== 'sitedrift.team') {
     return;
   }
   //navigate
   if (url.pathname === '/bypassed') {
-    let ext_url = new URL(brws.runtime.getURL(''));
+    const ext_url = new URL(brws.runtime.getURL(''));
     url.hostname = ext_url.hostname;
     url.protocol = ext_url.protocol;
     url.pathname = '/html' + url.pathname;
@@ -85,7 +85,7 @@ function reEnableCrowdBypassStartup() {
   brws.storage.local.get(['tempDisableCrowd']).then((result) => {
     if (result.tempDisableCrowd === 'true') {
       brws.storage.local.get(['options']).then((result) => {
-        let opt = result.options;
+        const opt = result.options;
         opt.optionCrowdBypass = true;
         brws.storage.local.set({ options: opt });
       });
@@ -101,7 +101,7 @@ brws.alarms.onAlarm.addListener((alarm) => {
       result.tempDisableCrowd === 'true'
     ) {
       brws.storage.local.get(['options']).then((result) => {
-        let opt = result.options;
+        const opt = result.options;
         opt.optionCrowdBypass = true;
         brws.storage.local.set({ options: opt });
         brws.storage.local.set({ tempDisableCrowd: 'false' });
@@ -120,29 +120,31 @@ brws.runtime.onStartup.addListener(() => {
 
 brws.runtime.onMessage.addListener((request, _, sendResponse) => {
   (async () => {
-    let options = await getOptions();
+    const options = await getOptions();
     if (options.optionCrowdBypass === false) {
       return;
     }
-    let url;
-    request.type === 'crowdQuery'
-      ? (url = 'https://crowd.sitedrift.team/crowd/query_v1')
-      : (url = 'https://crowd.sitedrift.team/crowd/contribute_v1');
+    let url: string;
+    if (request.type === 'crowdQuery') {
+      url = 'https://crowd.sitedrift.team/crowd/query_v1';
+    } else {
+      url = 'https://crowd.sitedrift.team/crowd/contribute_v1';
+    }
 
-    let params = new URLSearchParams();
+    const params = new URLSearchParams();
 
     if (request.type !== 'followAndContribute') {
-      for (let key in request.detail) {
+      for (const key in request.detail) {
         params.append(key, request.detail[key]);
       }
     } else {
-      for (let key in request.detail) {
+      for (const key in request.detail) {
         if (key === 'target') {
-          let dest = new URL(request.detail[key]);
+          const dest = new URL(request.detail[key]);
           if (!fetchDomains.includes(dest.hostname)) {
             return;
           }
-          let res = await fetch(dest.href, {
+          const res = await fetch(dest.href, {
             method: 'GET',
             redirect: 'follow',
           });
@@ -153,7 +155,7 @@ brws.runtime.onMessage.addListener((request, _, sendResponse) => {
       }
     }
 
-    let response = await fetch(url, {
+    const response = await fetch(url, {
       method: 'POST',
       body: params.toString(),
       headers: {

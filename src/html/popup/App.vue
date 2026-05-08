@@ -32,9 +32,9 @@
           </p>
           <textarea
             id="whitelist"
+            v-model="whitelist"
             class="ffInput"
             spellcheck="false"
-            v-model="whitelist"
             :class="{ invalid: isInvalid }"
           ></textarea>
           <input

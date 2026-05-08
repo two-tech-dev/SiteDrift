@@ -7,7 +7,7 @@ export default class Pirateproxy extends BypassDefinition {
     }
 
     execute() {
-        let search = location.search.replace("?", "")
+        const search = location.search.replace("?", "")
         if (search) {
             this.helpers.safelyNavigate(`https://${search}`)
         }

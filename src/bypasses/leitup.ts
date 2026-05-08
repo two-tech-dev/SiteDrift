@@ -8,7 +8,7 @@ export default class Leitup extends BypassDefinition {
 
     execute() {
         this.helpers.ifElement('input.form-control[type="text"]', (input) => {
-            let destination = input.attributes.placeholder.value
+            const destination = input.attributes.placeholder.value
             this.helpers.safelyNavigate(destination)
         })
     }

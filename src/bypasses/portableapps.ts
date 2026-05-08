@@ -9,10 +9,10 @@ export default class Portableapps extends BypassDefinition {
   execute() {
     //Check if the url contains "/downloading"
     if (window.location.href.indexOf('/downloading') > -1) {
-      let url = window.location.href;
-      let urlSplit = url.split('&f=');
-      let urlSplit2 = urlSplit[1].split('&');
-      let finalUrl = "https://download2.portableapps.com/portableapps/PortableApps.comPlatform/" + urlSplit2
+      const url = window.location.href;
+      const urlSplit = url.split('&f=');
+      const urlSplit2 = urlSplit[1].split('&');
+      const finalUrl = "https://download2.portableapps.com/portableapps/PortableApps.comPlatform/" + urlSplit2
       //Open finalUrl in a new tab
       window.open(finalUrl, '_blank');
     }

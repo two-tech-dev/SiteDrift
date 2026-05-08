@@ -8,7 +8,7 @@ function matchingBypass(bypasses: any) {
     if (!matches) continue;
     for (const key of matches) {
       if (key.charAt(0) === '/' && key.charAt(key.length - 1) === '/') {
-        let pattern = new RegExp(key.substring(1, key.length - 1));
+        const pattern = new RegExp(key.substring(1, key.length - 1));
         if (pattern.test(location.href)) {
           return module;
         }

@@ -7,7 +7,7 @@ export default class Squidssh extends BypassDefinition {
     }
 
     execute() {
-        let p = atob((new URLSearchParams(location.search)).get('short'))
+        const p = atob((new URLSearchParams(location.search)).get('short'))
         crowdPath(p)
         crowdBypass(() => this.helpers.ifElement("form[action='/user/links']", f => f.action += "#" + p))
     }

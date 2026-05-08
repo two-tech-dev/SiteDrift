@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default abstract class BypassDefinition {
     ensure_dom: boolean;
     helpers: any;

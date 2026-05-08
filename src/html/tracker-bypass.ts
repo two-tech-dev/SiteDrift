@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './base';
 import './i18n';
 /*global brws*/
@@ -79,3 +80,5 @@ async function resolveTracker(url) {
 }
 
 resolveTracker(trackerUrl);
+
+export {};

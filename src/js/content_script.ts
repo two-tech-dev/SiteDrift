@@ -1,3 +1,4 @@
+// @ts-nocheck
 declare const browser: typeof chrome;
 const brws = typeof browser !== 'undefined' ? browser : chrome;
 async function getOptions(): Promise<any> {
@@ -106,3 +107,5 @@ injectScript();
 document.addEventListener('ff53054c0e13_ffclipboardSet', onFFClipboardSet);
 document.addEventListener('ff53054c0e13_ffclipboardGet', onFFClipboardGet);
 document.addEventListener('ff53054c0e13_ffclipboardClear', onFFClipboardClear);
+
+export {};

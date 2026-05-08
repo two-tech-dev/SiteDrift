@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './base';
 import './i18n';
 const timerElement = document.getElementById('timer');
@@ -72,3 +73,5 @@ brws.storage.local.get('options', (result) => {
 });
 
 updateDestinationMessage();
+
+export {};

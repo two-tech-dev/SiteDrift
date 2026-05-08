@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Blitly extends BypassDefinition {

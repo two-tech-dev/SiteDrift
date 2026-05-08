@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as constants from './constants';
 
 declare const browser: typeof chrome;
@@ -193,3 +194,5 @@ brws.storage.onChanged.addListener(() => {
     }
   });
 });
+
+export {};

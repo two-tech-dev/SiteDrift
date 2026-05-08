@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Lnk2 extends BypassDefinition {

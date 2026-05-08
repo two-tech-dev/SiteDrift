@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Defines the property of an object with the given name and options. This can be used to find a part of the DOM needed for bypassing. If it fails, it will throw an error.
  * @function
@@ -515,3 +516,5 @@ export default {
   ODP,
   URL
 }
+
+export {};

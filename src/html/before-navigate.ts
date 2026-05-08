@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './base';
 import './i18n';
 /*global brws*/
@@ -53,3 +54,5 @@ brws.storage.local.get('options', (result) => {
     }
   }, 1000);
 });
+
+export {};

@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Tue dini zit ned met onnötige link verkörtzer verschwände. FastForward helft der bim omgoh vo setige links."
+		"message": "Tue dini zit ned met onnötige link verkörtzer verschwände. SiteDrift helft der bim omgoh vo setige links."
 	},
 	"firstrunTitle": {
-		"message": "Vele dank vörs installiere ond notze vo FastForward!"
+		"message": "Vele dank vörs installiere ond notze vo SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Es gsed so us als ob du NoScript oder öpis ähnleches tuesch verwände ond FastForward esch ned demet kompatibel."
+		"message": "Es gsed so us als ob du NoScript oder öpis ähnleches tuesch verwände ond SiteDrift esch ned demet kompatibel."
 	},
 	"version": {
 		"message": "Version"
@@ -33,16 +33,16 @@
 		"message": "Hüfig gstelti froge (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward hed för dech scho $1 omgange."
+		"message": "SiteDrift hed för dech scho $1 omgange."
 	},
 	"support": {
-		"message": "Onderstötz FastForward."
+		"message": "Onderstötz SiteDrift."
 	},
 	"options": {
 		"message": "Ihstelige"
 	},
 	"optionsLink": {
-		"message": "Ihstelige vo FastForward ändere."
+		"message": "Ihstelige vo SiteDrift ändere."
 	},
 	"optionsEnabled": {
 		"message": "Website omgoh ischalte."
@@ -78,7 +78,7 @@
 		"message": "Eigeti omgoh variante"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Das esch en erwiterti funktion för entweckler damet sie ehri eigete omgohigs wäg chönd programmiere för websitene. Wenn die mol perfekt usgarbeitet send chönd die via GitHub gschekt wärde ond de wärdets bi FastForward hinzuegfüegt, somet stönds de vör ali zor verfüegig."
+		"message": "Das esch en erwiterti funktion för entweckler damet sie ehri eigete omgohigs wäg chönd programmiere för websitene. Wenn die mol perfekt usgarbeitet send chönd die via GitHub gschekt wärde ond de wärdets bi SiteDrift hinzuegfüegt, somet stönds de vör ali zor verfüegig."
 	},
 	"beforeNavigate": {
 		"message": "Du besch fascht am ziel acho."
@@ -87,7 +87,7 @@
 		"message": "Dis ziel esch $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Aber falls du jetzt scho witer gosch de werd FastForward endeckt."
+		"message": "Aber falls du jetzt scho witer gosch de werd SiteDrift endeckt."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Du wersch i $1 sekondene nöme entdeckt."
@@ -114,7 +114,7 @@
 		"message": "Leider muesch du warte da die website secher go wot das du gwartet hesch bevor du es abelade chasch."
 	},
 	"infoOutdated": {
-		"message": "Die website chan metere neuere version vo FastForward omgange wärde."
+		"message": "Die website chan metere neuere version vo SiteDrift omgange wärde."
 	},
 	"crowdWait": {
 		"message": "Leider besch du de erschti wo dä link hed aber nach dem du gwarted hesch muess es kei andere benotzer meh."
@@ -126,7 +126,7 @@
 		"message": "Anschinend muesch du ned warte!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Anderi FastForward notzer händ vör dech scho gwarted ond die händ gseit das es do äne füert $1"
+		"message": "Anderi SiteDrift notzer händ vör dech scho gwarted ond die händ gseit das es do äne füert $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Das werd i $1 sekondene imene neue fenster ufgmacht."
@@ -150,9 +150,9 @@
 		"message": "Wetsch du das es sofort imene neue fenster ufgmacht werd oder i x sekondene?"
 	},
 	"blockedTitle": {
-		"message": "FastForward hed dech vomene IP-Logger gschötzt."
+		"message": "SiteDrift hed dech vomene IP-Logger gschötzt."
 	},
 	"blockedSubtitle": {
-		"message": "Wotsch ned das FastForward dini IP vo böse lüüt schötzt?"
+		"message": "Wotsch ned das SiteDrift dini IP vo böse lüüt schötzt?"
 	}
 }

@@ -3,7 +3,7 @@
     <nav>
       <ul>
         <div class="logo-wrapper">
-          <img class="logo" src="../../icon/branding.png" alt="FastForward" />
+          <img class="logo" src="../../icon/branding.png" alt="SiteDrift" />
         </div>
         <div class="spacer"></div>
       </ul>

@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Don't waste your time with compliance. FastForward circumvents annoying link shorteners."
+		"message": "Don't waste your time with compliance. SiteDrift circumvents annoying link shorteners."
 	},
 	"firstrunTitle": {
-		"message": "Thank you for installing FastForward!"
+		"message": "Thank you for installing SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "However, you seem to be using NoScript or similar, which FastForward is not compatible with."
+		"message": "However, you seem to be using NoScript or similar, which SiteDrift is not compatible with."
 	},
 	"version": {
 		"message": "Version"
@@ -21,16 +21,16 @@
 		"message": "Frequently Asked Questions (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward has already bypassed $1 sites for you."
+		"message": "SiteDrift has already bypassed $1 sites for you."
 	},
 	"support": {
-		"message": "Contribute to FastForward."
+		"message": "Contribute to SiteDrift."
 	},
 	"options": {
 		"message": "Options"
 	},
 	"optionsLink": {
-		"message": "Change FastForward's options."
+		"message": "Change SiteDrift's options."
 	},
 	"optionsEnabled": {
 		"message": "Enable website bypasses."
@@ -66,10 +66,10 @@
 		"message": "Bypass trackers immediately and automatically, instead of providing a link to the destination. Recommended: On."
 	},
 	"optionsBlockIPLoggersDescription": {
-		"message": "If FastForward can't bypass a link that will log your IP, we will block it instead. Recommended: On."
+		"message": "If SiteDrift can't bypass a link that will log your IP, we will block it instead. Recommended: On."
 	},
 	"optionsCrowdBypassDescription": {
-		"message": "Crowd Bypass: Use FastForward's online database of bypassed links to instantly bypass popular sites. Recommended: On."
+		"message": "Crowd Bypass: Use SiteDrift's online database of bypassed links to instantly bypass popular sites. Recommended: On."
 	},
 	"optionsCrowdAutoOpenDescription": {
 		"message": "Open Crowd Bypass destinations in a new tab rather than the current one, so you don't lose your place. Recommended: Off"
@@ -78,7 +78,7 @@
 		"message": "Close Crowd Bypass destination after a few seconds. Useful if most of the sites you visit have a direct download link. Recommended: Off"
 	},
 	"crowdBypassTempDisabledDescription": {
-		"message": "Crowd bypass has been temporarily disabled when FastForward was updated. Please re-enable it."
+		"message": "Crowd bypass has been temporarily disabled when SiteDrift was updated. Please re-enable it."
 	},
 	"privacyPolicy": {
 		"message": "Privacy Policy"
@@ -90,7 +90,7 @@
 		"message": "Custom Bypasses"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "This is an advanced feature for developers to create their own scripts to bypass sites. Once perfected, they can then be submitted on GitHub to be added to FastForward, so they're available to everyone."
+		"message": "This is an advanced feature for developers to create their own scripts to bypass sites. Once perfected, they can then be submitted on GitHub to be added to SiteDrift, so they're available to everyone."
 	},
 	"beforeNavigate": {
 		"message": "You're almost at your destination."
@@ -111,16 +111,16 @@
 		"message": "You are being navigated to $1"
 	},
 	"infoLinkvertise": {
-		"message": "FastForward requires you to complete the captcha before we can bypass this site for you. after you do this, we can skip the annoying steps!"
+		"message": "SiteDrift requires you to complete the captcha before we can bypass this site for you. after you do this, we can skip the annoying steps!"
 	},
 	"infoFileHoster": {
 		"message": "Unfortunately, the download server will ensure that you have waited before allowing you to download the file."
 	},
 	"infoOutdated": {
-		"message": "This website is bypassed by a newer version of FastForward."
+		"message": "This website is bypassed by a newer version of SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Unfortunately, you're the first to encounter this link, but after you've waited, other FastForward users will no longer have to."
+		"message": "Unfortunately, you're the first to encounter this link, but after you've waited, other SiteDrift users will no longer have to."
 	},
 	"crowdDisabled": {
 		"message": "This website is bypassed by crowd bypass, which you can enable in the options."
@@ -129,7 +129,7 @@
 		"message": "You might not have to wait!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Other FastForward users have already waited for you and reported that this leads to $1"
+		"message": "Other SiteDrift users have already waited for you and reported that this leads to $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "This will be opened in a new tab in $1 seconds."
@@ -150,16 +150,16 @@
 		"message": "Do you want this to be opened in a new tab instantly or in x seconds?"
 	},
 	"blockedTitle": {
-		"message": "FastForward prevented your IP from being logged."
+		"message": "SiteDrift prevented your IP from being logged."
 	},
 	"blockedSubtitle": {
-		"message": "Don't want FastForward to prevent bad actors from getting your IP?"
+		"message": "Don't want SiteDrift to prevent bad actors from getting your IP?"
 	},
 	"optionsWhitelist": {
 		"message": "Whitelist"
 	},
 	"optionsWhitelistDescription": {
-		"message": "A list of sites formatted as domain.tld or subdomain.domain.tld that won't be bypassed by FastForward. Seperate domains with new lines. Use * as a wildcard."
+		"message": "A list of sites formatted as domain.tld or subdomain.domain.tld that won't be bypassed by SiteDrift. Seperate domains with new lines. Use * as a wildcard."
 	},
 	"tempDisableCrowdBypassButton": {
 		"message": "Temporarily disable crowd bypass"

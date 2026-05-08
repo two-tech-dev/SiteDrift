@@ -3,10 +3,10 @@
 		"message": "Ne zapravljajte časa s skladnostjo.  Univerzalni bypass obide nadležne krajšave povezav."
 	},
 	"firstrunTitle": {
-		"message": "Hvala, ker ste namestili FastForward!"
+		"message": "Hvala, ker ste namestili SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Vendar se zdi, da uporabljate NoScript ali podobno, s čimer FastForward ni združljiv."
+		"message": "Vendar se zdi, da uporabljate NoScript ali podobno, s čimer SiteDrift ni združljiv."
 	},
 	"version": {
 		"message": "Različica"
@@ -33,7 +33,7 @@
 		"message": "Pogosta vprašanja (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward je že zaobšel$1 spletnih mest za vas."
+		"message": "SiteDrift je že zaobšel$1 spletnih mest za vas."
 	},
 	"support": {
 		"message": "Prispevajte k Univerzalni obvoznici."
@@ -42,7 +42,7 @@
 		"message": "Opcije"
 	},
 	"optionsLink": {
-		"message": "Spremeni možnosti FastForward '."
+		"message": "Spremeni možnosti SiteDrift '."
 	},
 	"optionsEnabled": {
 		"message": "Omogoči obhode spletnih strani"
@@ -78,7 +78,7 @@
 		"message": "Obvoznice po meri"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "To je napredna funkcija za razvijalce, da ustvarijo svoje skripte za obhod spletnih mest.  Ko bodo izpopolnjeni, jih je mogoče nato poslati na GitHub in jih dodati FastForward, tako da so na voljo vsem."
+		"message": "To je napredna funkcija za razvijalce, da ustvarijo svoje skripte za obhod spletnih mest.  Ko bodo izpopolnjeni, jih je mogoče nato poslati na GitHub in jih dodati SiteDrift, tako da so na voljo vsem."
 	},
 	"beforeNavigate": {
 		"message": "Skoraj že ste na svojem cilju."
@@ -87,7 +87,7 @@
 		"message": "Vaš cilj je$1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Če pa greste zdaj, bodo zaznali FastForward."
+		"message": "Če pa greste zdaj, bodo zaznali SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "V$1 sekundah ne boste več zaznani."
@@ -111,10 +111,10 @@
 		"message": "Na žalost bo strežnik za prenos poskrbel, da ste čakali, preden boste dovolili prenos datoteke."
 	},
 	"infoOutdated": {
-		"message": "To spletno mesto obide novejša različica FastForward."
+		"message": "To spletno mesto obide novejša različica SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Na žalost ste prvič naleteli na to povezavo, vendar po tem, ko ste čakali, drugim uporabnikom FastForward-a ne bo več treba."
+		"message": "Na žalost ste prvič naleteli na to povezavo, vendar po tem, ko ste čakali, drugim uporabnikom SiteDrift-a ne bo več treba."
 	},
 	"crowdDisabled": {
 		"message": "To spletno mesto obide množica bypass, kar lahko omogočite v možnostih."
@@ -123,7 +123,7 @@
 		"message": "Morda ne bo treba čakati!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Drugi uporabniki FastForward-a so vas že čakali in sporočili, da to vodi do$1"
+		"message": "Drugi uporabniki SiteDrift-a so vas že čakali in sporočili, da to vodi do$1"
 	},
 	"crowdBypassedTimer": {
 		"message": "To se odpre v novem zavihku v$1 sekundah."

@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Huwag sayangin ang iyong oras nang may pagsunod. Ang FastForward dinadaya ang nakakainis na mga shortener ng link."
+		"message": "Huwag sayangin ang iyong oras nang may pagsunod. Ang SiteDrift dinadaya ang nakakainis na mga shortener ng link."
 	},
 	"firstrunTitle": {
-		"message": "Salamat sa iyong pag i-install ng FastForward!"
+		"message": "Salamat sa iyong pag i-install ng SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Gayunpaman, mukhang gumagamit ka ng NoScript o katulad, na hindi katugma sa FastForward."
+		"message": "Gayunpaman, mukhang gumagamit ka ng NoScript o katulad, na hindi katugma sa SiteDrift."
 	},
 	"version": {
 		"message": "Bersyon"
@@ -33,16 +33,16 @@
 		"message": "Mga Madalas Itanong"
 	},
 	"bypassCounter": {
-		"message": "Ang FastForward ay naka iwas ng $1 mga sites para lang sa iyo."
+		"message": "Ang SiteDrift ay naka iwas ng $1 mga sites para lang sa iyo."
 	},
 	"support": {
-		"message": "Suportahan ang FastForward"
+		"message": "Suportahan ang SiteDrift"
 	},
 	"options": {
 		"message": "Pagpipilian"
 	},
 	"optionsLink": {
-		"message": "Baguhin ang mga pagpipilian sa FastForward."
+		"message": "Baguhin ang mga pagpipilian sa SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Paganahin ang website bypasses."
@@ -78,7 +78,7 @@
 		"message": "Pasadyang Mga Salamin"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Ito ay isang masulong na tampok para lang sa mga developers para makagawa ng sariling iskrip para ma liwasan ang mga sites. Kung perkpekto, puwde ipasa sa GitHub para idadagdag sa FastForward. Para Magagamit sa lahat."
+		"message": "Ito ay isang masulong na tampok para lang sa mga developers para makagawa ng sariling iskrip para ma liwasan ang mga sites. Kung perkpekto, puwde ipasa sa GitHub para idadagdag sa SiteDrift. Para Magagamit sa lahat."
 	},
 	"beforeNavigate": {
 		"message": "malapit ka na sa iyong patutunguhan."
@@ -87,7 +87,7 @@
 		"message": "ang iyong destinasyon ay $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "gayunpaman, kung maglayag ka na, ma tiktikan nila ang FastForward."
+		"message": "gayunpaman, kung maglayag ka na, ma tiktikan nila ang SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Hindi na ka makikita sa $1 segundo."
@@ -111,10 +111,10 @@
 		"message": "Sa kasamaang palad, masisiguro ng download server na naghintay ka bago ka payagan na mag-download ng file."
 	},
 	"infoOutdated": {
-		"message": "Ang website ay binaypass ng bagong version ng FastForward."
+		"message": "Ang website ay binaypass ng bagong version ng SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Sa kasamaang palad, ikaw ang unang nakatagpo ng link na ito, ngunit pagkatapos mong maghintay, ang ibang mga gumagamit ng FastForward ay hindi na magkakaroon."
+		"message": "Sa kasamaang palad, ikaw ang unang nakatagpo ng link na ito, ngunit pagkatapos mong maghintay, ang ibang mga gumagamit ng SiteDrift ay hindi na magkakaroon."
 	},
 	"crowdDisabled": {
 		"message": "Ang website ay bypassed ng crowd bypass, na ay iyong dinisable sa options."
@@ -123,7 +123,7 @@
 		"message": "Maaaring hindi mo na kailangang maghintay!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Ang iba pang mga gumagamit ng FastForward ay naghintay na sa iyo at iniulat na ang link na ito ay hahantong sa $1"
+		"message": "Ang iba pang mga gumagamit ng SiteDrift ay naghintay na sa iyo at iniulat na ang link na ito ay hahantong sa $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Ito ay bubuksan sa isang bagong tab sa $1 segundo."
@@ -147,9 +147,9 @@
 		"message": "Nais mo bang mabuksan ito sa isang bagong tab kaagad o sa x segundo?"
 	},
 	"blockedTitle": {
-		"message": "Pinigilan ng FastForward ang iyong IP na mai-log."
+		"message": "Pinigilan ng SiteDrift ang iyong IP na mai-log."
 	},
 	"blockedSubtitle": {
-		"message": "Hindi mo nais ang FastForward upang maiwasan ang masasamang loob na makuha ang iyong IP?"
+		"message": "Hindi mo nais ang SiteDrift upang maiwasan ang masasamang loob na makuha ang iyong IP?"
 	}
 }

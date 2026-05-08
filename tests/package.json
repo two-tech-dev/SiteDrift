@@ -1,11 +1,11 @@
 {
   "name": "autotest",
   "version": "1.0.0",
-  "description": "A tool to automatically test FastForward extension",
+  "description": "A tool to automatically test SiteDrift extension",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FastForwardTeam/FastForward.git",
+    "url": "https://github.com/2Tech Studio (2tech.studio) (prev FastForward)/SiteDrift.git",
     "directory": "tests"
     }
   }

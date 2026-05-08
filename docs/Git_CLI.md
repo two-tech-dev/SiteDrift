@@ -20,10 +20,10 @@ Into this:
 Open the terminal and run the following commands. 
 NOTE: Remember to substitue all `<things>`
 ```
-git clone https://github.com/<YOUR USERNAME>/FastForward
+git clone https://github.com/<YOUR USERNAME>/SiteDrift
 ```
 ```
-cd FastForward
+cd SiteDrift
 ```
 
 <pre>
@@ -48,11 +48,11 @@ NOTE: If you have made any changes on your main brainch they **will be lost.**
 Open the terminal and run the following commands. 
 NOTE: Remember to substitue all `<things>`
 ```
-git clone https://github.com/<your username>/FastForward
+git clone https://github.com/<your username>/SiteDrift
 ```
 ```
-cd FastForward
-git remote add upstream https://github.com/FastForwardteam/FastForward
+cd SiteDrift
+git remote add upstream https://github.com/2Tech Studio (2tech.studio) (prev FastForward)/SiteDrift
 git fetch upstream
 git checkout main
 git reset --hard upstream/main 

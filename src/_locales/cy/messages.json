@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Peidiwch â gwastraffu eich amser gyda chydymffurfiaeth. Mae FastForward yn osgoi linciau byr annifyr."
+		"message": "Peidiwch â gwastraffu eich amser gyda chydymffurfiaeth. Mae SiteDrift yn osgoi linciau byr annifyr."
 	},
 	"firstrunTitle": {
-		"message": "Diolch am lawrlwytho FastForward!"
+		"message": "Diolch am lawrlwytho SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Fodd bynnag, ni ydych yn defnyddio NoScript neu unrhyw beth tebyg, nad yw FastForward yn addas ar gyfer."
+		"message": "Fodd bynnag, ni ydych yn defnyddio NoScript neu unrhyw beth tebyg, nad yw SiteDrift yn addas ar gyfer."
 	},
 	"version": {
 		"message": "Fersiwn"
@@ -33,16 +33,16 @@
 		"message": "Cwestiynau cyffredin (CC)"
 	},
 	"bypassCounter": {
-		"message": "Mae FastForward wedi osgoi $1 gwefan yn barod i chi."
+		"message": "Mae SiteDrift wedi osgoi $1 gwefan yn barod i chi."
 	},
 	"support": {
-		"message": "Cyfrannu i FastForward"
+		"message": "Cyfrannu i SiteDrift"
 	},
 	"options": {
 		"message": "Opsiynau"
 	},
 	"optionsLink": {
-		"message": "Newid opsiynau FastForward."
+		"message": "Newid opsiynau SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Caniatáu osgoi gwefanau"
@@ -78,7 +78,7 @@
 		"message": "Ffyrdd Osgoi Personol"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Mae hon yn nodwedd uwch i ddatblygwyr greu sgriptiau eu hunain i osgoi safleoedd. Ar ôl eu perffeithio, gellir eu cyflwyno wedyn ar GitHub i'w hychwanegu at FastForward, fel ei bod ar gael i bawb."
+		"message": "Mae hon yn nodwedd uwch i ddatblygwyr greu sgriptiau eu hunain i osgoi safleoedd. Ar ôl eu perffeithio, gellir eu cyflwyno wedyn ar GitHub i'w hychwanegu at SiteDrift, fel ei bod ar gael i bawb."
 	},
 	"beforeNavigate": {
 		"message": "Rydych bron ar eich cyrchfan."
@@ -87,7 +87,7 @@
 		"message": "Eich cyrchfan yw $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Fodd bynnag, os byddwch yn llywio nawr, byddant yn synhwyro FastForward."
+		"message": "Fodd bynnag, os byddwch yn llywio nawr, byddant yn synhwyro SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Ni fyddwch yn cael eich synhywro mwyach mewn $1 eiliad."
@@ -114,10 +114,10 @@
 		"message": "Yn anffodus, bydd y gweinydd lawrlwytho yn sicrhau eich bod wedi aros cyn gadael i chi lawrlwytho'r ffeil."
 	},
 	"infoOutdated": {
-		"message": "Mae'r wefan hon yn gallu cael ei hosgoi gan fersiwn mwy newydd o FastForward."
+		"message": "Mae'r wefan hon yn gallu cael ei hosgoi gan fersiwn mwy newydd o SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Yn anffodus, chi yw'r cyntaf i ddod ar draws y linc hwn, ond ar ôl i chi aros, ni fydd yn rhaid i ddefnyddwyr eraill FastForward wneud hynny."
+		"message": "Yn anffodus, chi yw'r cyntaf i ddod ar draws y linc hwn, ond ar ôl i chi aros, ni fydd yn rhaid i ddefnyddwyr eraill SiteDrift wneud hynny."
 	},
 	"crowdDisabled": {
 		"message": "Mae'r wefan hon yn cael ei hosgoi gan osgoi torfol, gallwch ei galluogi yn yr opsiynau."
@@ -126,7 +126,7 @@
 		"message": "Efallai ni fydd yn rhaid i chi aros!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Mae defnyddwyr eraill FastForward eisoes wedi aros ac wedi dweud fod hwn yn arwain at $1"
+		"message": "Mae defnyddwyr eraill SiteDrift eisoes wedi aros ac wedi dweud fod hwn yn arwain at $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Bydd hwn yn cael ei agor mewn tab newydd mewn $1 eiliad."
@@ -150,9 +150,9 @@
 		"message": "Ydych chi am i hwn gael ei hagor mewn tab newydd ar unwaith neu mewn x eiliad?"
 	},
 	"blockedTitle": {
-		"message": "Rhwystrodd FastForward eich IP rhag cael ei ddwyn."
+		"message": "Rhwystrodd SiteDrift eich IP rhag cael ei ddwyn."
 	},
 	"blockedSubtitle": {
-		"message": "Ddim am i FastForward atal pobl gwael rhag cael eich IP?"
+		"message": "Ddim am i SiteDrift atal pobl gwael rhag cael eich IP?"
 	}
 }

@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Zamanınızı karmaşa ile harcamayın. FastForward, rahatsız edici bağlantı kısaltıcıları kendiliğinden geçer."
+		"message": "Zamanınızı karmaşa ile harcamayın. SiteDrift, rahatsız edici bağlantı kısaltıcıları kendiliğinden geçer."
 	},
 	"firstrunTitle": {
-		"message": "FastForward'i kurduğunuz için çok teşekkürler!"
+		"message": "SiteDrift'i kurduğunuz için çok teşekkürler!"
 	},
 	"firstrunNoScript": {
-		"message": "Görünen o ki FastForward ile uyumlu olmayan benzeri bir eklenti, NoScript veya betik kullanıyorsunuz."
+		"message": "Görünen o ki SiteDrift ile uyumlu olmayan benzeri bir eklenti, NoScript veya betik kullanıyorsunuz."
 	},
 	"version": {
 		"message": "Sürüm"
@@ -33,16 +33,16 @@
 		"message": "Sıkça Sorulan Sorular (SSS)"
 	},
 	"bypassCounter": {
-		"message": "FastForward sizin için şimdiye kadar $1 siteyi baypas etti."
+		"message": "SiteDrift sizin için şimdiye kadar $1 siteyi baypas etti."
 	},
 	"support": {
-		"message": "FastForward'ı Destekleyin"
+		"message": "SiteDrift'ı Destekleyin"
 	},
 	"options": {
 		"message": "Ayarlar"
 	},
 	"optionsLink": {
-		"message": "FastForward'ın seçeneklerini değiştir."
+		"message": "SiteDrift'ın seçeneklerini değiştir."
 	},
 	"optionsEnabled": {
 		"message": "Web sayfalarını es geçmeyi etkinleştir."
@@ -78,7 +78,7 @@
 		"message": "Özel Baypaslar"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Bu, geliştiricilerin siteleri atlamak için kendi komut dosyalarını oluşturmaları için gelişmiş bir özelliktir. Kusursuz çalıştığında, GitHub'a FastForward'a eklenmesi için gönderilebilirsiniz, böylece herkesin kullanımına açık olur."
+		"message": "Bu, geliştiricilerin siteleri atlamak için kendi komut dosyalarını oluşturmaları için gelişmiş bir özelliktir. Kusursuz çalıştığında, GitHub'a SiteDrift'a eklenmesi için gönderilebilirsiniz, böylece herkesin kullanımına açık olur."
 	},
 	"beforeNavigate": {
 		"message": "Neredeyse vardınız."
@@ -87,7 +87,7 @@
 		"message": "Hedefiniz: $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Hemen geçerseniz, bu web sitesi FastForward'i algılayacaktır."
+		"message": "Hemen geçerseniz, bu web sitesi SiteDrift'i algılayacaktır."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "$1 saniye sonra fark edilmeyeceksiniz."
@@ -114,10 +114,10 @@
 		"message": "İndirme sunucusu dosyayı indirmenize izin vermeden önce sizi biraz bekletecek."
 	},
 	"infoOutdated": {
-		"message": "Bu web sitesi FastForward'ın daha yeni bir sürümü tarafından atlandı."
+		"message": "Bu web sitesi SiteDrift'ın daha yeni bir sürümü tarafından atlandı."
 	},
 	"crowdWait": {
-		"message": "Maalesef, bu bağlantıyla ilk karşılaşan sizsiniz, ancak siz bekledikten sonra, diğer FastForward kullanıcılarının artık buna ihtiyacı kalmayacak."
+		"message": "Maalesef, bu bağlantıyla ilk karşılaşan sizsiniz, ancak siz bekledikten sonra, diğer SiteDrift kullanıcılarının artık buna ihtiyacı kalmayacak."
 	},
 	"crowdDisabled": {
 		"message": "Bu web sitesi, ayarlarda devre dışı bıraktığınız kitle baypası tarafından baypas edilmektedir."
@@ -126,7 +126,7 @@
 		"message": "Beklemek zorunda değilsiniz!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Diğer FastForward kullanıcıları sizin yerinize zaten beklediler ve bunun şuraya yönlendiğini bildirdiler: $1"
+		"message": "Diğer SiteDrift kullanıcıları sizin yerinize zaten beklediler ve bunun şuraya yönlendiğini bildirdiler: $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Bu, $1 saniye içinde yeni bir sekmede açılacaktır."
@@ -150,9 +150,9 @@
 		"message": "Bu adresin hemen mi yoksa x saniye sonra mı yeni bir sekmede açılmasını istersiniz?"
 	},
 	"blockedTitle": {
-		"message": "FastForward, IP adresinizin kayıtlara eklenmesini engelledi."
+		"message": "SiteDrift, IP adresinizin kayıtlara eklenmesini engelledi."
 	},
 	"blockedSubtitle": {
-		"message": "FastForward'ın sizi kötü kişilerin IP adresinizi almasından korumasını istemiyor musunuz?"
+		"message": "SiteDrift'ın sizi kötü kişilerin IP adresinizi almasından korumasını istemiyor musunuz?"
 	}
 }

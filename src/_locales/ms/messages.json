@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Jangan bazirkan masa anda dengan pematuhan. FastForward memintas pemendek pautan yang menyakitkan hati."
+		"message": "Jangan bazirkan masa anda dengan pematuhan. SiteDrift memintas pemendek pautan yang menyakitkan hati."
 	},
 	"firstrunTitle": {
-		"message": "Terima kasih kerana memasang FastForward"
+		"message": "Terima kasih kerana memasang SiteDrift"
 	},
 	"firstrunNoScript": {
-		"message": "Bagaimanapun, anda seperti menggunakan NoScript atau yang sepertinya, yang mana FastForward tidak  bersesuaian dengannya"
+		"message": "Bagaimanapun, anda seperti menggunakan NoScript atau yang sepertinya, yang mana SiteDrift tidak  bersesuaian dengannya"
 	},
 	"version": {
 		"message": "Versi"
@@ -36,13 +36,13 @@
 		"message": "Universal telah memintas $1 laman web untuk anda."
 	},
 	"support": {
-		"message": "Menyumbang untuk FastForward."
+		"message": "Menyumbang untuk SiteDrift."
 	},
 	"options": {
 		"message": "Pilihan"
 	},
 	"optionsLink": {
-		"message": "Ubah pilihan FastForward."
+		"message": "Ubah pilihan SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Benarkan pemintasan laman web."
@@ -78,7 +78,7 @@
 		"message": "Pemintas kostum"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Ini adalah ciri terkehadapan untuk pembangun untuk mencipta skrip mereka tersendiri untuk memintas laman web. setelah sempurna, mereka boleh menghantarnya ke Github untuk ditambah di FastForward, jadi ia sedia ada untuk semua."
+		"message": "Ini adalah ciri terkehadapan untuk pembangun untuk mencipta skrip mereka tersendiri untuk memintas laman web. setelah sempurna, mereka boleh menghantarnya ke Github untuk ditambah di SiteDrift, jadi ia sedia ada untuk semua."
 	},
 	"beforeNavigate": {
 		"message": "Anda hampir di destinasi anda."
@@ -87,7 +87,7 @@
 		"message": "Destinasi anda $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Akan tetapi, jika anda melayar sekarang, FastForward akan dikesan."
+		"message": "Akan tetapi, jika anda melayar sekarang, SiteDrift akan dikesan."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Anda tidak lagi dikesan dalam $1 saat."
@@ -114,10 +114,10 @@
 		"message": "Sayangnya, pelayan muatturun memastikan anda menunggu sebentar sebelum membenarkan anda memuatturun file."
 	},
 	"infoOutdated": {
-		"message": "Laman web ini dipintas oleh versi terbaru FastForward."
+		"message": "Laman web ini dipintas oleh versi terbaru SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Sayangnya, anda yang pertama denagn link ini, tapi selepas anda menunggu, penguna FastForward yang lain tidak perlu lagi."
+		"message": "Sayangnya, anda yang pertama denagn link ini, tapi selepas anda menunggu, penguna SiteDrift yang lain tidak perlu lagi."
 	},
 	"crowdDisabled": {
 		"message": "Laman web ini dipintas oleh pemintas awam, yang telah di nyahaktifkan oleh anda di pilihan."
@@ -126,7 +126,7 @@
 		"message": "Anda mungkin tidak perlu menunggu!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Pengguna FastForward yang lain telah menunggu untuk anda dan melaporkan dan membawa ke $1"
+		"message": "Pengguna SiteDrift yang lain telah menunggu untuk anda dan melaporkan dan membawa ke $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Ini akan dibuka di tab baru dalam $1 saat."
@@ -150,9 +150,9 @@
 		"message": "Adakah anda mahu ini dibuka di tab baru sekarang atau dalam x saat?"
 	},
 	"blockedTitle": {
-		"message": "FastForward menghalang IP anda dilog."
+		"message": "SiteDrift menghalang IP anda dilog."
 	},
 	"blockedSubtitle": {
-		"message": "Tidak mahu FastForward untuk menghalang pelaku jahat daripada mendapatkan IP anda?"
+		"message": "Tidak mahu SiteDrift untuk menghalang pelaku jahat daripada mendapatkan IP anda?"
 	}
 }

@@ -3,18 +3,18 @@
     <nav>
       <ul>
         <div class="logo-wrapper">
-          <img class="logo" src="../../icon/branding.png" alt="FastForward" />
+          <img class="logo" src="../../icon/branding.png" alt="SiteDrift" />
         </div>
         <div class="spacer"></div>
-        <li class="navlink"><a href="https://fastforward.team/changelog" target="_blank" data-message="changelog">Changelog</a></li>
-        <li class="navlink"><a href="https://fastforward.team/faq" target="_blank" data-message="faq">FAQ</a></li>
-        <li class="navlink"><a href="https://fastforward.team/contributors" target="_blank" data-message="contributors">Contributors</a></li>
+        <li class="navlink"><a href="https://sitedrift.team/changelog" target="_blank" data-message="changelog">Changelog</a></li>
+        <li class="navlink"><a href="https://sitedrift.team/faq" target="_blank" data-message="faq">FAQ</a></li>
+        <li class="navlink"><a href="https://sitedrift.team/contributors" target="_blank" data-message="contributors">Contributors</a></li>
       </ul>
     </nav>
     <div>
       <div id="contribute" hidden>
         <p>
-          <span>FastForward needs contributors to help bring parity to the Mv3 extension! Click </span>
+          <span>SiteDrift needs contributors to help bring parity to the Mv3 extension! Click </span>
           <a href="https://discord.gg/RSAf7b5njt" target="_blank">here</a>
           <span> to see how you can help!</span>
         </p>
@@ -63,7 +63,7 @@
               <input type="checkbox" v-model="options.optionCrowdBypass" />
               <span class="checkmark"></span>
             </label>
-            <span data-message="optionsCrowdBypass" for="option-crowd-bypass">Crowd Bypass</span> (<a href="https://github.com/FastForwardTeam/FastForward/blob/master/PRIVACY.md#crowd-bypass" target="_blank" data-message="privacyPolicy" class="link">Privacy Policy</a>)
+            <span data-message="optionsCrowdBypass" for="option-crowd-bypass">Crowd Bypass</span> (<a href="https://github.com/2Tech Studio (2tech.studio) (prev FastForward)/SiteDrift/blob/master/PRIVACY.md#crowd-bypass" target="_blank" data-message="privacyPolicy" class="link">Privacy Policy</a>)
             <p data-message="optionsCrowdBypassDescription"></p>
             <span v-if="tempDisableCrowd" id="crowdTempDisabledMessage">
               (<span class="text-warn" data-message="crowdBypassTempDisabled">Temporarily Disabled</span>)

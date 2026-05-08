@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Netērē savu laiku ar piekāpšanos. \"FastForward\" apiet kaitinošos saišu saīsinātājus."
+		"message": "Netērē savu laiku ar piekāpšanos. \"SiteDrift\" apiet kaitinošos saišu saīsinātājus."
 	},
 	"firstrunTitle": {
-		"message": "Paldies, kad ieinstalējāt \"FastForward\"!"
+		"message": "Paldies, kad ieinstalējāt \"SiteDrift\"!"
 	},
 	"firstrunNoScript": {
-		"message": "Izskatās, ka tu izmanto NoScript vai ko līdzīgu, ar ko \"FastForward\" nav derīgs."
+		"message": "Izskatās, ka tu izmanto NoScript vai ko līdzīgu, ar ko \"SiteDrift\" nav derīgs."
 	},
 	"version": {
 		"message": "Versija"
@@ -33,16 +33,16 @@
 		"message": "Visbiežāk prasītie jautājumi (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "\"FastForward\" jau ir apgājis $1 saites priekš tevīm."
+		"message": "\"SiteDrift\" jau ir apgājis $1 saites priekš tevīm."
 	},
 	"support": {
-		"message": "Ieguldiet \"FastForward\"."
+		"message": "Ieguldiet \"SiteDrift\"."
 	},
 	"options": {
 		"message": "Opcijas"
 	},
 	"optionsLink": {
-		"message": "Mainīt \"FastForward\" opcijas."
+		"message": "Mainīt \"SiteDrift\" opcijas."
 	},
 	"optionsEnabled": {
 		"message": "Ieslēgt saišu apeju."
@@ -78,7 +78,7 @@
 		"message": "Pielāgotas Apejas"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Šī ir advancētā funkcija izstrādātājiem, lai izveidotu savus skriptus, lai apietu vietnes. Pēc pilnveidošanas tos var iesniegt vietnē GitHub, lai tos pievienotu \"FastForward\", lai tie būtu pieejami visiem."
+		"message": "Šī ir advancētā funkcija izstrādātājiem, lai izveidotu savus skriptus, lai apietu vietnes. Pēc pilnveidošanas tos var iesniegt vietnē GitHub, lai tos pievienotu \"SiteDrift\", lai tie būtu pieejami visiem."
 	},
 	"beforeNavigate": {
 		"message": "Jūs esat gandrīz savā galapunktā."
@@ -87,7 +87,7 @@
 		"message": "Jūsu galapunkts ir $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Bet, ja jūs navigēsiet tagat, viņi atklās \"FastForward\"."
+		"message": "Bet, ja jūs navigēsiet tagat, viņi atklās \"SiteDrift\"."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Jūs vairāk nebūsiet atklāti pēc $1 sekundēm."
@@ -111,10 +111,10 @@
 		"message": "Diemžēl, lejupielādes serveris pārliecināsies ka tu esi gaidījis pirms tas ļaus tev lādet failu."
 	},
 	"infoOutdated": {
-		"message": "Šī saite tiek apieta ar \"FastForward\" jaunāko versiju."
+		"message": "Šī saite tiek apieta ar \"SiteDrift\" jaunāko versiju."
 	},
 	"crowdWait": {
-		"message": "Diemžēl, jūs esat pirmais kas ir šajā mājaslapā, bet kad jūs beigsiet gaidīt, citiem \"FastForward\" lietotājiem nevajadzēs gaidīt."
+		"message": "Diemžēl, jūs esat pirmais kas ir šajā mājaslapā, bet kad jūs beigsiet gaidīt, citiem \"SiteDrift\" lietotājiem nevajadzēs gaidīt."
 	},
 	"crowdDisabled": {
 		"message": "Šo mājaslapu var apiet ar pūļa apeju, ko jūs esat izslēguši opcijās."
@@ -123,7 +123,7 @@
 		"message": "Jums varbūt nevajag gaidīt!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Citi \"FastForward\" lietotāji jau ir gaidījuši tavā vietā un ziņoja, ka šis aiziet uz $1"
+		"message": "Citi \"SiteDrift\" lietotāji jau ir gaidījuši tavā vietā un ziņoja, ka šis aiziet uz $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Šis būs atvērts jaunā cilnē pēc $1 sekundēm."
@@ -147,9 +147,9 @@
 		"message": "Vai tu gribi atvērt šo jaunā cilnē uzreiz vai pēc x sekundēm?"
 	},
 	"blockedTitle": {
-		"message": "\"FastForward\" neļāva jūsu IP reģistrēties."
+		"message": "\"SiteDrift\" neļāva jūsu IP reģistrēties."
 	},
 	"blockedSubtitle": {
-		"message": "Negribi lai \"FastForward\" neļauj sliktiem aktieriem dabūt tavu IP?"
+		"message": "Negribi lai \"SiteDrift\" neļauj sliktiem aktieriem dabūt tavu IP?"
 	}
 }

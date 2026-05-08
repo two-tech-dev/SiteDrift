@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "No pierdas el tiempo para acceder. FastForward evade los molestos acortadores de enlaces."
+		"message": "No pierdas el tiempo para acceder. SiteDrift evade los molestos acortadores de enlaces."
 	},
 	"firstrunTitle": {
-		"message": "¡Gracias por instalar FastForward!"
+		"message": "¡Gracias por instalar SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "No obstante, parece que estás utilizando NoScript o similar, con la que FastForward no es compatible."
+		"message": "No obstante, parece que estás utilizando NoScript o similar, con la que SiteDrift no es compatible."
 	},
 	"version": {
 		"message": "Versión"
@@ -33,16 +33,16 @@
 		"message": "Preguntas frecuentes"
 	},
 	"bypassCounter": {
-		"message": "FastForward ya ha evadido $1 sitios para ti."
+		"message": "SiteDrift ya ha evadido $1 sitios para ti."
 	},
 	"support": {
-		"message": "Ayuda a FastForward"
+		"message": "Ayuda a SiteDrift"
 	},
 	"options": {
 		"message": "Opciones"
 	},
 	"optionsLink": {
-		"message": "Cambiar las opciones de FastForward."
+		"message": "Cambiar las opciones de SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Habilitar las evasiones del sitio web."
@@ -69,13 +69,13 @@
 		"message": "Bloquear registradores de IP si no pueden ser evadidos."
 	},
 	"optionsBlockIPLoggersDescription": {
-		"message": "Si FastForward no puede evadir un enlace que registrará tu IP, se bloqueará el enlace. Recomendación: Encendido."
+		"message": "Si SiteDrift no puede evadir un enlace que registrará tu IP, se bloqueará el enlace. Recomendación: Encendido."
 	},
 	"optionsCrowdBypass": {
 		"message": "Evasión en grupo. Enviar URLs de rastreadores inevitables para otros usuarios, y recibir las de ellos."
 	},
 	"optionsCrowdBypassDescription": {
-		"message": "Utiliza la base de datos de FastForward para evadir enlaces que no se pueden evadir de forma automática cuyo destino ya ha sido descubierto por otro usuario. Recomendación: Encendido."
+		"message": "Utiliza la base de datos de SiteDrift para evadir enlaces que no se pueden evadir de forma automática cuyo destino ya ha sido descubierto por otro usuario. Recomendación: Encendido."
 	},
 	"optionsCrowdAutoOpen": {
 		"message": "Abrir los destinos que ya fueron descubiertos en una pestaña nueva después de $1 segundo(s)."
@@ -99,7 +99,7 @@
 		"message": "Evasiones personalizadas"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Esta es una característica avanzada para que los desarrolladores creen sus propios scripts para evadir sitios. Una vez perfeccionados, se pueden enviar en GitHub para añadirlos a FastForward, de modo que estén disponibles para todos."
+		"message": "Esta es una característica avanzada para que los desarrolladores creen sus propios scripts para evadir sitios. Una vez perfeccionados, se pueden enviar en GitHub para añadirlos a SiteDrift, de modo que estén disponibles para todos."
 	},
 	"beforeNavigate": {
 		"message": "Ya casi estás en tu destino."
@@ -108,7 +108,7 @@
 		"message": "Tu dirección de destino es $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Sin embargo, si navegas ahora, FastForward será detectado."
+		"message": "Sin embargo, si navegas ahora, SiteDrift será detectado."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "No podrás ser detectado en $1 segundos."
@@ -135,10 +135,10 @@
 		"message": "Desafortunadamente, el servidor de descarga se asegurará de que hayas esperado antes de permitirte descargar el archivo."
 	},
 	"infoOutdated": {
-		"message": "Este sitio web se puede evadir con la última versión de FastForward."
+		"message": "Este sitio web se puede evadir con la última versión de SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Desafortunadamente, eres el primero en encontrar este enlace, pero después de haber esperado, otros usuarios de FastForward ya no tendrán que hacerlo."
+		"message": "Desafortunadamente, eres el primero en encontrar este enlace, pero después de haber esperado, otros usuarios de SiteDrift ya no tendrán que hacerlo."
 	},
 	"crowdDisabled": {
 		"message": "Este sitio web se puede evadir por evasión multiple. Puedes activarlo en las opciones."
@@ -147,7 +147,7 @@
 		"message": "¡Puede que no tengas que esperar!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Otros usuarios de FastForward ya han esperado por ti y han informado que esto lleva a $1"
+		"message": "Otros usuarios de SiteDrift ya han esperado por ti y han informado que esto lleva a $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Esto se abrirá en una pestaña nueva en $1 segundos."
@@ -171,16 +171,16 @@
 		"message": "¿Quieres que esto se abra en una pestaña nueva al instante, o tras x segundos?"
 	},
 	"blockedTitle": {
-		"message": "FastForward impidió que tu IP se registrara."
+		"message": "SiteDrift impidió que tu IP se registrara."
 	},
 	"blockedSubtitle": {
-		"message": "¿No quieres que FastForward impida que personas malintencionadas obtengan tu IP?"
+		"message": "¿No quieres que SiteDrift impida que personas malintencionadas obtengan tu IP?"
 	},
 	"optionsWhitelist": {
 		"message": "Lista Blanca"
 	},
 	"optionsWhitelistDescription": {
-		"message": "Una lista de sitios en el formado dominio.tld o subdominio.dominio.tld que no serán evadidas por FastForward. Un dominio por linea. Usa un asterisco como wildcard."
+		"message": "Una lista de sitios en el formado dominio.tld o subdominio.dominio.tld que no serán evadidas por SiteDrift. Un dominio por linea. Usa un asterisco como wildcard."
 	},
 	"tempDisableCrowdBypassButton": {
 		"message": "Desactiva temporalmente la evasión en grupo"

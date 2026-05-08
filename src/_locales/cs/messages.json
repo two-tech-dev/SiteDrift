@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Neztrácejte čas. FastForward automaticky přeskočí nepříjemné zkracovače odkazů."
+		"message": "Neztrácejte čas. SiteDrift automaticky přeskočí nepříjemné zkracovače odkazů."
 	},
 	"firstrunTitle": {
-		"message": "Děkujeme za instalaci FastForward!"
+		"message": "Děkujeme za instalaci SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Zdá se, že používáte NoScript nebo podobné pluginy, se kterým FastForward není kompatibilní."
+		"message": "Zdá se, že používáte NoScript nebo podobné pluginy, se kterým SiteDrift není kompatibilní."
 	},
 	"version": {
 		"message": "Verze"
@@ -33,16 +33,16 @@
 		"message": "Často kladené otázky (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward již pro vás obešel $1 stránek."
+		"message": "SiteDrift již pro vás obešel $1 stránek."
 	},
 	"support": {
-		"message": "Přispějte k FastForward."
+		"message": "Přispějte k SiteDrift."
 	},
 	"options": {
 		"message": "Nastavení"
 	},
 	"optionsLink": {
-		"message": "Změnit nastavení FastForward."
+		"message": "Změnit nastavení SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Povolit obcházení zkracovačů."
@@ -78,7 +78,7 @@
 		"message": "Vlastní přeskočení"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Tohle je pokročilá možnost pro vývojáře aby si mohli dělat vlastní scripty na obcházení stránek, když zdokonalené, můzou být dány na GitHub aby byly přidány do FastForward, takže budou přístupné pro všechny"
+		"message": "Tohle je pokročilá možnost pro vývojáře aby si mohli dělat vlastní scripty na obcházení stránek, když zdokonalené, můzou být dány na GitHub aby byly přidány do SiteDrift, takže budou přístupné pro všechny"
 	},
 	"beforeNavigate": {
 		"message": "Jste téměř na destinaci."
@@ -114,10 +114,10 @@
 		"message": "Bohužel, stahující server se ujistí že počkáte než vám dovolí stáhnout složku"
 	},
 	"infoOutdated": {
-		"message": "Tahle stránka se dá obejít s novější verzí FastForward"
+		"message": "Tahle stránka se dá obejít s novější verzí SiteDrift"
 	},
 	"crowdWait": {
-		"message": "Bohužel jste první, kdo narazil na tento odkaz, ale po čekání již nebudou muset čekat ostatní uživatelé FastForward."
+		"message": "Bohužel jste první, kdo narazil na tento odkaz, ale po čekání již nebudou muset čekat ostatní uživatelé SiteDrift."
 	},
 	"crowdDisabled": {
 		"message": "Tato stránka se dá obejít pomocí CrowdBypass, který jste vypnuli v nastavení."
@@ -126,7 +126,7 @@
 		"message": "Nemusel byste čekat!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Ostatní uživatelé FastForward na vás čekali a náhlasili že link vede k $1"
+		"message": "Ostatní uživatelé SiteDrift na vás čekali a náhlasili že link vede k $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Toto bude otevřeno na nové kartě za $1 sekund."
@@ -150,9 +150,9 @@
 		"message": "Přejete si, aby byla tato karta otevřena v nové kartě okamžitě nebo za X sekund?"
 	},
 	"blockedTitle": {
-		"message": "FastForward vás ochránil před IP loggerem."
+		"message": "SiteDrift vás ochránil před IP loggerem."
 	},
 	"blockedSubtitle": {
-		"message": "Nechcete, aby FastForward ochránil vaši IP?"
+		"message": "Nechcete, aby SiteDrift ochránil vaši IP?"
 	}
 }

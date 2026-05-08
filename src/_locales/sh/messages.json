@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Ne gubite vreme na komplikacije. FastForward zaobilazi dosadne link shortenere."
+		"message": "Ne gubite vreme na komplikacije. SiteDrift zaobilazi dosadne link shortenere."
 	},
 	"firstrunTitle": {
-		"message": "Hvala vam za instaliranje FastForward!"
+		"message": "Hvala vam za instaliranje SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Međutim, izgleda da koristite NoScript ili slično, s čime FastForward nije kompatibilan."
+		"message": "Međutim, izgleda da koristite NoScript ili slično, s čime SiteDrift nije kompatibilan."
 	},
 	"version": {
 		"message": "Verzija"

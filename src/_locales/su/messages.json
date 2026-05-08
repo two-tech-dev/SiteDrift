@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Ulah nyia-nyia keun waktos nurut kana aturan. FastForward bakal otomatis ngalangkungan alamat nu matak ngagganggu. "
+		"message": "Ulah nyia-nyia keun waktos nurut kana aturan. SiteDrift bakal otomatis ngalangkungan alamat nu matak ngagganggu. "
 	},
 	"firstrunTitle": {
-		"message": "Hatur nuhun parantos masang FastForward!"
+		"message": "Hatur nuhun parantos masang SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Nanging, anjeun sigana nganggo ekstensi NoScript atawa nu sajabana, nyebabkeun FastForward teu jalan."
+		"message": "Nanging, anjeun sigana nganggo ekstensi NoScript atawa nu sajabana, nyebabkeun SiteDrift teu jalan."
 	},
 	"version": {
 		"message": "Vérsi"

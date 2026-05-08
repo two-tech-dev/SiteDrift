@@ -20,7 +20,7 @@ async function injectScript() {
     options.whitelist &&
     matchDomains(window.location.hostname, options.whitelist)
   ) {
-    console.log('FastForward: Site whitelisted');
+    console.log('SiteDrift: Site whitelisted');
     return;
   }
   let script = document.createElement('script');
@@ -34,7 +34,7 @@ async function injectScript() {
   (document.head || document.documentElement).appendChild(script);
 }
 
-//ff + first 10 characters of SHA256 of fastforward to prevent collisions
+//ff + first 10 characters of SHA256 of sitedrift to prevent collisions
 document.addEventListener('ff53054c0e13_crowdQuery', async (event: Event) => {
   let data = (event as CustomEvent).detail;
   const response = await chrome.runtime.sendMessage({

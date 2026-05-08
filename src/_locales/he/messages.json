@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "אל תבזבז את הזמן שלך! FastForward מדלג אוטומטית על מקצרי לינקים מעצבנים."
+		"message": "אל תבזבז את הזמן שלך! SiteDrift מדלג אוטומטית על מקצרי לינקים מעצבנים."
 	},
 	"firstrunTitle": {
-		"message": "תודה לך על כך שהתקנת את FastForward!"
+		"message": "תודה לך על כך שהתקנת את SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "ככול הנראה אתה עושה שימוש ב-NoScript ודומיו, מה שלא מאפשר את פעולת FastForward."
+		"message": "ככול הנראה אתה עושה שימוש ב-NoScript ודומיו, מה שלא מאפשר את פעולת SiteDrift."
 	},
 	"version": {
 		"message": "גרסה"
@@ -36,13 +36,13 @@
 		"message": "מעקף אוניברסלי כבר עקף $1 אתרים בשבילך."
 	},
 	"support": {
-		"message": "תמוך ב-FastForward"
+		"message": "תמוך ב-SiteDrift"
 	},
 	"options": {
 		"message": "הגדרות"
 	},
 	"optionsLink": {
-		"message": "הגדר את FastForward."
+		"message": "הגדר את SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "הפעל מעקף לאתר."
@@ -99,10 +99,10 @@
 		"message": "מנווט ל $1"
 	},
 	"infoOutdated": {
-		"message": "האתר הזה יכול להיעקף בעזרת גרסה חדשה יותר של FastForward."
+		"message": "האתר הזה יכול להיעקף בעזרת גרסה חדשה יותר של SiteDrift."
 	},
 	"crowdWait": {
-		"message": "לצערי, אתה הראשון שנתקל בקישור הזה, אבל אחרי שחיכית, משתמשי FastForward אחרים לא יצטרכו לחכות יותר."
+		"message": "לצערי, אתה הראשון שנתקל בקישור הזה, אבל אחרי שחיכית, משתמשי SiteDrift אחרים לא יצטרכו לחכות יותר."
 	},
 	"crowdDisabled": {
 		"message": "אתר זה עוקף על ידי crowd bypass, אפשר לכבות אופציה זו בהגדרות."
@@ -138,6 +138,6 @@
 		"message": "עקיפה אוניברסלית מנעה את רישום ה- IP שלך."
 	},
 	"blockedSubtitle": {
-		"message": "לא רוצה שFastForward ימנע ממקורות רעים לקבל גישה לכתובת הIP שלך?"
+		"message": "לא רוצה שSiteDrift ימנע ממקורות רעים לקבל גישה לכתובת הIP שלך?"
 	}
 }

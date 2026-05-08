@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "No perdis el teu temps amb la conformitat. FastForward se salta automàticament molests escurçadors d'enllaços."
+		"message": "No perdis el teu temps amb la conformitat. SiteDrift se salta automàticament molests escurçadors d'enllaços."
 	},
 	"firstrunTitle": {
-		"message": "Gràcies per instal·lar FastForward!"
+		"message": "Gràcies per instal·lar SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Però, sembla que estàs utilitzant NoScript o similar, amb la qual FastForward no és compatible."
+		"message": "Però, sembla que estàs utilitzant NoScript o similar, amb la qual SiteDrift no és compatible."
 	},
 	"version": {
 		"message": "Versió"
@@ -33,16 +33,16 @@
 		"message": "Preguntes més freqüents (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward ha omès $1 pàgines per tu."
+		"message": "SiteDrift ha omès $1 pàgines per tu."
 	},
 	"support": {
-		"message": "Contribueix amb FastForward."
+		"message": "Contribueix amb SiteDrift."
 	},
 	"options": {
 		"message": "Opcions"
 	},
 	"optionsLink": {
-		"message": "Canvia les opcions de FastForward."
+		"message": "Canvia les opcions de SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Activa omissió de pàgines web."
@@ -78,7 +78,7 @@
 		"message": "Circumval·lacions personalitzades"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Aquesta és una funcionalitat avançada per a que els desenvolupadors crein els seus propis scripts per a omitir pàgines. Una vegada perfeccionat, poden èsser enviats a GitHub per a èsser afegits a FastForward, essent aixi disponibles per a tot el món."
+		"message": "Aquesta és una funcionalitat avançada per a que els desenvolupadors crein els seus propis scripts per a omitir pàgines. Una vegada perfeccionat, poden èsser enviats a GitHub per a èsser afegits a SiteDrift, essent aixi disponibles per a tot el món."
 	},
 	"beforeNavigate": {
 		"message": "Casi has arribat al teu destí."
@@ -87,7 +87,7 @@
 		"message": "El teu destí és $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Però, si hi vas ara, detectaran que utilitzes FastForward."
+		"message": "Però, si hi vas ara, detectaran que utilitzes SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "No ho detectaran en $1 segons."
@@ -114,10 +114,10 @@
 		"message": "Desafotunadament, el servidor de descàrregues s'assegurarà que has esperat abans de permitir-te descarregar el fitxer."
 	},
 	"infoOutdated": {
-		"message": "La pàgina és omesa mitjançant la nova versió de FastForward."
+		"message": "La pàgina és omesa mitjançant la nova versió de SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Desafortunadament, aquesta és la primera vegada que es troba aquest link, però després de que haguis esperat, la resta d'usuaris d'FastForward no ho hauran de fer"
+		"message": "Desafortunadament, aquesta és la primera vegada que es troba aquest link, però després de que haguis esperat, la resta d'usuaris d'SiteDrift no ho hauran de fer"
 	},
 	"crowdDisabled": {
 		"message": "Aquesta pàgina es redirigida mitjançant el bypass comunitari, que ho has desactivat a opcions."
@@ -126,7 +126,7 @@
 		"message": "Potser que no hagis d'esperar!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Altres usuaris de FastForward ja han esperat per tu i han informat que això porta a $1"
+		"message": "Altres usuaris de SiteDrift ja han esperat per tu i han informat que això porta a $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Aquesta pàgina serà oberta en una nova pestanya en $1 segons."
@@ -150,7 +150,7 @@
 		"message": "Vols obrir-ho en una nova pestanya o en  x segons?"
 	},
 	"blockedTitle": {
-		"message": "FastForward ha impedit que la seva adreça IP es registrés."
+		"message": "SiteDrift ha impedit que la seva adreça IP es registrés."
 	},
 	"blockedSubtitle": {
 		"message": "Vols que Universal Bpass eviti que persones malèfiques tinguin el teu IP?"

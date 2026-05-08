@@ -1,6 +1,6 @@
 {
 	"firstrunNoScript": {
-		"message": "Vi ŝajne uzas NoScript, aŭ aferoj same. FastForward bedaŭrinde ne povas kunfari kun tioj."
+		"message": "Vi ŝajne uzas NoScript, aŭ aferoj same. SiteDrift bedaŭrinde ne povas kunfari kun tioj."
 	},
 	"version": {
 		"message": "versio"
@@ -15,7 +15,7 @@
 		"message": "Ofta demandoj"
 	},
 	"bypassCounter": {
-		"message": "FastForward preterpasinta $1 retpaĝojn. "
+		"message": "SiteDrift preterpasinta $1 retpaĝojn. "
 	},
 	"options": {
 		"message": "agordoj"
@@ -24,7 +24,7 @@
 		"message": "Vi estas navigita al $1"
 	},
 	"infoOutdated": {
-		"message": "Ĉi tio retpaĝo estas uzanta pli nova versio de FastForward"
+		"message": "Ĉi tio retpaĝo estas uzanta pli nova versio de SiteDrift"
 	},
 	"crowdWait": {
 		"message": "Bedaŭrinde, vi estas la unua vizitanto sur ĉi retpaĝo. Sed, se vi atendas, la aliaj uzantoj ne atendos."
@@ -45,6 +45,6 @@
 		"message": "Ĉu vi volas aperi tion instante, sur nova tabo?"
 	},
 	"blockedTitle": {
-		"message": "FastForward haltis via IP adreso registrita."
+		"message": "SiteDrift haltis via IP adreso registrita."
 	}
 }

@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Đừng lãng phí thời gian của bạn. FastForward tự động bỏ qua các liên kết rút gọn phiền phức."
+		"message": "Đừng lãng phí thời gian của bạn. SiteDrift tự động bỏ qua các liên kết rút gọn phiền phức."
 	},
 	"firstrunTitle": {
-		"message": "Cảm ơn bạn đã cài đặt FastForward!"
+		"message": "Cảm ơn bạn đã cài đặt SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Tuy nhiên, bạn dường như đang sử dụng NoScript hoặc những thứ tương tự mà FastForward không tương thích."
+		"message": "Tuy nhiên, bạn dường như đang sử dụng NoScript hoặc những thứ tương tự mà SiteDrift không tương thích."
 	},
 	"version": {
 		"message": "Phiên bản"
@@ -33,16 +33,16 @@
 		"message": "Câu hỏi thường gặp (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward đã bỏ qua $1 trang cho bạn."
+		"message": "SiteDrift đã bỏ qua $1 trang cho bạn."
 	},
 	"support": {
-		"message": "Đóng góp cho FastForward."
+		"message": "Đóng góp cho SiteDrift."
 	},
 	"options": {
 		"message": "Tùy chọn"
 	},
 	"optionsLink": {
-		"message": "Thay đổi thiết lập của FastForward."
+		"message": "Thay đổi thiết lập của SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Cho phép bỏ qua website."
@@ -78,7 +78,7 @@
 		"message": "Tùy chỉnh Bypasses"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Đây là tính năng nâng cao cho những nhà phát triển để tạo những đoạn mã giúp bỏ qua các trang. Khi đã hoàn thành, họ có thể gửi chúng lên GitHub để được thêm vào FastForward, để mọi người có thể sử dụng."
+		"message": "Đây là tính năng nâng cao cho những nhà phát triển để tạo những đoạn mã giúp bỏ qua các trang. Khi đã hoàn thành, họ có thể gửi chúng lên GitHub để được thêm vào SiteDrift, để mọi người có thể sử dụng."
 	},
 	"beforeNavigate": {
 		"message": "Bạn sắp được đưa đến trang đích."
@@ -87,7 +87,7 @@
 		"message": "Trang đích của bạn là $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Tuy nhiên, nếu bạn chọn chuyển hướng ngay bây giờ, trang web sẽ phát hiện được FastForward."
+		"message": "Tuy nhiên, nếu bạn chọn chuyển hướng ngay bây giờ, trang web sẽ phát hiện được SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Bạn sẽ không còn bị phát hiện sau $1 giây."
@@ -108,16 +108,16 @@
 		"message": "Bạn đang được chuyển hướng đến $1"
 	},
 	"infoLinkvertise": {
-		"message": "FastForward cần bạn hoàn thành captcha trước khi chúng ta có thể bỏ qua những bước khó chịu!"
+		"message": "SiteDrift cần bạn hoàn thành captcha trước khi chúng ta có thể bỏ qua những bước khó chịu!"
 	},
 	"infoFileHoster": {
 		"message": "Thật không may, máy chủ cần phải đảm bảo bạn đã chờ trước khi cho phép tải về tệp."
 	},
 	"infoOutdated": {
-		"message": "Trang web này đã được bỏ qua với một phiên bản mới hơn của FastForward."
+		"message": "Trang web này đã được bỏ qua với một phiên bản mới hơn của SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Thật không may, bạn là người đầu tiên gặp phải liên kết này, nhưng sau khi bạn chờ đợi, những người dùng FastForward khác sẽ không còn phải làm như vậy nữa."
+		"message": "Thật không may, bạn là người đầu tiên gặp phải liên kết này, nhưng sau khi bạn chờ đợi, những người dùng SiteDrift khác sẽ không còn phải làm như vậy nữa."
 	},
 	"crowdDisabled": {
 		"message": "Trang web này được bỏ qua bởi chức năng Crowd Bypass mà bạn đã vô hiệu hóa trong tùy chọn."
@@ -126,7 +126,7 @@
 		"message": "Bạn có thể không cần phải đợi!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Người dùng FastForward đã từng chờ như bạn và phản hồi rằng liên liên kết này sẽ dẫn đến $1"
+		"message": "Người dùng SiteDrift đã từng chờ như bạn và phản hồi rằng liên liên kết này sẽ dẫn đến $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Sẽ được mở trong tab mới sau $1 giây."
@@ -150,9 +150,9 @@
 		"message": "Bạn có muốn mở trang web trong tab mới ngay bây giờ hay trong x giây?"
 	},
 	"blockedTitle": {
-		"message": "FastForward đã ngăn chặn IP của bạn bị ghi lại."
+		"message": "SiteDrift đã ngăn chặn IP của bạn bị ghi lại."
 	},
 	"blockedSubtitle": {
-		"message": "Không muốn FastForward ngăn kẻ xấu lấy được IP của bạn?"
+		"message": "Không muốn SiteDrift ngăn kẻ xấu lấy được IP của bạn?"
 	}
 }

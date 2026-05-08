@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Aja nelasaken wektune panjenengan gawe manuti aturan. FastForward bakal kanthi otomatis nglewati pemendek link sing ngganggu."
+		"message": "Aja nelasaken wektune panjenengan gawe manuti aturan. SiteDrift bakal kanthi otomatis nglewati pemendek link sing ngganggu."
 	},
 	"firstrunTitle": {
-		"message": "Matur sembah nuwun kangge panjenengan sing sampun nginstal FastForward!"
+		"message": "Matur sembah nuwun kangge panjenengan sing sampun nginstal SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Nanging, kados'e panjenengan ngagem ekstensi NoScript utawi sing meh sami, mulane FastForward mboten kompatibel kalih niku."
+		"message": "Nanging, kados'e panjenengan ngagem ekstensi NoScript utawi sing meh sami, mulane SiteDrift mboten kompatibel kalih niku."
 	},
 	"version": {
 		"message": "Versi"
@@ -33,16 +33,16 @@
 		"message": "Pitakon Seng Umum (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward sampun ngebypass $1 situs kangge panjenengan."
+		"message": "SiteDrift sampun ngebypass $1 situs kangge panjenengan."
 	},
 	"support": {
-		"message": "Maringi kontribusi kangge FastForward."
+		"message": "Maringi kontribusi kangge SiteDrift."
 	},
 	"options": {
 		"message": "Pilihan"
 	},
 	"optionsLink": {
-		"message": "Ngganti setelan FastForward."
+		"message": "Ngganti setelan SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "Ngaktifne bypass situs web."
@@ -78,7 +78,7 @@
 		"message": "Kustom Bypass"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Niki minangka fitur khusus kangge para pangembang ndamel skrip piyambak kagem ngebypass situs. Sakwise sampun sampurna, saged dikirim ing GitHub supaya bisa ditambahake datheng FastForward, supados bypass'e niku wau kasedhiya kangge tiyang kathah."
+		"message": "Niki minangka fitur khusus kangge para pangembang ndamel skrip piyambak kagem ngebypass situs. Sakwise sampun sampurna, saged dikirim ing GitHub supaya bisa ditambahake datheng SiteDrift, supados bypass'e niku wau kasedhiya kangge tiyang kathah."
 	},
 	"beforeNavigate": {
 		"message": "Panjenengan meh ngantos tekan tujuane panjenengan."
@@ -87,7 +87,7 @@
 		"message": "Tujuane panjenengan yaiku $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Nanging, menawi panjenengan langsung nglewati sakniki, dekne kabeh bakal ndeteksi FastForward."
+		"message": "Nanging, menawi panjenengan langsung nglewati sakniki, dekne kabeh bakal ndeteksi SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Panjenengan mboten bakal maneh dideteksi ing $1 detik."
@@ -114,10 +114,10 @@
 		"message": "Sayange, server unduhanipun ajeng mesthekaken menawi panjenengan sampun ngentosi saderengipun ngangsalaken panjenengan kangge ngunduh file."
 	},
 	"infoOutdated": {
-		"message": "Situs web niki sampun di bypass dening versi ingkang paling enggal saking FastForward."
+		"message": "Situs web niki sampun di bypass dening versi ingkang paling enggal saking SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Sayange, panjenengan minangka tiyang ingkang pertama ngliwati link niki, nanging sakwise panjenengan sampun ngliwati, pangguna FastForward liyane mboten perlu ngliwati malih."
+		"message": "Sayange, panjenengan minangka tiyang ingkang pertama ngliwati link niki, nanging sakwise panjenengan sampun ngliwati, pangguna SiteDrift liyane mboten perlu ngliwati malih."
 	},
 	"crowdDisabled": {
 		"message": "Situs web niki sampun saged di bypass ndamel fitur crowd bypass, ingkang saged panjenengan aktifaken wonten pengaturan."
@@ -126,7 +126,7 @@
 		"message": "Panjenengan mungkin mboten perlu ngenteni!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Pangguna FastForward liyane sampun ngliwati kangge panjenengan lan nglaporne yen link niki tujuane yaiku $1"
+		"message": "Pangguna SiteDrift liyane sampun ngliwati kangge panjenengan lan nglaporne yen link niki tujuane yaiku $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Niki bakal di bukak teng tab anyar ing $1 detik."
@@ -150,9 +150,9 @@
 		"message": "Menapa panjenengan pingin niki di bukak teng tab anyar langsung utawi ing x detik?"
 	},
 	"blockedTitle": {
-		"message": "FastForward nyegah IPne panjenengan supados mboten mlebet log."
+		"message": "SiteDrift nyegah IPne panjenengan supados mboten mlebet log."
 	},
 	"blockedSubtitle": {
-		"message": "Mboten pingin FastForward nyegah bad actors (Peretas) saking mendet IPne panjenengan?"
+		"message": "Mboten pingin SiteDrift nyegah bad actors (Peretas) saking mendet IPne panjenengan?"
 	}
 }

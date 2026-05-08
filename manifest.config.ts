@@ -2,12 +2,12 @@ import { defineManifest } from '@crxjs/vite-plugin';
 
 export default defineManifest(async (env) => ({
   manifest_version: 3,
-  name: "FastForward",
+  name: "SiteDrift",
   description: "__MSG_appDesc__",
   version: "13.15.2",
   default_locale: "en",
-  homepage_url: "https://fastforward.team",
-  author: "FastForward Team",
+  homepage_url: "https://sitedrift.team",
+  author: "2Tech Studio (2tech.studio) (prev FastForward)",
   incognito: "split",
   icons: {
     "48": "src/icon/48.png",

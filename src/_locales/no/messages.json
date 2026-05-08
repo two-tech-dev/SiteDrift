@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Ikke kast bort tiden din på å følge krav. FastForward hopper automatisk over irriterende lenkeforkortere."
+		"message": "Ikke kast bort tiden din på å følge krav. SiteDrift hopper automatisk over irriterende lenkeforkortere."
 	},
 	"firstrunTitle": {
-		"message": "Takk for at du har installert FastForward!"
+		"message": "Takk for at du har installert SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Men du ser ut til å bruke NoScript eller noe lignende, som FastForward ikke er kompatibel med."
+		"message": "Men du ser ut til å bruke NoScript eller noe lignende, som SiteDrift ikke er kompatibel med."
 	},
 	"version": {
 		"message": "Versjon"
@@ -33,16 +33,16 @@
 		"message": "Ofte Stilte Spørsmål (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward har allerede forbigått $1 nettsteder for deg."
+		"message": "SiteDrift har allerede forbigått $1 nettsteder for deg."
 	},
 	"support": {
-		"message": "Støtt FastForward."
+		"message": "Støtt SiteDrift."
 	},
 	"options": {
 		"message": "Innstillinger"
 	},
 	"optionsLink": {
-		"message": "Endre FastForward sine innstillinger."
+		"message": "Endre SiteDrift sine innstillinger."
 	},
 	"optionsEnabled": {
 		"message": "Slå på nettside bypass."
@@ -72,7 +72,7 @@
 		"message": "Tilpassede forbipasserere"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Dette er en avansert funksjon for utviklere å lage sine egne skript for å omgå nettsteder. Når de er perfeksjonert, kan de deretter sendes inn på GitHub for å bli lagt til FastForward, slik at de er tilgjengelige for alle."
+		"message": "Dette er en avansert funksjon for utviklere å lage sine egne skript for å omgå nettsteder. Når de er perfeksjonert, kan de deretter sendes inn på GitHub for å bli lagt til SiteDrift, slik at de er tilgjengelige for alle."
 	},
 	"beforeNavigate": {
 		"message": "Du er nesten i destinasjonen din."
@@ -90,7 +90,7 @@
 		"message": "Vil du bli omdirigert øyeblikkelig eller om x sekunder?"
 	},
 	"crowdWait": {
-		"message": "Dessverre er du den første som møter denne lenken, men etter at du har ventet, vil andre brukere av FastForward ikke lenger behøve å gjøre det."
+		"message": "Dessverre er du den første som møter denne lenken, men etter at du har ventet, vil andre brukere av SiteDrift ikke lenger behøve å gjøre det."
 	},
 	"crowdDisabled": {
 		"message": "Dette nettstedet omgås av publikumsomgang, som du har deaktivert under alternativene."
@@ -99,7 +99,7 @@
 		"message": "Du vil kanskje ikke måtte vente!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Andre FastForward-brukere har allerede ventet på deg, og har meldt ifra om at dette fører til $1"
+		"message": "Andre SiteDrift-brukere har allerede ventet på deg, og har meldt ifra om at dette fører til $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Dette åpnes i en ny fane om $1 sekunder."
@@ -117,9 +117,9 @@
 		"message": "Vil du at dette skal åpnes i en ny fane øyeblikkelig eller om x sekunder?"
 	},
 	"blockedTitle": {
-		"message": "FastForward hindret IP-adressen din fra å bli loggført."
+		"message": "SiteDrift hindret IP-adressen din fra å bli loggført."
 	},
 	"blockedSubtitle": {
-		"message": "Vil du at FastForward skal stoppe dårlige folk fra å få IPen din?"
+		"message": "Vil du at SiteDrift skal stoppe dårlige folk fra å få IPen din?"
 	}
 }

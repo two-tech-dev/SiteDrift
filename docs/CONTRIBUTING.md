@@ -1,5 +1,5 @@
-# Contributing to FastForward
-Thanks for taking the time to contribute to FastForward, it is volunteers like you who make this project possible.
+# Contributing to SiteDrift
+Thanks for taking the time to contribute to SiteDrift, it is volunteers like you who make this project possible.
 
 ## Contibuting bypasses
 

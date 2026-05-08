@@ -11,7 +11,7 @@ export const beforeNavigateRules = [
     },
     condition: {
       regexFilter:
-        '^https?://fastforward.team/bypassed(\\?(.*&)?type=crowd(&.*)?$)',
+        '^https?://sitedrift.team/bypassed(\\?(.*&)?type=crowd(&.*)?$)',
       resourceTypes: ['main_frame'],
     },
   },
@@ -27,7 +27,7 @@ export const beforeNavigateRules = [
     },
     condition: {
       regexFilter:
-        '^https?://fastforward.team/bypassed(\\?(.*&)?type=tracker(&.*)?$)',
+        '^https?://sitedrift.team/bypassed(\\?(.*&)?type=tracker(&.*)?$)',
       resourceTypes: ['main_frame'],
     },
   },
@@ -42,7 +42,7 @@ export const beforeNavigateRules = [
       },
     },
     condition: {
-      regexFilter: '^https?://fastforward\\.team/bypassed(\\?.*)',
+      regexFilter: '^https?://sitedrift\\.team/bypassed(\\?.*)',
       resourceTypes: ['main_frame'],
     },
   },

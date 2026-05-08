@@ -65,7 +65,7 @@ This is a list of websites bypassed in the MV2 version of the extension.
 | https://indishare.org                      | ✅      |
 | https://solvetube.site                     | ✅      |
 | https://lkc21.net                          | ✅      |
-| https://fastforward.team                   | ✅      |
+| https://sitedrift.team                   | ✅      |
 | https://linkvertise.com                    | ✅      |
 | https://linkvertise.net                    | ✅      |
 | https://link-to.net                        | ✅      |

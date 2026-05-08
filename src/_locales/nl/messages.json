@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Verspil geen tijd met moeilijkheid. FastForward slaat irritante link-verkorters automatisch over."
+		"message": "Verspil geen tijd met moeilijkheid. SiteDrift slaat irritante link-verkorters automatisch over."
 	},
 	"firstrunTitle": {
-		"message": "Bedankt voor het installeren van FastForward!"
+		"message": "Bedankt voor het installeren van SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Het lijkt erop dat u NoScript of iets dergelijks gebruikt, hiermee werkt FastForward niet."
+		"message": "Het lijkt erop dat u NoScript of iets dergelijks gebruikt, hiermee werkt SiteDrift niet."
 	},
 	"version": {
 		"message": "Versie"
@@ -33,16 +33,16 @@
 		"message": "Veelgestelde Vragen (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward heeft al $1 sites voor je omzeild."
+		"message": "SiteDrift heeft al $1 sites voor je omzeild."
 	},
 	"support": {
-		"message": "Ondersteun FastForward."
+		"message": "Ondersteun SiteDrift."
 	},
 	"options": {
 		"message": "Opties"
 	},
 	"optionsLink": {
-		"message": "FastForward-opties wijzigen."
+		"message": "SiteDrift-opties wijzigen."
 	},
 	"optionsEnabled": {
 		"message": "Website bypass inschakelen."
@@ -78,7 +78,7 @@
 		"message": "Aangepaste omzeilingen"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Dit is een geavanceerde functie voor ontwikkelaars om hun eigen scripts te maken om sites te omzeilen. Eenmaal geperfectioneerd, kunnen ze deze vervolgens indienen op GitHub om toe te voegen aan FastForward, zodat ze voor iedereen beschikbaar zijn."
+		"message": "Dit is een geavanceerde functie voor ontwikkelaars om hun eigen scripts te maken om sites te omzeilen. Eenmaal geperfectioneerd, kunnen ze deze vervolgens indienen op GitHub om toe te voegen aan SiteDrift, zodat ze voor iedereen beschikbaar zijn."
 	},
 	"beforeNavigate": {
 		"message": "Je bent bijna op je bestemming."
@@ -87,7 +87,7 @@
 		"message": "Uw bestemming is $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Echter, als je nu navigeert, detecteren ze FastForward."
+		"message": "Echter, als je nu navigeert, detecteren ze SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Je wordt niet langer gedetecteerd over $1 seconden."
@@ -114,7 +114,7 @@
 		"message": "Helaas zal de downloadserver ervoor zorgen dat je hebt gewacht voordat je dit bestand kan downloaden."
 	},
 	"infoOutdated": {
-		"message": "Deze website wordt overgeslagen in een nieuwere versie van FastForward."
+		"message": "Deze website wordt overgeslagen in een nieuwere versie van SiteDrift."
 	},
 	"crowdWait": {
 		"message": "Helaas ben je de eerste die deze link tegenkomt, maar nadat je hebt gewacht hoeven anderen dat niet meer."
@@ -126,7 +126,7 @@
 		"message": "U hoeft misschien niet te wachten!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Andere FastForward-gebruikers hebben al aangegeven dat dit aan $1 ligt"
+		"message": "Andere SiteDrift-gebruikers hebben al aangegeven dat dit aan $1 ligt"
 	},
 	"crowdBypassedTimer": {
 		"message": "Dit zal in $1 seconden worden geopend in een nieuw tabblad."
@@ -150,7 +150,7 @@
 		"message": "Wilt je dat dit direct, of na x seconden wordt geopend in een nieuw tabblad?"
 	},
 	"blockedTitle": {
-		"message": "FastForward voorkwam dat uw IP werdt geregistreerd."
+		"message": "SiteDrift voorkwam dat uw IP werdt geregistreerd."
 	},
 	"blockedSubtitle": {
 		"message": "Weet u zeker dat u IP-Logger bescherming wilt uitschakelen?"

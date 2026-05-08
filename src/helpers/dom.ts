@@ -10,7 +10,7 @@ export const ODP = (t, p, o) => {
   try {
     Object.defineProperty(t, p, o)
   } catch (e) {
-    console.trace("[FastForward] Couldn't define", p)
+    console.trace("[SiteDrift] Couldn't define", p)
   }
 }
 /**
@@ -60,7 +60,7 @@ export function transparentProperty (name, valFunc) {
  * @param {string} r - The referer to use.
  */
 export function unsafelyAssignWithReferer (target, referer) {
-  location.href = `https://fastforward.team/navigate?target=${encodeURIComponent(
+  location.href = `https://sitedrift.team/navigate?target=${encodeURIComponent(
     target
   )}&referer=${encodeURIComponent(referer)}`
 }
@@ -191,14 +191,14 @@ export function watchForElement (selector) {
   return new Promise(resolve => {
     const element = document.querySelector(selector)
     if (element) {
-      console.log(`[FastForward] Element found: ${element} | Selector: ${selector}`)
+      console.log(`[SiteDrift] Element found: ${element} | Selector: ${selector}`)
       resolve(element)
       return
     }
 
     const observer = new MutationObserver(() => {
       Array.from(document.querySelectorAll(selector)).forEach(el => {
-        console.log(`[FastForward] Element found: ${el} | Selector: ${selector}`)
+        console.log(`[SiteDrift] Element found: ${el} | Selector: ${selector}`)
         resolve(el)
         observer.disconnect()
       })
@@ -277,7 +277,7 @@ export function crowdQuery (domain, path) {
     domain: domain,
     path: path
   }
-  //ff + first 10 characters of SHA256 of fastforward to prevent collisions
+  //ff + first 10 characters of SHA256 of sitedrift to prevent collisions
   document.dispatchEvent(
     new CustomEvent('ff53054c0e13_crowdQuery', { detail: data })
   )
@@ -339,11 +339,11 @@ export function unsafelyNavigate (target, referer = null, crowd = false) {
   }
   let url
   if (crowd) {
-    url = `https://fastforward.team/bypassed?type=crowd&target=${encodeURIComponent(
+    url = `https://sitedrift.team/bypassed?type=crowd&target=${encodeURIComponent(
       target
     )}`
   } else {
-    url = `https://fastforward.team/bypassed?target=${encodeURIComponent(
+    url = `https://sitedrift.team/bypassed?target=${encodeURIComponent(
       target
     )}`
   }

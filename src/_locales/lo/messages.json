@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "ຢ່າເສຍເວລາຂອງທ່ານດ້ວຍການປະຕິບັດຕາມ. FastForward ຫລີກລ້ຽງການເຊື່ອມຕໍ່ສັ້ນທີ່ ໜ້າ ຮໍາຄານ"
+		"message": "ຢ່າເສຍເວລາຂອງທ່ານດ້ວຍການປະຕິບັດຕາມ. SiteDrift ຫລີກລ້ຽງການເຊື່ອມຕໍ່ສັ້ນທີ່ ໜ້າ ຮໍາຄານ"
 	},
 	"firstrunTitle": {
-		"message": "ຂອບໃຈ ສຳ ລັບຕິດຕັ້ງ FastForward!"
+		"message": "ຂອບໃຈ ສຳ ລັບຕິດຕັ້ງ SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "ເຖິງຢ່າງໃດກໍ່ຕາມ, ທ່ານເບິ່ງຄືວ່າ ກຳ ລັງໃຊ້ NoScript ຫຼືຄ້າຍຄືກັນ, ເຊິ່ງ FastForward ບໍ່ເຂົ້າກັນ."
+		"message": "ເຖິງຢ່າງໃດກໍ່ຕາມ, ທ່ານເບິ່ງຄືວ່າ ກຳ ລັງໃຊ້ NoScript ຫຼືຄ້າຍຄືກັນ, ເຊິ່ງ SiteDrift ບໍ່ເຂົ້າກັນ."
 	},
 	"version": {
 		"message": "ຮຸ່ນ"
@@ -33,13 +33,13 @@
 		"message": "ຄໍາ​ຖາມ​ທີ່​ຖືກ​ຖາມ​ເລື້ອຍໆ"
 	},
 	"support": {
-		"message": "ປະກອບສ່ວນໃຫ້ FastForward."
+		"message": "ປະກອບສ່ວນໃຫ້ SiteDrift."
 	},
 	"options": {
 		"message": "ທາງເລືອກ"
 	},
 	"optionsLink": {
-		"message": "ປ່ຽນຕົວເລືອກ FastForward."
+		"message": "ປ່ຽນຕົວເລືອກ SiteDrift."
 	},
 	"optionsEnabled": {
 		"message": "ເປີດ ນຳ ໃຊ້ເວັບໄຊທ໌ຂ້າມຜ່ານ."

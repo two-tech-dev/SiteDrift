@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Spild ikke din tid med overholdelse. FastForward overspringer automatisk irriterende link-afkortere."
+		"message": "Spild ikke din tid med overholdelse. SiteDrift overspringer automatisk irriterende link-afkortere."
 	},
 	"firstrunTitle": {
-		"message": "Tak fordi du installerede FastForward!"
+		"message": "Tak fordi du installerede SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Dog ser det ud til, at du benytter f.eks. NoScript, hvilket FastForward ikke understøtter."
+		"message": "Dog ser det ud til, at du benytter f.eks. NoScript, hvilket SiteDrift ikke understøtter."
 	},
 	"version": {
 		"message": "Version"
@@ -33,16 +33,16 @@
 		"message": "Ofte stilte spørgsmål (FAQ)"
 	},
 	"bypassCounter": {
-		"message": "FastForward har allerede omgået $1 websteder for dig."
+		"message": "SiteDrift har allerede omgået $1 websteder for dig."
 	},
 	"support": {
-		"message": "Støt FastForward"
+		"message": "Støt SiteDrift"
 	},
 	"options": {
 		"message": "Indstillinger"
 	},
 	"optionsLink": {
-		"message": "Ændr FastForward-indstillinger."
+		"message": "Ændr SiteDrift-indstillinger."
 	},
 	"optionsEnabled": {
 		"message": "Aktivér websteds-bypass."
@@ -78,7 +78,7 @@
 		"message": "Tilpassede Omgåelser"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Dette er en avanceret funktion, så udviklere kan oprette deres egne scripts til webstedsomgåelse. Når de er finpudsede, kan de derefter indsendes på GitHub for at blive føjet til FastForward, og blive tilgængelige for alle."
+		"message": "Dette er en avanceret funktion, så udviklere kan oprette deres egne scripts til webstedsomgåelse. Når de er finpudsede, kan de derefter indsendes på GitHub for at blive føjet til SiteDrift, og blive tilgængelige for alle."
 	},
 	"beforeNavigate": {
 		"message": "Du er næsten på din destination."
@@ -87,7 +87,7 @@
 		"message": "Din destination er $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Navigerer du videre nu, registrerer de FastForward."
+		"message": "Navigerer du videre nu, registrerer de SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Om $1 sekunder bliver du ikke længere opdaget."
@@ -114,10 +114,10 @@
 		"message": "Bemærk: Downloadserveren tvinger dig til at vente et øjeblik, inden filen kan downloades."
 	},
 	"infoOutdated": {
-		"message": "Dette websted kan omgås af en nyere version af FastForward."
+		"message": "Dette websted kan omgås af en nyere version af SiteDrift."
 	},
 	"crowdWait": {
-		"message": "Desværre er du den første, der støder på dette link, men efter at du har ventet, vil ingen andre FastForward-brugere længere skulle det."
+		"message": "Desværre er du den første, der støder på dette link, men efter at du har ventet, vil ingen andre SiteDrift-brugere længere skulle det."
 	},
 	"crowdDisabled": {
 		"message": "Dette websted omgås via masseomgåelse, som du har deaktiveret i indstillingerne."
@@ -126,7 +126,7 @@
 		"message": "Du behøver måske ikke at vente!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Andre FastForward-brugere har allerede ventet for dig og rapporteret, at dette fører til $1"
+		"message": "Andre SiteDrift-brugere har allerede ventet for dig og rapporteret, at dette fører til $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Dette åbnes i en ny fane om $1 sekunder."
@@ -150,9 +150,9 @@
 		"message": "Skal dette åbnes i en ny fane straks eller om x sekunder?"
 	},
 	"blockedTitle": {
-		"message": "FastForward forhindrede din IP i at blive logget."
+		"message": "SiteDrift forhindrede din IP i at blive logget."
 	},
 	"blockedSubtitle": {
-		"message": "Ønsker ikke, at FastForward skal forhindre dårlige udbydere i at få din IP?"
+		"message": "Ønsker ikke, at SiteDrift skal forhindre dårlige udbydere i at få din IP?"
 	}
 }

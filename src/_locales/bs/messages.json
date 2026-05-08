@@ -3,10 +3,10 @@
 		"message": "Ne gubite vrijeme na poštivanje pravila. Univerzalni Bypass zaobilazi dosadne skraćivače web stranica."
 	},
 	"firstrunTitle": {
-		"message": "Hvala Vam što ste instalirali FastForward!"
+		"message": "Hvala Vam što ste instalirali SiteDrift!"
 	},
 	"firstrunNoScript": {
-		"message": "Međutim, čini se da koristite NoScript ili nešto slično, što nije kompatibilno sa FastForward."
+		"message": "Međutim, čini se da koristite NoScript ili nešto slično, što nije kompatibilno sa SiteDrift."
 	},
 	"version": {
 		"message": "Verzija"
@@ -33,16 +33,16 @@
 		"message": "Često postavljana pitanja (ČPP)"
 	},
 	"bypassCounter": {
-		"message": "FastForward je već zaobišao $1 web stranica za Vas."
+		"message": "SiteDrift je već zaobišao $1 web stranica za Vas."
 	},
 	"support": {
-		"message": "Doniraj FastForward-u."
+		"message": "Doniraj SiteDrift-u."
 	},
 	"options": {
 		"message": "Opcije"
 	},
 	"optionsLink": {
-		"message": "Promijenite opcije FastForward-a."
+		"message": "Promijenite opcije SiteDrift-a."
 	},
 	"optionsEnabled": {
 		"message": "Omogući obilaženje web stranica."
@@ -78,7 +78,7 @@
 		"message": "Prilagođeni obilaznici"
 	},
 	"optionsUserscriptsDescription": {
-		"message": "Ovo je napredna funkcija za programere da kreiraju vlastite skripte za zaobilaženje web stranica. Nakon što se usavrše, mogu se priložiti na GitHub kako bi se dodali u FastForward, tako da su dostupni svima."
+		"message": "Ovo je napredna funkcija za programere da kreiraju vlastite skripte za zaobilaženje web stranica. Nakon što se usavrše, mogu se priložiti na GitHub kako bi se dodali u SiteDrift, tako da su dostupni svima."
 	},
 	"beforeNavigate": {
 		"message": "Skoro ste na svom odredištu."
@@ -87,7 +87,7 @@
 		"message": "Vaše odredište je $1"
 	},
 	"beforeNavigateUnsafe": {
-		"message": "Međutim, ako se sada krećete, otkrit će FastForward."
+		"message": "Međutim, ako se sada krećete, otkrit će SiteDrift."
 	},
 	"beforeNavigateUnsafeTimer": {
 		"message": "Nećete više biti otkriveni u $1 sekundi."
@@ -114,10 +114,10 @@
 		"message": "Nažalost, poslužitelj za preuzimanje osigurat će da pričekate prije nego Vam se omogući preuzimanje datoteke."
 	},
 	"infoOutdated": {
-		"message": "Ova web stranica je zaobiđena novijom verzijom FastForward-a."
+		"message": "Ova web stranica je zaobiđena novijom verzijom SiteDrift-a."
 	},
 	"crowdWait": {
-		"message": "Nažalost, Vi ste prvi koji ste se susreli sa ovom vezom, ali nakon što sačekate, drugi FastForward korisnici više neće morati."
+		"message": "Nažalost, Vi ste prvi koji ste se susreli sa ovom vezom, ali nakon što sačekate, drugi SiteDrift korisnici više neće morati."
 	},
 	"crowdDisabled": {
 		"message": "Ova web stranica je zaobiđena od stane drugih korisnika, no tu opciju ste onemogućili u postavkama."
@@ -126,7 +126,7 @@
 		"message": "Možda nećete morati da čekate!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Ostali korisnici FastForward-a su već čekali za Vas i prijavili da to vodi do $1"
+		"message": "Ostali korisnici SiteDrift-a su već čekali za Vas i prijavili da to vodi do $1"
 	},
 	"crowdBypassedTimer": {
 		"message": "Ovo će se otvoriti u novoj kartici u $1 sekundi."
@@ -150,9 +150,9 @@
 		"message": "Želite li da se ovo otvori odmah u novoj kartici ili za x sekundi?"
 	},
 	"blockedTitle": {
-		"message": "FastForward je spriječio evidenciju Vaše IP adrese."
+		"message": "SiteDrift je spriječio evidenciju Vaše IP adrese."
 	},
 	"blockedSubtitle": {
-		"message": "Ne želite da FastForward spreči dijeljenje Vaše IP adrese?"
+		"message": "Ne želite da SiteDrift spreči dijeljenje Vaše IP adrese?"
 	}
 }

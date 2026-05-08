@@ -1,12 +1,12 @@
 {
 	"appDesc": {
-		"message": "Vaxtınızı uyğunlaşdırmaya xərcləməyin. FastForward, zəhlətökən bağlantı qısaldıcılarını ötürür."
+		"message": "Vaxtınızı uyğunlaşdırmaya xərcləməyin. SiteDrift, zəhlətökən bağlantı qısaldıcılarını ötürür."
 	},
 	"firstrunTitle": {
-		"message": "FastForward quraşdırdığınız üçün təşəkkürlər!"
+		"message": "SiteDrift quraşdırdığınız üçün təşəkkürlər!"
 	},
 	"firstrunNoScript": {
-		"message": "Buna baxmayaraq, FastForward ilə uyğunlaşmayan NoScript və ya oxşarını istifadə edirsiniz."
+		"message": "Buna baxmayaraq, SiteDrift ilə uyğunlaşmayan NoScript və ya oxşarını istifadə edirsiniz."
 	},
 	"version": {
 		"message": "Versiya"
@@ -24,13 +24,13 @@
 		"message": "Tez-tez Soruşulan Suallar (FAQ)"
 	},
 	"support": {
-		"message": "FastForward-ı Dəstəkləyin."
+		"message": "SiteDrift-ı Dəstəkləyin."
 	},
 	"options": {
 		"message": "Seçimlər"
 	},
 	"optionsLink": {
-		"message": "FastForward seçimlərini dəyişdirin."
+		"message": "SiteDrift seçimlərini dəyişdirin."
 	},
 	"optionsEnabled": {
 		"message": "Veb saytlarının ötürülməsini fəallaşdır."
@@ -60,13 +60,13 @@
 		"message": "1 saniyə ərzində avtomatik yönləndiriləcəksiniz."
 	},
 	"crowdWait": {
-		"message": "Təəssüf ki, bu bağlantı ilə qarşılaşan ilk sizsiniz, ancaq siz gözlədikdən sonra, digər FastForward istifadəçilərinin buna ehtiyacı olmayacaq."
+		"message": "Təəssüf ki, bu bağlantı ilə qarşılaşan ilk sizsiniz, ancaq siz gözlədikdən sonra, digər SiteDrift istifadəçilərinin buna ehtiyacı olmayacaq."
 	},
 	"crowdBypassed": {
 		"message": "Gözləməyinizə ehtiyac yoxdur!"
 	},
 	"crowdBypassedInfo": {
-		"message": "Digər FastForward istifadəçiləri artıq sizi gözlədilər və bunun $1 a çatdığı bildirildi"
+		"message": "Digər SiteDrift istifadəçiləri artıq sizi gözlədilər və bunun $1 a çatdığı bildirildi"
 	},
 	"crowdBypassedTimer": {
 		"message": "Bu, $1 saniyə ərzində yeni bir vərəqdə açılacaq."
@@ -81,9 +81,9 @@
 		"message": "Bunun indi ya x saniyə sonra yeni bir vərəqdə açılmasını istəyirsiniz?"
 	},
 	"blockedTitle": {
-		"message": "FastForward, IP ünvanların qeydlərə əlavə edilməsinin qarşısı aldı."
+		"message": "SiteDrift, IP ünvanların qeydlərə əlavə edilməsinin qarşısı aldı."
 	},
 	"blockedSubtitle": {
-		"message": "FastForward-ın, pisniyyətli insanların IP ünvanınızı oğurlamasının qarşısını almasını istəmirsiniz?"
+		"message": "SiteDrift-ın, pisniyyətli insanların IP ünvanınızı oğurlamasının qarşısını almasını istəmirsiniz?"
 	}
 }

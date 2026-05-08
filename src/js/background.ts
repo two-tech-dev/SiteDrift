@@ -24,7 +24,7 @@ if (isFirefox) {
 }
 
 const brws = typeof browser !== 'undefined' ? browser : chrome;
-const fetchDomains = ['crowd.fastforward.team', 'redirect-api.work.ink']; //only allow requests to these domains
+const fetchDomains = ['crowd.sitedrift.team', 'redirect-api.work.ink']; //only allow requests to these domains
 
 async function getOptions() {
   return new Promise((resolve) => {
@@ -44,7 +44,7 @@ function clearCrowdIgnoredURLs() {
 
 function firstrun(details) {
   if (details.reason == 'install' || details.reason == 'update') {
-    brws.tabs.create({ url: 'https://fastforward.team/firstrun' });
+    brws.tabs.create({ url: 'https://sitedrift.team/firstrun' });
     ffclipboardClear();
     brws.storage.local.set({ tempDisableCrowd: 'false' });
     brws.storage.local.set({ version: brws.runtime.getManifest().version });
@@ -58,7 +58,7 @@ function firstrun(details) {
 
 function preflight(details) {
   let url = new URL(details.url);
-  if (url.hostname !== 'fastforward.team') {
+  if (url.hostname !== 'sitedrift.team') {
     return;
   }
   //navigate
@@ -127,8 +127,8 @@ brws.runtime.onMessage.addListener((request, _, sendResponse) => {
     }
     let url;
     request.type === 'crowdQuery'
-      ? (url = 'https://crowd.fastforward.team/crowd/query_v1')
-      : (url = 'https://crowd.fastforward.team/crowd/contribute_v1');
+      ? (url = 'https://crowd.sitedrift.team/crowd/query_v1')
+      : (url = 'https://crowd.sitedrift.team/crowd/contribute_v1');
 
     let params = new URLSearchParams();
 

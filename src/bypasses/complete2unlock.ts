@@ -16,10 +16,9 @@ export default class Complete2unlock extends BypassDefinition {
 
       if (0 === unlock_panels.length) return;
 
-      clearInterval(timer)(
-        // override the window open method, no more annoying popups
-        window as any
-      ).open = () => {};
+      clearInterval(timer);
+      // override the window open method, no more annoying popups
+      (window as any).open = () => {};
 
       unlock_panels.forEach((panel) => (panel as HTMLElement).click());
 

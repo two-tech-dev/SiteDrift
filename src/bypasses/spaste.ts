@@ -8,17 +8,37 @@ export default class Spaste extends BypassDefinition {
 
   execute() {
     this.helpers.insertInfoBox('Please complete the captcha to continue');
-    const doTheThing = f => setTimeout(() => {
-      const item = document.querySelector('#currentCapQue').textContent;
-      document.querySelectorAll('.markAnswer').forEach(as => {
-        if (as.querySelector('img').getAttribute('src').toLowerCase().indexOf(item) > -1) {
-          as.click();
-        }
-      });
-      f();
-    }, 200);
-    (document.querySelector('#captchaVerifiedStatus') as HTMLElement | null)?.click();
-    doTheThing(() => doTheThing(() => doTheThing(() => (document.querySelector('#template-contactform-submit') as HTMLElement | null)?.click())));
+    const doTheThing = (f) =>
+      setTimeout(() => {
+        const item = document.querySelector('#currentCapQue').textContent;
+        document.querySelectorAll('.markAnswer').forEach((el) => {
+          if (
+            el
+              .querySelector('img')
+              ?.getAttribute('src')
+              ?.toLowerCase()
+              .indexOf(item) ??
+            -1 > -1
+          ) {
+            (el as HTMLElement).click();
+          }
+        });
+        f();
+      }, 200);
+    (
+      document.querySelector('#captchaVerifiedStatus') as HTMLElement | null
+    )?.click();
+    doTheThing(() =>
+      doTheThing(() =>
+        doTheThing(() =>
+          (
+            document.querySelector(
+              '#template-contactform-submit'
+            ) as HTMLElement | null
+          )?.click()
+        )
+      )
+    );
   }
 }
 

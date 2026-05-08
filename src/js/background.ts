@@ -25,10 +25,18 @@ if (isFirefox) {
 const brws = typeof browser !== 'undefined' ? browser : chrome;
 const fetchDomains = ['crowd.sitedrift.team', 'redirect-api.work.ink']; //only allow requests to these domains
 
-async function getOptions() {
+interface Options {
+  optionCrowdBypass?: boolean;
+  optionBlockIpLoggers?: boolean;
+  optionTrackerBypass?: boolean;
+  optionInstantNavigationTrackers?: boolean;
+  [key: string]: unknown;
+}
+
+async function getOptions(): Promise<Options> {
   return new Promise((resolve) => {
     brws.storage.local.get('options').then((result) => {
-      resolve(result.options);
+      resolve(result.options as Options);
     });
   });
 }
@@ -85,7 +93,7 @@ function reEnableCrowdBypassStartup() {
   brws.storage.local.get(['tempDisableCrowd']).then((result) => {
     if (result.tempDisableCrowd === 'true') {
       brws.storage.local.get(['options']).then((result) => {
-        const opt = result.options;
+        const opt = result.options as Options;
         opt.optionCrowdBypass = true;
         brws.storage.local.set({ options: opt });
       });
@@ -101,7 +109,7 @@ brws.alarms.onAlarm.addListener((alarm) => {
       result.tempDisableCrowd === 'true'
     ) {
       brws.storage.local.get(['options']).then((result) => {
-        const opt = result.options;
+        const opt = result.options as Options;
         opt.optionCrowdBypass = true;
         brws.storage.local.set({ options: opt });
         brws.storage.local.set({ tempDisableCrowd: 'false' });

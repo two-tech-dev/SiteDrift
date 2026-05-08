@@ -95,9 +95,11 @@ export function keepLooking(func) {
 export function persistHash(here) {
   ensureDomLoaded(() => {
     document
-      .querySelectorAll('form[action]')
+      .querySelectorAll<HTMLFormElement>('form[action]')
       .forEach((e) => (e.action += '#' + here));
-    document.querySelectorAll('a[href]').forEach((e) => (e.href += '#' + here));
+    document
+      .querySelectorAll<HTMLAnchorElement>('a[href]')
+      .forEach((e) => (e.href += '#' + here));
   });
 }
 /**
@@ -289,7 +291,7 @@ export function crowdQuery(domain, path) {
 
     document.addEventListener('ff53054c0e13_crowdResponse', function (event) {
       clearTimeout(timeout);
-      resolve(event.detail);
+      resolve((event as CustomEvent).detail);
     });
   });
 }

@@ -1,4 +1,4 @@
-export const beforeNavigateRules = [
+export const beforeNavigateRules: chrome.declarativeNetRequest.Rule[] = [
   {
     id: 1,
     priority: 2,

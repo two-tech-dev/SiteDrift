@@ -18,7 +18,7 @@ function escapeHtml(str) {
     .replaceAll("'", '&#039;');
 }
 
-function showError(err) {
+function showError(err?) {
   console.error(err);
   trackerInfoElement.textContent = brws.i18n.getMessage('trackerBypassedError');
   trackerInfoElement.classList.add('text-warn');

@@ -1,5 +1,6 @@
+declare const browser: typeof chrome;
 const brws = typeof browser !== 'undefined' ? browser : chrome;
-async function getOptions() {
+async function getOptions(): Promise<any> {
   return new Promise((resolve) => {
     brws.storage.local.get('options').then((result) => {
       resolve(result.options);
@@ -33,8 +34,8 @@ async function injectScript() {
 }
 
 //ff + first 10 characters of SHA256 of fastforward to prevent collisions
-document.addEventListener('ff53054c0e13_crowdQuery', async (event) => {
-  let data = event.detail;
+document.addEventListener('ff53054c0e13_crowdQuery', async (event: Event) => {
+  let data = (event as CustomEvent).detail;
   const response = await chrome.runtime.sendMessage({
     type: 'crowdQuery',
     detail: data,
@@ -56,23 +57,23 @@ function matchDomains(inputString, domains) {
   return false;
 }
 
-document.addEventListener('ff53054c0e13_crowdContribute', (event) => {
-  let data = event.detail;
+document.addEventListener('ff53054c0e13_crowdContribute', (event: Event) => {
+  let data = (event as CustomEvent).detail;
   chrome.runtime.sendMessage({
     type: 'crowdContribute',
     detail: data,
   });
 });
-document.addEventListener('ff53054c0e13_followAndContribute', (event) => {
-  let data = event.detail;
+document.addEventListener('ff53054c0e13_followAndContribute', (event: Event) => {
+  let data = (event as CustomEvent).detail;
   chrome.runtime.sendMessage({
     type: 'followAndContribute',
     detail: data,
   });
 });
 
-function onFFClipboardSet(event) {
-  const { key, value } = event.detail;
+function onFFClipboardSet(event: Event) {
+  const { key, value } = (event as CustomEvent).detail;
   chrome.storage.local.get('ffclipboard', (result) => {
     const ffclipboard = result.ffclipboard || {};
     ffclipboard[key] = value;
@@ -80,8 +81,8 @@ function onFFClipboardSet(event) {
   });
 }
 
-function onFFClipboardGet(event) {
-  const { key } = event.detail;
+function onFFClipboardGet(event: Event) {
+  const { key } = (event as CustomEvent).detail;
   chrome.storage.local.get('ffclipboard', (result) => {
     const value = result.ffclipboard ? result.ffclipboard[key] : undefined;
     const responseEvent = new CustomEvent('ff53054c0e13_ffclipboardResponse', {
@@ -91,8 +92,8 @@ function onFFClipboardGet(event) {
   });
 }
 
-function onFFClipboardClear(event) {
-  const { key } = event.detail;
+function onFFClipboardClear(event: Event) {
+  const { key } = (event as CustomEvent).detail;
   chrome.storage.local.get('ffclipboard', (result) => {
     if (result.ffclipboard) {
       delete result.ffclipboard[key];

@@ -1,4 +1,6 @@
-import * as constants from './constants.js';
+import * as constants from './constants';
+
+declare const browser: typeof chrome;
 
 const isFirefox = /Firefox/i.test(navigator.userAgent);
 

@@ -59,6 +59,7 @@ body {
 }
 
 nav {
+  display: flex;
   background-color: var(--ff-module-background);
   border-image: linear-gradient(
       135deg,
@@ -396,7 +397,12 @@ a .link-preview:hover {
   position: absolute;
   /* display: none; */
   width: 60%;
-  background-image: linear-gradient(135deg, var(--ff-aqua) 0%, var(--ff-blue) 50%, var(--ff-purple) 100%);
+  background-image: linear-gradient(
+    135deg,
+    var(--ff-aqua) 0%,
+    var(--ff-blue) 50%,
+    var(--ff-purple) 100%
+  );
   padding: 3px;
   padding-left: 6px;
   margin: auto;
@@ -428,7 +434,7 @@ a .link-preview:hover {
 
 #close:after {
   display: inline-block;
-  content: "\00d7";
+  content: '\00d7';
 }
 
 #whitelistDesc {

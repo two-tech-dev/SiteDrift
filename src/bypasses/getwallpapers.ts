@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Getwallpapers extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class Getwallpapers extends BypassDefinition {
   }
 
   execute() {
+  // @ts-ignore
     window.setInterval = f => setInterval(f, 1)
   }
 }

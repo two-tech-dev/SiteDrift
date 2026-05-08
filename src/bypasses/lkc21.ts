@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Lkc21 extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class Lkc21 extends BypassDefinition {
   }
 
   execute() {
+  // @ts-ignore
     window.setTimeout = f => setTimeout(f, 100)
   }
 }

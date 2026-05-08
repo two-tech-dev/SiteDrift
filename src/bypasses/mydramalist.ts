@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Mydramalist extends BypassDefinition {

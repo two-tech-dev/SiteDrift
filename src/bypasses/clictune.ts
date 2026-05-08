@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Clictune extends BypassDefinition {
@@ -8,7 +7,9 @@ export default class Clictune extends BypassDefinition {
     }
 
     execute() {
+  // @ts-ignore
         seconde = 0;
+  // @ts-ignore
         Compteur();
 
         this.helpers.awaitElement('#compteur2 a[href]', a => {

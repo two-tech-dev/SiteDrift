@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Get2clickblogspot extends BypassDefinition {

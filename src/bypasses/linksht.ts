@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Linksht extends BypassDefinition {
@@ -10,6 +9,7 @@ export default class Linksht extends BypassDefinition {
     execute() {
         const getUrl = document.URL;
         const urlSplit = getUrl.split("/");
+  // @ts-ignore
         $.post("/Links/Getlink", {id: urlSplit[urlSplit.length - 1]}, function (destination) {
             if(destination!="") {
                 location.assign(destination);

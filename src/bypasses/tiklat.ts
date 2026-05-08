@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Tiklat extends BypassDefinition {
@@ -7,6 +6,7 @@ export default class Tiklat extends BypassDefinition {
   }
 
   execute () {
+  // @ts-ignore
     window.setInterval = func => setInterval(func, 1)
     this.helpers.awaitElement('.skip > .wait > .skip > .btn > a[href]', a => {
       this.helpers.safelyNavigate(a.href)

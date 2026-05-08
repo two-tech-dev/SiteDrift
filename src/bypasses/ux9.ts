@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Ux9 extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class Ux9 extends BypassDefinition {
   }
 
   execute() {
+  // @ts-ignore
     this.helpers.safelyAssign(window.ux_secure.fullUrl);
   }
 }

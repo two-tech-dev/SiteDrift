@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Pcgamestorrents extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class Pcgamestorrents extends BypassDefinition {
   }
 
   execute() {
+  // @ts-ignore
     window.setInterval = f => setInterval(f, 1)
     this.helpers.transparentProperty("Time_Start", t => t - 5000)
     this.helpers.awaitElement("input#nut[src]", i => i.parentNode.submit())

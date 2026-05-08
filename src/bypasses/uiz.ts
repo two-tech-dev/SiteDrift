@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Uiz extends BypassDefinition {
@@ -14,6 +13,7 @@ export default class Uiz extends BypassDefinition {
             document.querySelectorAll("script").forEach(script => {
                 let match = regHere.exec(script.textContent)
                 if (match && match[1]){
+  // @ts-ignore
                     this.helpers.crowdPath(bypassClipboard)
                     this.helpers.contributeAndNavigate(match[1])
 

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import './base';
 import './i18n';
 /*global brws*/
@@ -21,6 +20,7 @@ function escapeHtml(unsafe) {
 
 // Update destination message with target URL
 const destinationElement = document.querySelector('#destination');
+  // @ts-ignore
 destinationElement.innerHTML = brws.i18n.getMessage(
   'beforeNavigateDestination',
   `<br><a href="${escapeHtml(
@@ -28,6 +28,7 @@ destinationElement.innerHTML = brws.i18n.getMessage(
   )}" class="link link-preview"><code> ${escapeHtml(targetUrl)} </a></code>`
 );
 
+  // @ts-ignore
 brws.storage.local.get('options', (result) => {
   if (!result.options.navigationDelayToggle) {
     return;
@@ -36,6 +37,7 @@ brws.storage.local.get('options', (result) => {
   let timeLeft = delay;
 
   timerElement.classList.remove('uk-hidden');
+  // @ts-ignore
   timerText.textContent = brws.i18n.getMessage(
     timeLeft === 1 ? 'beforeNavigateTimerSingular' : 'beforeNavigateTimer',
     [timeLeft]
@@ -47,6 +49,7 @@ brws.storage.local.get('options', (result) => {
       clearInterval(interval);
       window.location.href = targetUrl;
     } else {
+  // @ts-ignore
       timerText.textContent = brws.i18n.getMessage(
         timeLeft === 1 ? 'beforeNavigateTimerSingular' : 'beforeNavigateTimer',
         [timeLeft]

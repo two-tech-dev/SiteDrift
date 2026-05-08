@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Lnk2cc extends BypassDefinition {
@@ -11,7 +10,7 @@ export default class Lnk2cc extends BypassDefinition {
         //Replace substr(0,4) with substring
 
         if (location.pathname.substring(0,5) === "/go/"){
-            document.querySelector("form").submit()
+            (document.querySelector("form") as HTMLFormElement | null)?.submit()
         }
         else{
             this.helpers.crowdBypass()

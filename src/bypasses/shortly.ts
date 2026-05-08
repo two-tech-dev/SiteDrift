@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Shortly extends BypassDefinition {
@@ -8,9 +7,11 @@ export default class Shortly extends BypassDefinition {
 
     execute() {
         if (location.pathname.substr(0, 3) === "/r/") {
+  // @ts-ignore
             document.getElementById = () => ({
                 submit: () => {
                     let f = document.querySelector("form")
+  // @ts-ignore
                     f.action = "/link#" + document.querySelector("input[name='id']").value
                     f.submit()
                 }

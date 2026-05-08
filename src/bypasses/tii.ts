@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class TiiLa extends BypassDefinition {
@@ -15,8 +14,11 @@ export default class TiiLa extends BypassDefinition {
       /*keep checking for the button*/
     setInterval(() => {
         const button = document.querySelector("a.btn.btn-success.btn-lg.get-link");
+  // @ts-ignore
         if (button && button.href) {
+  // @ts-ignore
             this.helpers.crowdContribute('tii.la', urlObj.pathname.slice(1), button.href)
+  // @ts-ignore
             this.helpers.safelyNavigate(button.href)
         }
       }, 500);

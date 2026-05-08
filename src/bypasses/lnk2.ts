@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Lnk2 extends BypassDefinition {
@@ -11,7 +10,7 @@ export default class Lnk2 extends BypassDefinition {
     //If the url doesn't contain /go/, use the insertInfoBox
     if (window.location.href.includes('/go/')) {
       document.getElementById('getLink').removeAttribute('disabled');
-      document.getElementById('getLink').click();
+      (document.getElementById('getLink') as HTMLElement | null)?.click();
     } else {
       this.helpers.insertInfoBox('Please complete the captcha, then we can bypass you');
     }

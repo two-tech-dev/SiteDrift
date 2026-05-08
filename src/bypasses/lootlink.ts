@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class LootLink extends BypassDefinition {
@@ -20,6 +19,7 @@ export default class LootLink extends BypassDefinition {
     }
 
     customFetch(url, config, originalFetch) {
+  // @ts-ignore
         if (url.includes(`${INCENTIVE_SYNCER_DOMAIN}/tc`)) {
             return originalFetch(url, config).then(response => {
                 if (!response.ok) return response.json()
@@ -44,7 +44,9 @@ export default class LootLink extends BypassDefinition {
             const task_id = 54; // magic number
 
             this.setupWebSocket(urid, task_id)
+  // @ts-ignore
             navigator.sendBeacon(`https://${urid.substr(-5) % 3}.${INCENTIVE_SERVER_DOMAIN}/st?uid=${urid}&cat=${task_id}`)
+  // @ts-ignore
             fetch(`https://${INCENTIVE_SYNCER_DOMAIN}/td?ac=1&urid=${urid}&&cat=${task_id}&tid=${TID}`)
             fetch(action_pixel_url)
 
@@ -57,6 +59,7 @@ export default class LootLink extends BypassDefinition {
     }
 
     setupWebSocket(urid, task_id) {
+  // @ts-ignore
         const ws = new WebSocket(`wss://${urid.substr(-5) % 3}.${INCENTIVE_SERVER_DOMAIN}/c?uid=${urid}&cat=${task_id}&key=${KEY}`)
 
         ws.onopen = () => setInterval(() => ws.send('0'), 1000)

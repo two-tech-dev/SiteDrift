@@ -1,4 +1,3 @@
-// @ts-nocheck
 import './base';
 import './i18n';
 const timerElement = document.getElementById('timer');
@@ -20,6 +19,7 @@ function escapeHtml(unsafe) {
 }
 
 function updateDestinationMessage() {
+  // @ts-ignore
   let msg = brws.i18n.getMessage(
     'crowdBypassedInfo',
     `<br><a href="${escapeHtml(
@@ -30,20 +30,25 @@ function updateDestinationMessage() {
 }
 
 tempDisableCrowdButton.addEventListener('click', () => {
+  // @ts-ignore
   brws.storage.local.get(['options']).then((result) => {
     let opt = result.options;
     if (!opt.optionCrowdBypass) {
       return;
     }
     opt.optionCrowdBypass = false;
+  // @ts-ignore
     brws.storage.local.set({ options: opt });
+  // @ts-ignore
     brws.storage.local.set({ tempDisableCrowd: 'true' });
     // Create an alarm that will trigger after 10 minutes
+  // @ts-ignore
     brws.alarms.create('enableCrowdBypass', { delayInMinutes: 10 });
     history.back();
   });
 });
 
+  // @ts-ignore
 brws.storage.local.get('options', (result) => {
   if (!result.options.optionCrowdOpenDelayToggle) {
     return;
@@ -52,6 +57,7 @@ brws.storage.local.get('options', (result) => {
   // Show countdown timer
   let timeLeft = delay;
   timerElement.hidden = false;
+  // @ts-ignore
   timerText.textContent = brws.i18n.getMessage(
     timeLeft === 1 ? 'crowdBypassedTimerSingular' : 'crowdBypassedTimer',
     [timeLeft]
@@ -64,6 +70,7 @@ brws.storage.local.get('options', (result) => {
       window.open(targetUrl, '_blank').focus();
       timerElement.hidden = true;
     } else {
+  // @ts-ignore
       timerText.textContent = brws.i18n.getMessage(
         timeLeft === 1 ? 'crowdBypassedTimerSingular' : 'crowdBypassedTimer',
         [timeLeft]

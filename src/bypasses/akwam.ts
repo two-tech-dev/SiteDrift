@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Akwam extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class Akwam extends BypassDefinition {
     }
 
     execute() {
+  // @ts-ignore
         window.setInterval = f => setInterval(f, 1)
         this.helpers.awaitElement("a.download_button[href]", a => {this.helpers.safelyNavigate(a.href)})
     }

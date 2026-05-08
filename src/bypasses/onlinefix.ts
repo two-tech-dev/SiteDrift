@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Onelinefix extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class Onelinefix extends BypassDefinition {
     }
 
     execute() {
+  // @ts-ignore
         window.setTimeout = f => setTimeout(f,1)
         this.helpers.awaitElement("#res > center > button.btn[onclick]", but => but.onclick())
     }

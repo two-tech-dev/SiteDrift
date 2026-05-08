@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Adtival extends BypassDefinition {
@@ -11,6 +10,7 @@ export default class Adtival extends BypassDefinition {
     console.log('Adtival found!');
 
     const executor = async () => {
+  // @ts-ignore
       const El = window.livewire.components.components()[0];
 
       const payload = {
@@ -34,6 +34,7 @@ export default class Adtival extends BypassDefinition {
           headers: {
             'Content-Type': 'application/json',
             'X-Livewire': 'true',
+  // @ts-ignore
             'X-CSRF-TOKEN': window.livewire_token,
           },
           method: 'POST',
@@ -56,6 +57,7 @@ export default class Adtival extends BypassDefinition {
         console.log('addRecord...');
 
         const input = document.createElement('input');
+  // @ts-ignore
         input.value = window.livewire_token;
         input.name = '_token';
         input.hidden = true;

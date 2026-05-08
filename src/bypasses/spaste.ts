@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Spaste extends BypassDefinition {
@@ -13,13 +12,14 @@ export default class Spaste extends BypassDefinition {
       let item = document.querySelector('#currentCapQue').textContent;
       document.querySelectorAll('.markAnswer').forEach(as => {
         if (as.querySelector('img').getAttribute('src').toLowerCase().indexOf(item) > -1) {
+  // @ts-ignore
           as.click();
         }
       });
       f();
     }, 200);
-    document.querySelector('#captchaVerifiedStatus').click();
-    doTheThing(() => doTheThing(() => doTheThing(() => document.querySelector('#template-contactform-submit').click())));
+    (document.querySelector('#captchaVerifiedStatus') as HTMLElement | null)?.click();
+    doTheThing(() => doTheThing(() => doTheThing(() => (document.querySelector('#template-contactform-submit') as HTMLElement | null)?.click())));
   }
 }
 

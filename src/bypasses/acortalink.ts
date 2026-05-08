@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Acortalink extends BypassDefinition {
@@ -18,9 +17,12 @@ export default class Acortalink extends BypassDefinition {
 		// Triggered on example.com and subdomains (e.g. www.example.com)
 		this.helpers.ensureDomLoaded(() => {
 			// Triggered as soon as the DOM is ready
+  // @ts-ignore
 			window.open = (linkacorta) => {
+  // @ts-ignore
 			    this.helpers.safelyNavigate(rot13(atob(linkacorta.substring(30))));
 			};
+  // @ts-ignore
 			GetLink();
 		})
     }

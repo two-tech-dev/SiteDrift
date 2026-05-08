@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class ONELink extends BypassDefinition {
@@ -8,7 +7,7 @@ export default class ONELink extends BypassDefinition {
     }
 
     execute() {
-        this.helpers.safelyNavigate(document.querySelector('a#download').href);
+        this.helpers.safelyNavigate((document.querySelector('a#download') as HTMLAnchorElement | null)?.href);
     }
 }
 

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Complete2unlock extends BypassDefinition {
@@ -17,8 +16,10 @@ export default class Complete2unlock extends BypassDefinition {
 
             clearInterval(timer)
             // override the window open method, no more annoying popups
+  // @ts-ignore
             window.open = () => { }
 
+  // @ts-ignore
             unlock_panels.forEach(panel => panel.click())
 
             const is_button_enabled_timer = setInterval(() => {

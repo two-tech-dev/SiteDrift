@@ -1,4 +1,3 @@
-// @ts-nocheck
 declare const browser: typeof chrome;
 const brws = typeof browser !== 'undefined' ? browser : chrome;
 async function getOptions(): Promise<any> {

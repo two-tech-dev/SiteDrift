@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Defines the property of an object with the given name and options. This can be used to find a part of the DOM needed for bypassing. If it fails, it will throw an error.
  * @function
@@ -97,7 +96,9 @@ export function persistHash (here) {
   ensureDomLoaded(() => {
     document
       .querySelectorAll('form[action]')
+  // @ts-ignore
       .forEach(e => (e.action += '#' + here))
+  // @ts-ignore
     document.querySelectorAll('a[href]').forEach(e => (e.href += '#' + here))
   })
 }
@@ -288,6 +289,7 @@ export function crowdQuery (domain, path) {
 
     document.addEventListener('ff53054c0e13_crowdResponse', function (event) {
       clearTimeout(timeout)
+  // @ts-ignore
       resolve(event.detail)
     })
   })

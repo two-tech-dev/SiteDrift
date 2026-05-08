@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Enlacito extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class Enlacito extends BypassDefinition {
     }
 
     execute() {
+  // @ts-ignore
         this.helpers.safelyNavigate(window.DYykkzwP)
     }
 }

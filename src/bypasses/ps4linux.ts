@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class PS4Linux extends BypassDefinition {
@@ -8,6 +7,7 @@ export default class PS4Linux extends BypassDefinition {
     }
 
     execute() {
+  // @ts-ignore
         const targetURL = document.querySelector('#skipaft > a:nth-child(1)')?.href
         if (targetURL) {
             this.helpers.safelyNavigate(targetURL)

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Ryn extends BypassDefinition {
@@ -8,10 +7,12 @@ export default class Ryn extends BypassDefinition {
   }
 
   execute() {
+  // @ts-ignore
     if (typeof countdown == 'function') {
       document.write('<div id="link"><p id="timer">0</p></div>');
+  // @ts-ignore
       countdown();
-      this.helpers.safelyNavigate(document.querySelector('#link > a').href);
+      this.helpers.safelyNavigate((document.querySelector('#link > a') as HTMLAnchorElement | null)?.href);
     }
   }
 }

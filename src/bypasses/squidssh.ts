@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition'
 
 export default class Squidssh extends BypassDefinition {
@@ -9,7 +8,9 @@ export default class Squidssh extends BypassDefinition {
 
     execute() {
         let p = atob((new URLSearchParams(location.search)).get('short'))
+  // @ts-ignore
         crowdPath(p)
+  // @ts-ignore
         crowdBypass(() => this.helpers.ifElement("form[action='/user/links']", f => f.action += "#" + p))
     }
 }

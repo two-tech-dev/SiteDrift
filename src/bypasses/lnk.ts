@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from './BypassDefinition';
 
 export default class Lnk extends BypassDefinition {
@@ -12,7 +11,7 @@ export default class Lnk extends BypassDefinition {
       //Insert /go/ inbetween the domain and the rest of the url
       this.helpers.safelyNavigate(window.location.href.replace(/(https?:\/\/[^/]+)(\/.*)/, '$1/go$2'));
     }
-    document.getElementById('get_link_btn').click();
+    (document.getElementById('get_link_btn') as HTMLElement | null)?.click();
   }
 }
 

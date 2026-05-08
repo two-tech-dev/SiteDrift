@@ -1,4 +1,3 @@
-// @ts-nocheck
 import BypassDefinition from "./BypassDefinition"
 
 export default class Ouo extends BypassDefinition {
@@ -8,12 +7,13 @@ export default class Ouo extends BypassDefinition {
     execute() {
         if (location.pathname !== '/') {
             if (/(go|fbc)/.test(location.pathname.split("/")[1])) {
-                document.querySelector("form").submit()
+                (document.querySelector("form") as HTMLFormElement | null)?.submit()
             }
             else {
-                if (document.querySelector("form#form-captcha")) {
-                    document.querySelector("form#form-captcha").action = `/xreallcygo${location.pathname}`
-                    document.querySelector("form#form-captcha").submit()
+                const form = document.querySelector("form#form-captcha") as HTMLFormElement;
+                if (form) {
+                    form.action = `/xreallcygo${location.pathname}`;
+                    form.submit();
                 }
                 else {
                     //this.helpers.crowdBypass()

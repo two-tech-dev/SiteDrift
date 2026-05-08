@@ -1,3 +1,5 @@
+import './style.css';
+
 declare const browser: typeof chrome;
 const brws = typeof browser !== 'undefined' ? browser : chrome;
 document.documentElement.setAttribute(

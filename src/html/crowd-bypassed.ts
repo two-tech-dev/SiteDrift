@@ -1,4 +1,5 @@
-/*global brws*/
+import './base';
+import './i18n';
 const timerElement = document.getElementById('timer');
 const timerText = timerElement.querySelector('p');
 const tempDisableCrowdButton = document.getElementById('temp-disable-crowd');

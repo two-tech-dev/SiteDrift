@@ -1,3 +1,5 @@
+import './base';
+import './i18n';
 /*global brws*/
 const trackerInfoElement = document.getElementById('tracker-info');
 

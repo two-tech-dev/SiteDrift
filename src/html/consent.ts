@@ -1,3 +1,5 @@
+import "./base";
+declare const browser: any;
 // Function to save consent status
 async function saveConsentStatus(consentStatus) {
     return browser.storage.local.set({ consentStatus: consentStatus });

@@ -1,3 +1,5 @@
+import './base';
+import './i18n';
 /*global brws*/
 const timerElement = document.getElementById('timer');
 const timerText = timerElement.querySelector('p');

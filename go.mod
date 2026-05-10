@@ -1,4 +1,4 @@
-module FastForwardServer
+module SiteDriftCrowdServer
 
 go 1.17
 

@@ -30,7 +30,7 @@ var (
 //Shows server starting message
 func logStart() {
 	logger.Println("")
-	logger.Println("FastForward server")
+	logger.Println("SiteDrift server")
 	logger.Println("Version:", version)
 	logger.Println("Server is starting...")
 

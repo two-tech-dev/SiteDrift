@@ -48,7 +48,7 @@ services:
     restart: on-failure
 
   ffserver:
-    image: ghcr.io/fastforwardteam/server:latest
+    image: ghcr.io/sitedrift/server:latest
     environment:
       - port=:5000
       - privPEM=$privPEM

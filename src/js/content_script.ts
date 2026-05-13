@@ -13,6 +13,11 @@ function getExtBaseURL() {
 }
 
 async function injectScript() {
+  const enabledResult = await brws.storage.local.get('extensionEnabled');
+  if (enabledResult.extensionEnabled === false) {
+    console.log('SiteDrift: Extension disabled');
+    return;
+  }
   const options = await getOptions();
   if (
     options &&

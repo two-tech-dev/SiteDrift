@@ -76,15 +76,14 @@ services:
       - internal
 
   db:
-    image: mariadb:10.11
+    image: postgres:16-alpine
     environment:
-      MYSQL_ROOT_PASSWORD: $dbRootPass
-      MYSQL_DATABASE: $dbName
-      MYSQL_USER: $dbUser
-      MYSQL_PASSWORD: $dbUserPass
+      POSTGRES_DB: $dbName
+      POSTGRES_USER: $dbUser
+      POSTGRES_PASSWORD: $dbUserPass
     restart: on-failure
     volumes:
-      - database_mysql:/var/lib/mysql
+      - database_postgres:/var/lib/postgresql/data
       - type: bind
         source: ./config/sql-scripts/
         target: /docker-entrypoint-initdb.d
@@ -114,7 +113,7 @@ services:
       - db
 
 volumes:
-  database_mysql:
+  database_postgres:
 
 
 networks:

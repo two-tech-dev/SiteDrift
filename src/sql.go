@@ -23,7 +23,7 @@ import (
 	"fmt"
 	"time"
 
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 )
 
 var (
@@ -34,9 +34,9 @@ var (
 func connectDb() error {
 	var err error
 
-	creds := fmt.Sprintf("%s:%s@tcp(db:3306)/%s", dbUser, dbPassword, dbName)
+	creds := fmt.Sprintf("postgres://%s:%s@db:5432/%s?sslmode=disable", dbUser, dbPassword, dbName)
 
-	db, err = sql.Open("mysql", creds)
+	db, err = sql.Open("postgres", creds)
 	if err != nil {
 		return err
 	}
@@ -48,18 +48,21 @@ func connectDb() error {
 
 // returns (error, if exists, destination if exists, votedfordeletion 0/1)
 func dbQuery(domain string, path string) (bool, string, int, error) {
-	stmt, err := db.Prepare("SELECT destination, votedfordeletion FROM links WHERE domain = ? AND path = ?")
+	stmt, err := db.Prepare("SELECT destination, votedfordeletion FROM links WHERE domain = $1 AND path = $2")
 	if err != nil {
 		return false, "", 0, err
 	}
 	defer stmt.Close()
 	var dest string
-	var votedfordeletion int
+	var votedfordeletion bool
 	switch err = stmt.QueryRow(domain, path).Scan(&dest, &votedfordeletion); err {
 	case sql.ErrNoRows:
 		return false, "", 0, nil
 	case nil:
-		return true, dest, votedfordeletion, nil
+		if votedfordeletion {
+			return true, dest, 1, nil
+		}
+		return true, dest, 0, nil
 	default:
 		return false, "", 0, err
 	}
@@ -67,16 +70,20 @@ func dbQuery(domain string, path string) (bool, string, int, error) {
 }
 
 func dbAdminVoteQuery(domain string, path string) (votedfordeletion int, votedBy string, err error) {
-	stmt, err := db.Prepare("SELECT votedfordeletion, voted_by FROM links WHERE domain = ? AND path = ?")
+	stmt, err := db.Prepare("SELECT votedfordeletion, voted_by FROM links WHERE domain = $1 AND path = $2")
 	if err != nil {
 		return 0, "", err
 	}
 	defer stmt.Close()
+	var votedfordeletionBool bool
 	var voted_by_safe sql.NullString //Allows null values
-	switch err = stmt.QueryRow(domain, path).Scan(&votedfordeletion, &voted_by_safe); err {
+	switch err = stmt.QueryRow(domain, path).Scan(&votedfordeletionBool, &voted_by_safe); err {
 	case sql.ErrNoRows:
 		return 0, "", errnoEnt
 	case nil:
+		if votedfordeletionBool {
+			votedfordeletion = 1
+		}
 		if voted_by_safe.Valid {
 			return votedfordeletion, voted_by_safe.String, nil //If the value is valid(not null), return it
 		}
@@ -88,7 +95,7 @@ func dbAdminVoteQuery(domain string, path string) (votedfordeletion int, votedBy
 
 func dbInsert(domain string, path string, target string, hashedIP string) error {
 
-	stmt, err := db.Prepare("INSERT INTO links (domain, path, destination, hashed_IP) VALUES (?, ?, ?, ?)")
+	stmt, err := db.Prepare("INSERT INTO links (domain, path, destination, hashed_IP) VALUES ($1, $2, $3, $4)")
 	if err != nil {
 		return err
 	}
@@ -99,10 +106,10 @@ func dbInsert(domain string, path string, target string, hashedIP string) error 
 
 }
 
-//Increases times_reported by 1
+// Increases times_reported by 1
 func dbReport(domain string, path string) error {
 
-	stmt, err := db.Prepare("UPDATE links SET times_reported = times_reported + 1 WHERE domain = ? AND path = ?")
+	stmt, err := db.Prepare("UPDATE links SET times_reported = times_reported + 1 WHERE domain = $1 AND path = $2")
 	if err != nil {
 		return err
 	}
@@ -123,9 +130,9 @@ func dbAdminSoftDelete(domain string, path string) error {
 
 	{
 		stmt, err := tx.Prepare(`INSERT INTO recycle_bin (id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, voted_by)
-							SELECT *
+							SELECT id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, voted_by
 							FROM links
-							WHERE domain = ? AND path = ?;`)
+							WHERE domain = $1 AND path = $2;`)
 		if err != nil {
 			tx.Rollback()
 			return err
@@ -140,7 +147,7 @@ func dbAdminSoftDelete(domain string, path string) error {
 
 	{
 		stmt, err := tx.Prepare(`DELETE FROM links
-							WHERE domain = ? AND path = ?;`)
+							WHERE domain = $1 AND path = $2;`)
 		if err != nil {
 			tx.Rollback()
 			return err
@@ -159,7 +166,7 @@ func dbAdminSoftDelete(domain string, path string) error {
 
 func dbAdminVoteDelete(username string, domain string, path string) error {
 
-	stmt, err := db.Prepare("UPDATE links SET votedfordeletion = 1, voted_by = ? WHERE domain = ? AND path = ?")
+	stmt, err := db.Prepare("UPDATE links SET votedfordeletion = true, voted_by = $1 WHERE domain = $2 AND path = $3")
 	if err != nil {
 		return err
 	}
@@ -173,7 +180,7 @@ func dbAdminVoteDelete(username string, domain string, path string) error {
 /*
 func dbAdminCredsInsert(username string, password string) error {
 
-	stmt, err := db.Prepare("INSERT INTO admin_creds (username, password) VALUES (?, ?)")
+	stmt, err := db.Prepare("INSERT INTO admin_creds (username, password) VALUES ($1, $2)")
 	if err != nil {
 		return err
 	}
@@ -188,7 +195,7 @@ func dbAdminCredsInsert(username string, password string) error {
 
 func dbAdminPasswordChange(username string, newPassword string) error {
 
-	stmt, err := db.Prepare("UPDATE admin_creds SET password = ? WHERE username = ?")
+	stmt, err := db.Prepare("UPDATE admin_creds SET password = $1 WHERE username = $2")
 	if err != nil {
 		return err
 	}
@@ -201,7 +208,7 @@ func dbAdminPasswordChange(username string, newPassword string) error {
 
 func dbAdminRefTokenInsert(username string, uuid string) error {
 
-	stmt, err := db.Prepare("UPDATE admin_creds SET token_id = ? WHERE username = ?;")
+	stmt, err := db.Prepare("UPDATE admin_creds SET token_id = $1 WHERE username = $2;")
 	if err != nil {
 		return err
 	}
@@ -216,7 +223,7 @@ func dbAdminRefTokenInsert(username string, uuid string) error {
 // Returns (user exists, password if exists, error)
 func dbAdminCredsQuery(username string) (bool, string, error) {
 
-	stmt, err := db.Prepare("SELECT password FROM admin_creds WHERE username = ?")
+	stmt, err := db.Prepare("SELECT password FROM admin_creds WHERE username = $1")
 	if err != nil {
 		return false, "", err
 	}
@@ -236,7 +243,7 @@ func dbAdminCredsQuery(username string) (bool, string, error) {
 // Returns (user exists) (Ref token if exists) (error)
 func dbAdminRefTokenQuery(username string) (bool, string, error) {
 
-	stmt, err := db.Prepare("SELECT token_id FROM admin_creds WHERE username = ?")
+	stmt, err := db.Prepare("SELECT token_id FROM admin_creds WHERE username = $1")
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -256,7 +263,7 @@ func dbAdminRefTokenQuery(username string) (bool, string, error) {
 // Return reported links as json array with id, domain, path, destination, times_reported, hashed_ip, votedfordeletion, voted_by
 func dbQueryReported(page int) ([]byte, error) {
 
-	stmt, err := db.Prepare("SELECT * FROM links WHERE times_reported > 0 LIMIT ? OFFSET ?")
+	stmt, err := db.Prepare("SELECT id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, voted_by FROM links WHERE times_reported > 0 LIMIT $1 OFFSET $2")
 	if err != nil {
 		logger.Fatal(err)
 	}
@@ -281,26 +288,24 @@ func dbQueryReported(page int) ([]byte, error) {
 	var entries []Entry
 
 	for rows.Next() {
-		var id, times_reported, tempVotedfordeletion int
-		var domain, path, destination, hashed_IP, voted_by string
+		var id, times_reported int
+		var domain, path, destination, hashed_IP string
+		var voted_by sql.NullString
 		var votedfordeletion bool
 
-		rows.Scan(&id, &domain, &path, &destination, &times_reported, &hashed_IP, &tempVotedfordeletion, &voted_by)
-		// sorry :p
-		if tempVotedfordeletion == 0 {
-			votedfordeletion = false
-		} else {
-			votedfordeletion = true
-		}
+		rows.Scan(&id, &domain, &path, &destination, &times_reported, &hashed_IP, &votedfordeletion, &voted_by)
 
 		// (hopefully) prevent xss
 		domain = bmStrict.Sanitize(domain)
 		path = bmStrict.Sanitize(path)
 		destination = bmStrict.Sanitize(destination)
 		hashed_IP = bmStrict.Sanitize(hashed_IP)
-		voted_by = bmStrict.Sanitize(voted_by)
+		votedBy := ""
+		if voted_by.Valid {
+			votedBy = bmStrict.Sanitize(voted_by.String)
+		}
 
-		entries = append(entries, Entry{id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, voted_by})
+		entries = append(entries, Entry{id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, votedBy})
 	}
 	if len(entries) == 0 {
 		return nil, errnoEnt

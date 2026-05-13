@@ -13,7 +13,7 @@ This Go-based backend manages the Crowd Bypass system, enabling users to skip wa
 ## Setup & Deployment
 
 1. Make sure you have Go 1.17+ installed.
-2. Setup a MySQL/MariaDB database and configure your `.env` file based on the examples.
+2. Setup a PostgreSQL database and configure your `.env` file based on the examples.
 3. Build the server:
    ```bash
    go build -o SiteDriftCrowdServer ./src

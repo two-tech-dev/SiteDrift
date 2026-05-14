@@ -1,0 +1,9 @@
+SiteDriftCrowdServer
+main
+letsencrypt
+node_modules
+.parcel-cache
+.cache
+dist
+private.pem
+public.pem

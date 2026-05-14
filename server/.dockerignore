@@ -1,0 +1,6 @@
+letsencrypt
+node_modules
+.git
+.parcel-cache
+.cache
+dist

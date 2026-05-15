@@ -30,7 +30,14 @@ interface Options {
   optionBlockIpLoggers?: boolean;
   optionTrackerBypass?: boolean;
   optionInstantNavigationTrackers?: boolean;
+  whitelist?: string;
   [key: string]: unknown;
+}
+
+interface Stats {
+  totalBypasses: number;
+  timeSavedSeconds: number;
+  lastBypass: string;
 }
 
 async function getOptions(): Promise<Options> {
@@ -57,6 +64,58 @@ function firstrun(details) {
       addRules: constants.beforeNavigateRules,
       removeRuleIds: constants.beforeNavigateRules.map((rule) => rule.id),
     });
+    // Register injection_script on install/update
+    registerInjectionScript();
+  }
+}
+
+// === Dynamic injection_script registration (Phase 1) ===
+
+const INJECTION_SCRIPT_ID = 'sitedrift-injection';
+
+function whitelistToExcludeMatches(whitelist: string): string[] {
+  if (!whitelist || !whitelist.trim()) return [];
+  return whitelist
+    .split('\n')
+    .map((d) => d.trim())
+    .filter(Boolean)
+    .map((domain) => `*://${domain}/*`);
+}
+
+async function registerInjectionScript() {
+  // Unregister first to avoid duplicate
+  try {
+    await brws.scripting.unregisterContentScripts({ ids: [INJECTION_SCRIPT_ID] });
+  } catch {
+    // Script not registered yet, ignore
+  }
+
+  const result = await brws.storage.local.get(['extensionEnabled', 'options']);
+  if (result.extensionEnabled === false) {
+    console.log('SiteDrift: Extension disabled, not registering injection script');
+    return;
+  }
+
+  const options = (result.options || {}) as Options;
+  const excludeMatches = whitelistToExcludeMatches(options.whitelist || '');
+
+  const scriptConfig: any = {
+    id: INJECTION_SCRIPT_ID,
+    matches: ['<all_urls>'],
+    js: ['injection_script.js'],
+    runAt: 'document_start',
+    world: 'MAIN',
+  };
+
+  if (excludeMatches.length > 0) {
+    scriptConfig.excludeMatches = excludeMatches;
+  }
+
+  try {
+    await brws.scripting.registerContentScripts([scriptConfig]);
+    console.log('SiteDrift: Injection script registered');
+  } catch (err) {
+    console.error('SiteDrift: Failed to register injection script', err);
   }
 }
 
@@ -117,10 +176,22 @@ brws.runtime.onStartup.addListener(() => {
   clearCrowdIgnoredURLs();
   reEnableCrowdBypassStartup();
   brws.storage.local.set({ version: brws.runtime.getManifest().version });
+  registerInjectionScript();
 });
 
 brws.runtime.onMessage.addListener((request, _, sendResponse) => {
   (async () => {
+    // Phase 3: Stats tracking
+    if (request.type === 'bypassTriggered') {
+      const result = await brws.storage.local.get('stats');
+      const stats: Stats = (result.stats as Stats) || { totalBypasses: 0, timeSavedSeconds: 0, lastBypass: '' };
+      stats.totalBypasses++;
+      stats.timeSavedSeconds += 10; // avg 10s saved per bypass
+      stats.lastBypass = request.detail?.domain || '';
+      brws.storage.local.set({ stats });
+      return;
+    }
+
     const options = await getOptions();
     if (options.optionCrowdBypass === false) {
       return;
@@ -171,7 +242,12 @@ brws.runtime.onMessage.addListener((request, _, sendResponse) => {
   return true;
 });
 
-brws.storage.onChanged.addListener(() => {
+brws.storage.onChanged.addListener((changes) => {
+  // Re-register injection script when enabled state or whitelist changes
+  if (changes.extensionEnabled || changes.options) {
+    registerInjectionScript();
+  }
+
   getOptions().then((options) => {
     if (typeof options === 'undefined') {
       return;

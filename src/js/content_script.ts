@@ -1,8 +1,14 @@
 declare const browser: typeof chrome;
 const brws = typeof browser !== 'undefined' ? browser : chrome;
 
-// injection_script.ts is now injected directly via manifest (world: "MAIN")
-// This content_script only handles cross-world event forwarding (clipboard, crowd).
+// injection_script.ts is now registered dynamically via chrome.scripting API (world: "MAIN")
+// This content_script handles cross-world event forwarding (clipboard, crowd, stats).
+
+// Phase 3: Forward bypass stats to background
+document.addEventListener('sd5a79e655f0_bypassTriggered', (event: Event) => {
+  const data = (event as CustomEvent).detail;
+  brws.runtime.sendMessage({ type: 'bypassTriggered', detail: data });
+});
 
 //sd + first 10 characters of SHA256 of sitedrift to prevent collisions
 document.addEventListener('sd5a79e655f0_crowdQuery', async (event: Event) => {

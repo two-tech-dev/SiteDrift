@@ -31,7 +31,23 @@ if (match) {
   const BypassClass = (match as any).default;
   const bps = new BypassClass();
   bps.set_helpers(domHelpers);
-  console.log(`ensure_dom: ${bps.ensure_dom}`);
+
+  // Phase 3: Notify content_script about bypass trigger for stats
+  document.dispatchEvent(
+    new CustomEvent('sd5a79e655f0_bypassTriggered', {
+      detail: { domain: location.host },
+    })
+  );
+
+  // Phase 2: Error boundary — bypass crash won't break the page
+  const safeExecute = () => {
+    try {
+      bps.execute();
+    } catch (err) {
+      console.error('[SiteDrift] Bypass crashed:', err);
+    }
+  };
+
   if (bps.ensure_dom) {
     let executed = false;
     document.addEventListener('readystatechange', () => {
@@ -40,16 +56,16 @@ if (match) {
         !executed
       ) {
         executed = true;
-        bps.execute();
+        safeExecute();
       }
     });
     document.addEventListener('DOMContentLoaded', () => {
       if (!executed) {
         executed = true;
-        bps.execute();
+        safeExecute();
       }
     });
   } else {
-    bps.execute();
+    safeExecute();
   }
 }

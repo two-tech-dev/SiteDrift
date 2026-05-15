@@ -63,6 +63,30 @@
       </section>
     </div>
 
+    <!-- Stats Section -->
+    <div class="stats-area">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-icon">🔗</span>
+          <div class="stat-info">
+            <span class="stat-value">{{ stats.totalBypasses }}</span>
+            <span class="stat-label">Links Bypassed</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">⏱</span>
+          <div class="stat-info">
+            <span class="stat-value">{{ formatTime(stats.timeSavedSeconds) }}</span>
+            <span class="stat-label">Time Saved</span>
+          </div>
+        </div>
+      </div>
+      <div v-if="stats.lastBypass" class="last-bypass">
+        <span class="last-label">Last bypass:</span>
+        <span class="last-domain">{{ stats.lastBypass }}</span>
+      </div>
+    </div>
+
     <!-- Footer Actions -->
     <div class="footer">
       <button class="add-btn" type="button" @click="addCurrentPage">
@@ -85,6 +109,13 @@ import { ref, computed, onMounted, watch } from 'vue';
 const whitelist = ref('');
 const version = ref('');
 const extensionEnabled = ref(true);
+const stats = ref({ totalBypasses: 0, timeSavedSeconds: 0, lastBypass: '' });
+
+const formatTime = (seconds: number) => {
+  if (seconds < 60) return `${seconds}s`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m`;
+  return `${Math.floor(seconds / 3600)}h ${Math.floor((seconds % 3600) / 60)}m`;
+};
 
 const whitelistItems = computed(() =>
   whitelist.value
@@ -161,6 +192,11 @@ const loadData = () => {
   });
   chrome.storage.local.get('extensionEnabled', (result: any) => {
     extensionEnabled.value = result.extensionEnabled !== false;
+  });
+  chrome.storage.local.get('stats', (result: any) => {
+    if (result.stats) {
+      stats.value = result.stats;
+    }
   });
 };
 
@@ -538,5 +574,67 @@ textarea::placeholder {
 }
 .options-link:hover {
   color: var(--primary);
+}
+
+/* ===== Stats Section ===== */
+.stats-area {
+  padding: 0 16px 16px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid rgba(66, 71, 84, 0.4);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+.stat-card:hover {
+  border-color: rgba(173, 198, 255, 0.3);
+}
+.stat-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.last-bypass {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: var(--surface-highest);
+  border-radius: 8px;
+  font-size: 12px;
+}
+.last-label {
+  color: var(--on-surface-variant);
+}
+.last-domain {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--tertiary);
+  font-size: 12px;
 }
 </style>

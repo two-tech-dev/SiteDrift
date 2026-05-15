@@ -6,6 +6,7 @@
   <a href="https://github.com/two-tech-dev/SiteDrift/actions"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/two-tech-dev/SiteDrift/main.yml?branch=main&label=Build&style=for-the-badge&logo=githubactions"></a>
   <a href="https://discord.gg/DYeCKWP3jB"><img alt="Discord" src="https://img.shields.io/discord/1448225921373966521?label=Discord&logo=discord&style=for-the-badge"></a>
   <a href="https://sitedrift.2tech.studio"><img alt="Website" src="https://img.shields.io/badge/Website-sitedrift.2tech.studio-blue?style=for-the-badge"></a>
+  <a href="https://ko-fi.com/X8X61ZH3YC"><img alt="Ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"></a>
 </div>
 
 ---

@@ -3,14 +3,21 @@ import BypassDefinition from './BypassDefinition'
 export default class Brpaper extends BypassDefinition {
     constructor() {
         super()
-        // custom bypass required bases can be set here
+        this.ensure_dom = true
     }
 
     execute() {
-        this.helpers.ensureDomLoaded(() => {
-            const loc = location.href.replace("downloads", "downloader")
-            this.helpers.safelyNavigate(loc)
-        })
+        // Skip the 20s countdown and trigger download immediately
+        if ((window as any).DownloadManager) {
+            const dm = (window as any).DownloadManager;
+            dm.waitTime = 0;
+            dm.downloadFile();
+        } else {
+            // Fallback: submit the download form directly
+            this.helpers.awaitElement('#download-form', (form: HTMLFormElement) => {
+                form.submit();
+            });
+        }
     }
 }
 

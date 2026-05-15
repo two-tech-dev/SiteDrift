@@ -79,7 +79,10 @@ export default defineManifest(async (env) => ({
   browser_specific_settings: {
     gecko: {
       id: "sitedrift@2tech.studio",
-      strict_min_version: "111.0"
+      strict_min_version: "111.0",
+      data_collection_permissions: {
+        required: ["none"]
+      }
     }
   } as any
 }));

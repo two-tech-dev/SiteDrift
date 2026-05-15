@@ -9,6 +9,7 @@ export default class Anonym extends BypassDefinition {
     execute() {
         this.helpers.ensureDomLoaded(() => {
             const a = window.location.href.split('/').slice(-1)[0]
+            if (a == "") return;
             this.helpers.safelyNavigate(`https://anonym.ninja/download/file/request/${a}`)
         })
     }

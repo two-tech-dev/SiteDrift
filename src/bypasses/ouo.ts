@@ -3,6 +3,7 @@ import BypassDefinition from "./BypassDefinition"
 export default class Ouo extends BypassDefinition {
     constructor() {
         super()
+    this.ensure_dom = true;
     }
     execute() {
         if (location.pathname !== '/') {

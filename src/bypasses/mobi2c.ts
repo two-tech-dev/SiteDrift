@@ -3,6 +3,7 @@ import BypassDefinition from './BypassDefinition';
 export default class Mobi2c extends BypassDefinition {
   constructor() {
     super();
+    this.ensure_dom = true;
     // custom bypass required bases can be set here
   }
 

@@ -34,9 +34,9 @@ export const URL = window.URL;
  * @param {String} n - The name of the attribute
  * @param {String} v - The value of the attribute
  */
-export const docSetAttribute = document.documentElement.setAttribute.bind(
-  document.documentElement
-);
+export const docSetAttribute = (name: string, value: string) => {
+  document.documentElement?.setAttribute(name, value);
+};
 let navigated = false;
 
 import { insertInfoBox } from './infobox.js';

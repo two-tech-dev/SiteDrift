@@ -3,6 +3,7 @@ import BypassDefinition from './BypassDefinition';
 export default class Get2clickblogspot extends BypassDefinition {
   constructor() {
     super();
+    this.ensure_dom = true;
   }
 
   execute() {

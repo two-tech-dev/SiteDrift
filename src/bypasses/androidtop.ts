@@ -3,7 +3,7 @@ import BypassDefinition from './BypassDefinition';
 export default class Androidtop extends BypassDefinition {
   constructor() {
     super();
-    // custom bypass required bases can be set here
+    this.ensure_dom = true;
   }
 
   execute() {

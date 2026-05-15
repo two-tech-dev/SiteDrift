@@ -84,6 +84,10 @@ func main() {
 
 	adminPanelRouters(router)
 
+	// Stats endpoints
+	router.HandleFunc("/stats/report", statsReport)
+	router.HandleFunc("/stats/summary", statsQuery)
+
 	router.Handle("/healthz", healthz())
 
 	nextRequestID := func() string {

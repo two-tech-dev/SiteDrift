@@ -25,7 +25,7 @@ function showError(err?) {
   trackerInfoElement.textContent = brws.i18n.getMessage('trackerBypassedError');
   trackerInfoElement.classList.add('text-warn');
   setTimeout(() => {
-    if (trackerUrl) window.location.replace(trackerUrl);
+    if (trackerUrl) safeReplace(trackerUrl);
     else console.error('no url param found');
   }, 3000);
 }
@@ -52,8 +52,21 @@ function updateTrackerMessage(url) {
 
   brws.storage.local.get('options').then((result) => {
     if (!result.options.optionInstantNavigationTrackers) return;
-    window.location.replace(url);
+    safeReplace(url);
   });
+}
+
+function safeReplace(url: string) {
+  try {
+    const parsedUrl = new URL(url, window.location.origin);
+    if (parsedUrl.protocol === 'http:' || parsedUrl.protocol === 'https:') {
+      window.location.replace(parsedUrl.href);
+    } else {
+      console.error('Unsafe URL protocol:', parsedUrl.protocol);
+    }
+  } catch (e) {
+    console.error('Invalid URL:', url);
+  }
 }
 
 async function resolveTracker(url) {

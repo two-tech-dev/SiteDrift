@@ -260,32 +260,31 @@ func dbAdminRefTokenQuery(username string) (bool, string, error) {
 
 }
 
-// Return reported links as json array with id, domain, path, destination, times_reported, hashed_ip, votedfordeletion, voted_by
-func dbQueryReported(page int) ([]byte, error) {
+type ReportedLinkEntry struct {
+	Id               int    `json:"id"`
+	Domain           string `json:"domain"`
+	Path             string `json:"path"`
+	Destination      string `json:"destination"`
+	Times_reported   int    `json:"times_reported"`
+	Hashed_IP        string `json:"hashed_IP"`
+	Votedfordeletion bool   `json:"votedfordeletion"`
+	Voted_by         string `json:"voted_by"`
+}
 
-	stmt, err := db.Prepare("SELECT id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, voted_by FROM links WHERE times_reported > 0 LIMIT $1 OFFSET $2")
+// Return reported links as json array with id, domain, path, destination, times_reported, hashed_ip, votedfordeletion, voted_by
+func dbQueryReported(cursorId int) ([]byte, error) {
+
+	stmt, err := db.Prepare("SELECT id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, voted_by FROM links WHERE times_reported > 0 AND id > $1 ORDER BY id ASC LIMIT 20")
 	if err != nil {
 		logger.Fatal(err)
 	}
 	defer stmt.Close()
-	page -= 1
-	rows, err := stmt.Query(20, page*20)
+	rows, err := stmt.Query(cursorId)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-	type Entry struct {
-		Id               int    `json:"id"`
-		Domain           string `json:"domain"`
-		Path             string `json:"path"`
-		Destination      string `json:"destination"`
-		Times_reported   int    `json:"times_reported"`
-		Hashed_IP        string `json:"hashed_IP"`
-		Votedfordeletion bool   `json:"votedfordeletion"`
-		Voted_by         string `json:"voted_by"`
-	}
-
-	var entries []Entry
+	var entries []ReportedLinkEntry
 
 	for rows.Next() {
 		var id, times_reported int
@@ -305,7 +304,7 @@ func dbQueryReported(page int) ([]byte, error) {
 			votedBy = bmStrict.Sanitize(voted_by.String)
 		}
 
-		entries = append(entries, Entry{id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, votedBy})
+		entries = append(entries, ReportedLinkEntry{id, domain, path, destination, times_reported, hashed_IP, votedfordeletion, votedBy})
 	}
 	if len(entries) == 0 {
 		return nil, errnoEnt

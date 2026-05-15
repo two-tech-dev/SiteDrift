@@ -222,7 +222,7 @@ export const ffclipboard = {
    * @param {any} value - The value to set.
    */
   set: function (key, value) {
-    const event = new CustomEvent('ff53054c0e13_ffclipboardSet', {
+    const event = new CustomEvent('sd5a79e655f0_ffclipboardSet', {
       detail: { key, value },
     });
     document.dispatchEvent(event);
@@ -233,7 +233,7 @@ export const ffclipboard = {
    */
 
   clear: function (key) {
-    const event = new CustomEvent('ff53054c0e13_ffclipboardClear', {
+    const event = new CustomEvent('sd5a79e655f0_ffclipboardClear', {
       detail: { key },
     });
     document.dispatchEvent(event);
@@ -249,17 +249,17 @@ export const ffclipboard = {
         if (event.detail.key === key) {
           resolve(event.detail.value);
           document.removeEventListener(
-            'ff53054c0e13_ffclipboardResponse',
+            'sd5a79e655f0_ffclipboardResponse',
             onFFClipboardResponse
           );
         }
       }
 
       document.addEventListener(
-        'ff53054c0e13_ffclipboardResponse',
+        'sd5a79e655f0_ffclipboardResponse',
         onFFClipboardResponse
       );
-      const event = new CustomEvent('ff53054c0e13_ffclipboardGet', {
+      const event = new CustomEvent('sd5a79e655f0_ffclipboardGet', {
         detail: { key },
       });
       document.dispatchEvent(event);
@@ -280,16 +280,16 @@ export function crowdQuery(domain, path) {
     domain: domain,
     path: path,
   };
-  //ff + first 10 characters of SHA256 of sitedrift to prevent collisions
+  //sd + first 10 characters of SHA256 of sitedrift to prevent collisions
   document.dispatchEvent(
-    new CustomEvent('ff53054c0e13_crowdQuery', { detail: data })
+    new CustomEvent('sd5a79e655f0_crowdQuery', { detail: data })
   );
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
       reject(new Error('Timeout: crowd response not received'));
     }, 10000); //10 sec timeout
 
-    document.addEventListener('ff53054c0e13_crowdResponse', function (event) {
+    document.addEventListener('sd5a79e655f0_crowdResponse', function (event) {
       clearTimeout(timeout);
       resolve((event as CustomEvent).detail);
     });
@@ -310,7 +310,7 @@ export function crowdContribute(domain, path, target) {
     target: target,
   };
   document.dispatchEvent(
-    new CustomEvent('ff53054c0e13_crowdContribute', { detail: data })
+    new CustomEvent('sd5a79e655f0_crowdContribute', { detail: data })
   );
 }
 
@@ -328,7 +328,7 @@ export function followAndContribute(domain, path, target) {
     target: target,
   };
   document.dispatchEvent(
-    new CustomEvent('ff53054c0e13_followAndContribute', { detail: data })
+    new CustomEvent('sd5a79e655f0_followAndContribute', { detail: data })
   );
 }
 /**

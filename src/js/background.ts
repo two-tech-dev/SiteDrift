@@ -34,11 +34,8 @@ interface Options {
 }
 
 async function getOptions(): Promise<Options> {
-  return new Promise((resolve) => {
-    brws.storage.local.get('options').then((result) => {
-      resolve(result.options as Options);
-    });
-  });
+  const result = await brws.storage.local.get('options');
+  return result.options as Options;
 }
 
 function ffclipboardClear() {
@@ -73,14 +70,10 @@ function preflight(details) {
     const ext_url = new URL(brws.runtime.getURL(''));
     url.hostname = ext_url.hostname;
     url.protocol = ext_url.protocol;
-    url.pathname = '/html' + url.pathname;
     if (url.searchParams.get('crowd') === 'true') {
-      url.pathname =
-        url.pathname.split('/').slice(0, -1).join('/') + '/crowd-bypassed.html';
+      url.pathname = '/html/crowd-bypassed.html';
     } else {
-      url.pathname =
-        url.pathname.split('/').slice(0, -1).join('/') +
-        '/before-navigate.html';
+      url.pathname = '/html/before-navigate.html';
     }
 
     brws.tabs.update(details.tabId, {

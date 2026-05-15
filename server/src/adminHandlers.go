@@ -169,13 +169,17 @@ func returnReported(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	p, err := strconv.Atoi(r.FormValue("page"))
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
-		return
+	cursorStr := r.FormValue("cursorId")
+	cursor := 0
+	if cursorStr != "" {
+		cursor, err = strconv.Atoi(cursorStr)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
 	}
 
-	jsonData, err := dbQueryReported(p)
+	jsonData, err := dbQueryReported(cursor)
 	if errors.Is(err, errnoEnt) {
 		w.WriteHeader(http.StatusNoContent)
 		return

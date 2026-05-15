@@ -20,7 +20,7 @@ const netRequest = {
 
   reportedLinks(acctoken) {
     const bearer = `Bearer ${acctoken}`;
-    const page = '1';
+    const cursorId = '0'; // For pagination, could be dynamically updated
     const options = {
       method: 'POST',
       headers: {
@@ -28,7 +28,7 @@ const netRequest = {
         'Content-Type': 'application/x-www-form-url-encoded',
       },
     };
-    return fetch(`/admin/api/getreported?page=${page}`, options);
+    return fetch(`/admin/api/getreported?cursorId=${cursorId}`, options);
   },
 
   voteDelete(link, acctoken) {

@@ -18,12 +18,13 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"os"
 	"os/signal"
 	"sync/atomic"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type key int
@@ -86,7 +87,7 @@ func main() {
 	router.Handle("/healthz", healthz())
 
 	nextRequestID := func() string {
-		return fmt.Sprintf("%d", time.Now().UnixNano())
+		return uuid.New().String()
 	}
 
 	server := &http.Server{

@@ -28,7 +28,6 @@ var dbPassword string
 var dbName string
 var ipList []string
 var USER_DIR string
-var panelDir string
 var privPEM string
 var pubPEM string
 
@@ -59,5 +58,4 @@ func parseEnv() {
 	dbName = os.Getenv("dbName")
 	dbUser = os.Getenv("dbUser")
 	dbPassword = os.Getenv("dbPassword")
-	panelDir = "./static/"
 }

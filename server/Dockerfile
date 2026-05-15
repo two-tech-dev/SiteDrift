@@ -22,16 +22,6 @@ COPY . .
 # Build the Go app
 RUN go build -o main ./src/
 
-# Use NPM to build frontend
-FROM node as npmBuilder
-
-WORKDIR /app
-
-COPY src/adminpanel .
-
-RUN rm -rf dist
-RUN npx parcel build --public-url /admin
-
 # Start a new stage from scratch
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
@@ -39,8 +29,6 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 
 COPY --from=goBuilder /app/main .
-
-COPY --from=npmBuilder /app/dist/ ./static/admin
 
 EXPOSE 5000
 

@@ -23,7 +23,7 @@ if (isFirefox) {
 }
 
 const brws = typeof browser !== 'undefined' ? browser : chrome;
-const fetchDomains = ['crowd.sitedrift.team', 'redirect-api.work.ink']; //only allow requests to these domains
+const fetchDomains = ['api.sitedrift.2tech.studio', 'redirect-api.work.ink']; //only allow requests to these domains
 
 interface Options {
   optionCrowdBypass?: boolean;
@@ -55,7 +55,7 @@ function clearCrowdIgnoredURLs() {
 
 function firstrun(details) {
   if (details.reason == 'install' || details.reason == 'update') {
-    brws.tabs.create({ url: 'https://sitedrift.team/firstrun' });
+    brws.tabs.create({ url: 'https://api.sitedrift.2tech.studio/firstrun' });
     ffclipboardClear();
     brws.storage.local.set({ tempDisableCrowd: 'false' });
     brws.storage.local.set({ version: brws.runtime.getManifest().version });
@@ -121,7 +121,7 @@ async function registerInjectionScript() {
 
 function preflight(details) {
   const url = new URL(details.url);
-  if (url.hostname !== 'sitedrift.team') {
+  if (url.hostname !== 'api.sitedrift.2tech.studio' && url.hostname !== 'sitedrift.team') {
     return;
   }
   //navigate
@@ -195,7 +195,7 @@ brws.runtime.onMessage.addListener((request, _, sendResponse) => {
 
       // Report to server (fire-and-forget)
       try {
-        fetch('https://crowd.sitedrift.team/stats/report', {
+        fetch('https://api.sitedrift.2tech.studio/stats/report', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams({
@@ -216,9 +216,9 @@ brws.runtime.onMessage.addListener((request, _, sendResponse) => {
     }
     let url: string;
     if (request.type === 'crowdQuery') {
-      url = 'https://crowd.sitedrift.team/crowd/query_v1';
+      url = 'https://api.sitedrift.2tech.studio/crowd/query_v1';
     } else {
-      url = 'https://crowd.sitedrift.team/crowd/contribute_v1';
+      url = 'https://api.sitedrift.2tech.studio/crowd/contribute_v1';
     }
 
     const params = new URLSearchParams();

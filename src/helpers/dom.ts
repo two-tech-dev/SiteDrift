@@ -59,7 +59,7 @@ export function transparentProperty(name, valFunc) {
  * @param {string} r - The referer to use.
  */
 export function unsafelyAssignWithReferer(target, referer) {
-  location.href = `https://sitedrift.team/navigate?target=${encodeURIComponent(
+  location.href = `https://api.sitedrift.2tech.studio/navigate?target=${encodeURIComponent(
     target
   )}&referer=${encodeURIComponent(referer)}`;
 }
@@ -342,11 +342,11 @@ export function unsafelyNavigate(target, referer = null, crowd = false) {
   }
   let url;
   if (crowd) {
-    url = `https://sitedrift.team/bypassed?type=crowd&target=${encodeURIComponent(
+    url = `https://api.sitedrift.2tech.studio/bypassed?type=crowd&target=${encodeURIComponent(
       target
     )}`;
   } else {
-    url = `https://sitedrift.team/bypassed?target=${encodeURIComponent(
+    url = `https://api.sitedrift.2tech.studio/bypassed?target=${encodeURIComponent(
       target
     )}`;
   }

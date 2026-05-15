@@ -11,7 +11,7 @@ export const beforeNavigateRules: chrome.declarativeNetRequest.Rule[] = [
     },
     condition: {
       regexFilter:
-        '^https?://sitedrift.team/bypassed(\\?(.*&)?type=crowd(&.*)?$)',
+        '^https?://api\\.sitedrift\\.2tech\\.studio/bypassed(\\?(.*&)?type=crowd(&.*)?$)',
       resourceTypes: ['main_frame'],
     },
   },
@@ -27,7 +27,7 @@ export const beforeNavigateRules: chrome.declarativeNetRequest.Rule[] = [
     },
     condition: {
       regexFilter:
-        '^https?://sitedrift.team/bypassed(\\?(.*&)?type=tracker(&.*)?$)',
+        '^https?://api\\.sitedrift\\.2tech\\.studio/bypassed(\\?(.*&)?type=tracker(&.*)?$)',
       resourceTypes: ['main_frame'],
     },
   },

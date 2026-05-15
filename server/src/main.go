@@ -39,7 +39,7 @@ var (
 
 func bypassed(w http.ResponseWriter, r *http.Request) {
 	// redirect to error page
-	http.Redirect(w, r, "https://sitedrift.team/crowd-bypassed", http.StatusSeeOther)
+	http.Redirect(w, r, "https://sitedrift.2tech.studio/crowd-bypassed", http.StatusSeeOther)
 }
 
 func all(w http.ResponseWriter, r *http.Request) {

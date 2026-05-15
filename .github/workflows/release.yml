@@ -62,7 +62,10 @@ jobs:
         run: npm run build
 
       - name: Package dist as zip
-        run: cd dist && zip -r ../SiteDrift_${{ needs.check.outputs.version }}_chromium.zip . -x ".vite/*"
+        run: |
+          cd dist
+          zip -r ../SiteDrift_${{ needs.check.outputs.version }}_chromium.zip . -x ".vite/*"
+          zip -r ../SiteDrift_${{ needs.check.outputs.version }}_firefox.xpi . -x ".vite/*"
 
       - name: Create Git tag
         run: |
@@ -78,4 +81,6 @@ jobs:
           name: SiteDrift ${{ needs.check.outputs.version }}
           prerelease: ${{ needs.check.outputs.prerelease }}
           generate_release_notes: true
-          files: SiteDrift_${{ needs.check.outputs.version }}_chromium.zip
+          files: |
+            SiteDrift_${{ needs.check.outputs.version }}_chromium.zip
+            SiteDrift_${{ needs.check.outputs.version }}_firefox.xpi

@@ -1,6 +1,6 @@
 import * as domHelpers from '../helpers/dom';
 
-const bypassModules = import.meta.glob('../bypasses/*.ts', { eager: true });
+const bypassModules = import.meta.glob('../bypasses/**/*.ts', { eager: true });
 
 function matchingBypass(bypasses: any) {
   for (const [path, module] of Object.entries(bypasses)) {

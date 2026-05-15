@@ -62,7 +62,7 @@ jobs:
         run: npm run build
 
       - name: Package dist as zip
-        run: zip -r SiteDrift_${{ needs.check.outputs.version }}_chromium.zip dist/
+        run: cd dist && zip -r ../SiteDrift_${{ needs.check.outputs.version }}_chromium.zip .
 
       - name: Create Git tag
         run: |

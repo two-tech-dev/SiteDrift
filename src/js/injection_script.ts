@@ -7,13 +7,19 @@ function matchingBypass(bypasses: any) {
     const matches = (module as any).matches;
     if (!matches) continue;
     for (const key of matches) {
-      if (key.charAt(0) === '/' && key.charAt(key.length - 1) === '/') {
-        const pattern = new RegExp(key.substring(1, key.length - 1));
-        if (pattern.test(location.href)) {
+      if (key instanceof RegExp) {
+        if (key.test(location.href)) {
           return module;
         }
-      } else if (key === location.host) {
-        return module;
+      } else if (typeof key === 'string') {
+        if (key.charAt(0) === '/' && key.charAt(key.length - 1) === '/') {
+          const pattern = new RegExp(key.substring(1, key.length - 1));
+          if (pattern.test(location.href)) {
+            return module;
+          }
+        } else if (key === location.host) {
+          return module;
+        }
       }
     }
   }

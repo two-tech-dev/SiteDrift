@@ -1,8 +1,12 @@
 import './base';
 import './i18n';
-/*global brws*/
-const timerElement = document.getElementById('timer');
-const timerText = timerElement.querySelector('p');
+
+declare const browser: any;
+declare const chrome: any;
+const brws = typeof browser !== 'undefined' ? browser : chrome;
+
+const timerElement = document.getElementById('timer') as HTMLElement;
+const timerText = timerElement.querySelector('p') as HTMLParagraphElement;
 
 // Get target URL from search parameter
 const urlParams = new URLSearchParams(window.location.search);

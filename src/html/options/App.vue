@@ -50,6 +50,10 @@
                 Bypass countdowns
               </h4>
               <p class="card-desc">Automatically skips artificial waiting periods on download and redirect sites.</p>
+              <div class="setting-input-row" v-if="options.navigationDelayToggle">
+                <span class="input-label">Delay (seconds):</span>
+                <input type="number" min="0" max="60" class="number-input" v-model.number="options.navigationDelay" />
+              </div>
             </div>
             <div class="card-toggle">
               <label class="toggle">
@@ -145,6 +149,10 @@
                 Auto-open crowd-bypassed links
               </h4>
               <p class="card-desc">Automatically redirect current tab to the destination when found by community.</p>
+              <div class="setting-input-row" v-if="options.optionCrowdOpenDelayToggle">
+                <span class="input-label">Delay (seconds):</span>
+                <input type="number" min="0" max="60" class="number-input" v-model.number="options.optionCrowdOpenDelay" />
+              </div>
             </div>
             <div class="card-toggle">
               <label class="toggle">
@@ -162,6 +170,10 @@
                 Auto-close crowd-bypassed links
               </h4>
               <p class="card-desc">Close the tracking tab once the destination is successfully opened elsewhere.</p>
+              <div class="setting-input-row" v-if="options.optionCrowdCloseDelayToggle">
+                <span class="input-label">Delay (seconds):</span>
+                <input type="number" min="0" max="60" class="number-input" v-model.number="options.optionCrowdCloseDelay" />
+              </div>
             </div>
             <div class="card-toggle">
               <label class="toggle">
@@ -640,6 +652,39 @@ onMounted(() => {
   padding: 3px 7px;
   border-radius: 9999px;
   border: 1px solid rgba(255, 180, 171, 0.28);
+}
+
+/* ===== Inputs ===== */
+.setting-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.input-label {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  font-family: 'JetBrains Mono', 'Cascadia Mono', monospace;
+}
+.number-input {
+  width: 60px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--on-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', 'Cascadia Mono', monospace;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.number-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(173, 198, 255, 0.2);
+}
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  opacity: 1;
 }
 
 /* ===== Toggle Switch ===== */

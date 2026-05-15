@@ -1,6 +1,8 @@
 import './base';
 import './i18n';
-/*global brws*/
+declare const browser: any;
+declare const chrome: any;
+const brws = typeof browser !== 'undefined' ? browser : chrome;
 const trackerInfoElement = document.getElementById('tracker-info');
 
 // Get tracker URL from search parameter

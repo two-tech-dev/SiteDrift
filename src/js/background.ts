@@ -71,9 +71,9 @@ function preflight(details) {
     url.hostname = ext_url.hostname;
     url.protocol = ext_url.protocol;
     if (url.searchParams.get('crowd') === 'true') {
-      url.pathname = '/html/crowd-bypassed.html';
+      url.pathname = '/src/html/crowd-bypassed.html';
     } else {
-      url.pathname = '/html/before-navigate.html';
+      url.pathname = '/src/html/before-navigate.html';
     }
 
     brws.tabs.update(details.tabId, {

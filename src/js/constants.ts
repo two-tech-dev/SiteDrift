@@ -6,7 +6,7 @@ export const beforeNavigateRules: chrome.declarativeNetRequest.Rule[] = [
       type: 'redirect',
       redirect: {
         regexSubstitution:
-          chrome.runtime.getURL('/html/crowd-bypassed.html') + '\\1',
+          chrome.runtime.getURL('/src/html/crowd-bypassed.html') + '\\1',
       },
     },
     condition: {
@@ -22,7 +22,7 @@ export const beforeNavigateRules: chrome.declarativeNetRequest.Rule[] = [
       type: 'redirect',
       redirect: {
         regexSubstitution:
-          chrome.runtime.getURL('/html/tracker-bypass.html') + '\\1',
+          chrome.runtime.getURL('/src/html/tracker-bypass.html') + '\\1',
       },
     },
     condition: {
@@ -38,7 +38,7 @@ export const beforeNavigateRules: chrome.declarativeNetRequest.Rule[] = [
       type: 'redirect',
       redirect: {
         regexSubstitution:
-          chrome.runtime.getURL('/html/before-navigate.html') + '\\1',
+          chrome.runtime.getURL('/src/html/before-navigate.html') + '\\1',
       },
     },
     condition: {

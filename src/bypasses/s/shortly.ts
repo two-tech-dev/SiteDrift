@@ -11,13 +11,8 @@ export default class Shortly extends BypassDefinition {
       (document as any).getElementById = () => ({
         submit: () => {
           const f = document.querySelector('form');
-          f.action =
-            '/link#' +
-            (
-              document.querySelector(
-                "input[name='id']"
-              ) as HTMLInputElement | null
-            )?.value;
+          const idInput = document.querySelector("input[name='id']") as HTMLInputElement | null;
+          f.action = '/link#' + encodeURIComponent(idInput?.value || '');
           f.submit();
         },
       });

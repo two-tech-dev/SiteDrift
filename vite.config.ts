@@ -22,21 +22,12 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        // Any HTML files or scripts not automatically picked up by CRXJS can be listed here,
-        // but CRXJS typically handles everything in the manifest.
-        injection_script: 'src/js/injection_script.ts',
+        // CRXJS handles content_scripts (including injection_script) from the manifest.
+        // Only additional HTML pages that CRXJS doesn't auto-detect need to be listed here.
         'before-navigate': 'src/html/before-navigate.html',
         'blocked': 'src/html/blocked.html',
         'crowd-bypassed': 'src/html/crowd-bypassed.html',
         'tracker-bypass': 'src/html/tracker-bypass.html',
-      },
-      output: {
-        entryFileNames: (chunkInfo) => {
-          if (chunkInfo.name === 'injection_script') {
-            return 'injection_script.js';
-          }
-          return 'assets/[name]-[hash].js';
-        },
       },
     },
   },

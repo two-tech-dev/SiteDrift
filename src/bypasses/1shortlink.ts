@@ -9,7 +9,7 @@ export default class ONEShortlink extends BypassDefinition {
         this.helpers.bypassRequests(async (data: any) => {
             try {
                 let json = null;
-                
+
                 // Handle XMLHttpRequest
                 if (data.currentTarget) {
                     const xhr = data.currentTarget;
@@ -21,7 +21,7 @@ export default class ONEShortlink extends BypassDefinition {
                             json = JSON.parse(xhr.responseText);
                         }
                     }
-                } 
+                }
                 // Handle Fetch API
                 else if (data.clone) {
                     const text = await data.clone().text();

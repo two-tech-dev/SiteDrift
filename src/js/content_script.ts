@@ -1,50 +1,10 @@
 declare const browser: typeof chrome;
 const brws = typeof browser !== 'undefined' ? browser : chrome;
-interface Options {
-  optionCrowdBypass?: boolean;
-  optionBlockIpLoggers?: boolean;
-  optionTrackerBypass?: boolean;
-  optionInstantNavigationTrackers?: boolean;
-  whitelist?: string;
-  [key: string]: unknown;
-}
 
-async function getOptions(): Promise<Options> {
-  const result = await brws.storage.local.get('options');
-  return result.options as Options;
-}
+// injection_script.ts is now injected directly via manifest (world: "MAIN")
+// This content_script only handles cross-world event forwarding (clipboard, crowd).
 
-function getExtBaseURL() {
-  return brws.runtime.getURL('/');
-}
-
-async function injectScript() {
-  const enabledResult = await brws.storage.local.get('extensionEnabled');
-  if (enabledResult.extensionEnabled === false) {
-    console.log('SiteDrift: Extension disabled');
-    return;
-  }
-  const options = await getOptions();
-  if (
-    options &&
-    options.whitelist &&
-    matchDomains(window.location.hostname, options.whitelist)
-  ) {
-    console.log('SiteDrift: Site whitelisted');
-    return;
-  }
-  const script = document.createElement('script');
-  script.src =
-    brws.runtime.getURL('injection_script.js') +
-    '?' +
-    new URLSearchParams({ ext_base_URL: getExtBaseURL() }); //pass base url to injection script https://stackoverflow.com/a/9517879
-  script.onload = function () {
-    script.remove();
-  };
-  (document.head || document.documentElement).appendChild(script);
-}
-
-//ff + first 10 characters of SHA256 of sitedrift to prevent collisions
+//sd + first 10 characters of SHA256 of sitedrift to prevent collisions
 document.addEventListener('sd5a79e655f0_crowdQuery', async (event: Event) => {
   const data = (event as CustomEvent).detail;
   const response = await brws.runtime.sendMessage({
@@ -56,17 +16,6 @@ document.addEventListener('sd5a79e655f0_crowdQuery', async (event: Event) => {
     new CustomEvent('sd5a79e655f0_crowdResponse', { detail: response })
   );
 });
-
-function matchDomains(inputString, domains) {
-  const domainList = domains.split('\n');
-  for (const domain of domainList) {
-    const regex = new RegExp('^' + domain.replace(/\*/g, '[^.]+') + '$');
-    if (regex.test(inputString)) {
-      return true;
-    }
-  }
-  return false;
-}
 
 document.addEventListener('sd5a79e655f0_crowdContribute', (event: Event) => {
   const data = (event as CustomEvent).detail;
@@ -113,7 +62,6 @@ function onFFClipboardClear(event: Event) {
   });
 }
 
-injectScript();
 document.addEventListener('sd5a79e655f0_ffclipboardSet', onFFClipboardSet);
 document.addEventListener('sd5a79e655f0_ffclipboardGet', onFFClipboardGet);
 document.addEventListener('sd5a79e655f0_ffclipboardClear', onFFClipboardClear);

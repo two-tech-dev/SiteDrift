@@ -41,6 +41,12 @@ export default defineManifest(async (env) => ({
       matches: ["<all_urls>"],
       js: ["src/js/content_script.ts"],
       run_at: "document_start"
+    },
+    {
+      matches: ["<all_urls>"],
+      js: ["src/js/injection_script.ts"],
+      run_at: "document_start",
+      world: "MAIN" as any
     }
   ],
   web_accessible_resources: [
@@ -51,8 +57,7 @@ export default defineManifest(async (env) => ({
         "src/html/crowd-bypassed.html",
         "src/html/tracker-bypass.html",
         "src/html/options.html",
-        "src/icon/48.png",
-        "injection_script.js"
+        "src/icon/48.png"
       ],
       matches: ["<all_urls>"]
     }

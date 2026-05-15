@@ -7,10 +7,21 @@ export default class Cpmlink extends BypassDefinition {
     }
 
     execute() {
-        this.helpers.ifElement('a#btn-main', a =>{
-            this.helpers.crowdPath(location.pathname.substring(4))
-            this.helpers.contributeAndNavigate(a.href)
-        },() => this.helpers.crowdBypass())
+        // Skip the 5s countdown
+        const btn = document.getElementById('btn-main');
+        if (btn) {
+            btn.className = 'btn btn-warning btn-lg';
+            btn.innerHTML = 'Get Link';
+        }
+
+        if ((window as any).myCounter) {
+            (window as any).myCounter.stop();
+        }
+
+        // Click the button to trigger link generation, then navigate
+        this.helpers.awaitElement('#btn-main[href]', (a: HTMLAnchorElement) => {
+            this.helpers.safelyNavigate(a.href);
+        });
     }
 }
 

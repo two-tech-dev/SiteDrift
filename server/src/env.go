@@ -43,9 +43,15 @@ func parseEnv() {
 			log.Println("WARNING: Environment variable " + evar + " is not set")
 		}
 	}
-	port = os.Getenv("port")
+	port = os.Getenv("PORT")
 	if port == "" {
-		port = "5000" // Default port for Heroku compatibility if missing
+		port = os.Getenv("port")
+	}
+	if port == "" {
+		port = "5000"
+	}
+	if !strings.HasPrefix(port, ":") {
+		port = ":" + port
 	}
 	privPEM = os.Getenv("privPEM")
 	pubPEM = os.Getenv("pubPEM")

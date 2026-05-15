@@ -181,14 +181,32 @@ brws.runtime.onStartup.addListener(() => {
 
 brws.runtime.onMessage.addListener((request, _, sendResponse) => {
   (async () => {
-    // Phase 3: Stats tracking
+    // Phase 3: Stats tracking (local + server)
     if (request.type === 'bypassTriggered') {
+      const domain = request.detail?.domain || '';
+
+      // Local stats for popup display
       const result = await brws.storage.local.get('stats');
       const stats: Stats = (result.stats as Stats) || { totalBypasses: 0, timeSavedSeconds: 0, lastBypass: '' };
       stats.totalBypasses++;
       stats.timeSavedSeconds += 10; // avg 10s saved per bypass
-      stats.lastBypass = request.detail?.domain || '';
+      stats.lastBypass = domain;
       brws.storage.local.set({ stats });
+
+      // Report to server (fire-and-forget)
+      try {
+        fetch('https://crowd.sitedrift.team/stats/report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            domain,
+            version: brws.runtime.getManifest().version,
+            timestamp: Date.now().toString(),
+          }).toString(),
+        }).catch(() => {}); // silently fail
+      } catch {
+        // Network errors shouldn't affect extension
+      }
       return;
     }
 

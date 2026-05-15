@@ -65,6 +65,10 @@ jobs:
         run: |
           cd dist
           zip -r ../SiteDrift_${{ needs.check.outputs.version }}_chromium.zip . -x ".vite/*"
+          cd ..
+          cp -r dist dist-firefox
+          cd dist-firefox
+          jq '.background.scripts = [.background.service_worker]' manifest.json > manifest.tmp && mv manifest.tmp manifest.json
           zip -r ../SiteDrift_${{ needs.check.outputs.version }}_firefox.xpi . -x ".vite/*"
 
       - name: Create Git tag

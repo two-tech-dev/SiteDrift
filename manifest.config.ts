@@ -4,9 +4,9 @@ export default defineManifest(async (env) => ({
   manifest_version: 3,
   name: "SiteDrift",
   description: "__MSG_appDesc__",
-  version: "13.15.2",
+  version: "26.0.0",
   default_locale: "en",
-  homepage_url: "https://sitedrift.team",
+  homepage_url: "https://sitedrift.2tech.studio",
   author: "2Tech Studio (2tech.studio) (prev FastForward)",
   incognito: "split",
   icons: {

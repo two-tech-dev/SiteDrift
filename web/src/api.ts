@@ -1,4 +1,4 @@
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://crowd.sitedrift.team';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://sitedrift-core-25658b4dcfd8.herokuapp.com';
 
 export interface StatsSummary {
     total_bypasses: number;

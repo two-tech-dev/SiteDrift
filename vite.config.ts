@@ -10,7 +10,10 @@ export default defineConfig({
     vue(),
     crx({ manifest }),
     viteStaticCopy({
-      targets: [{ src: 'src/_locales', dest: '.' }],
+      targets: [
+        { src: 'src/_locales', dest: '.' },
+        { src: 'src/icon_disabled', dest: 'src' },
+      ],
     }),
   ],
   resolve: {

@@ -4,7 +4,7 @@
     <div class="header">
       <div class="header-left">
         <div class="logo-frame">
-          <img src="../../icon/48.png" alt="SiteDrift Logo" />
+          <img src="../../icon/icon48.png" alt="SiteDrift Logo" />
         </div>
         <div>
           <h1 class="brand-name">SiteDrift</h1>

@@ -13,7 +13,7 @@ onMounted(async () => {
   }
 });
 
-const installUrl = 'https://github.com/2Technologysolutions/SiteDrift';
+const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
 </script>
 
 <template>

@@ -20,6 +20,11 @@ const router = createRouter({
       component: () => import('../views/Community.vue')
     },
     {
+      path: '/firstrun',
+      name: 'firstrun',
+      component: () => import('../views/FirstRun.vue')
+    },
+    {
       path: '/admin',
       component: () => import('../layouts/AdminLayout.vue'),
       children: [

@@ -263,6 +263,20 @@ brws.storage.onChanged.addListener((changes) => {
     registerInjectionScript();
   }
 
+  // Toggle icon when extension is enabled/disabled
+  if (changes.extensionEnabled) {
+    const enabled = changes.extensionEnabled.newValue !== false;
+    const dir = enabled ? 'src/icon' : 'src/icon_disabled';
+    brws.action.setIcon({
+      path: {
+        16: `${dir}/icon16.png`,
+        32: `${dir}/icon32.png`,
+        48: `${dir}/icon48.png`,
+        128: `${dir}/icon128.png`,
+      },
+    });
+  }
+
   getOptions().then((options) => {
     if (typeof options === 'undefined') {
       return;

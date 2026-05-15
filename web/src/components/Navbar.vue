@@ -20,6 +20,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
   >
     <div class="nav-container">
       <router-link to="/" class="brand">
+        <img src="/favicon.png" alt="SiteDrift" class="brand-icon" />
         SiteDrift
       </router-link>
       
@@ -78,10 +79,19 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: 0.02em;
   color: var(--text-main);
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .nav-links {

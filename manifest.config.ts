@@ -10,11 +10,10 @@ export default defineManifest(async (env) => ({
   author: "2Tech Studio (2tech.studio) (prev FastForward)",
   incognito: "split",
   icons: {
-    "48": "src/icon/48.png",
-    "128": "src/icon/128.png",
-    "150": "src/icon/150.png",
-    "176": "src/icon/176.png",
-    "512": "src/icon/512.png"
+    "16": "src/icon/icon16.png",
+    "32": "src/icon/icon32.png",
+    "48": "src/icon/icon48.png",
+    "128": "src/icon/icon128.png"
   },
   permissions: [
     "alarms",
@@ -53,7 +52,11 @@ export default defineManifest(async (env) => ({
         "src/html/crowd-bypassed.html",
         "src/html/tracker-bypass.html",
         "src/html/options.html",
-        "src/icon/48.png",
+        "src/icon/icon48.png",
+        "src/icon_disabled/icon16.png",
+        "src/icon_disabled/icon32.png",
+        "src/icon_disabled/icon48.png",
+        "src/icon_disabled/icon128.png",
         "injection_script.js"
       ],
       matches: ["<all_urls>"]

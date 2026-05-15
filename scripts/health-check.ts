@@ -104,14 +104,53 @@ async function main() {
   console.log('\n' + '='.repeat(60));
   console.log(`\n📊 Results: ${alive.length} alive, ${dead.length} dead\n`);
 
+  const autoDelete = process.argv.includes('--auto-delete');
+  const deletedFiles: string[] = [];
+
   if (dead.length > 0) {
     console.log('❌ Dead domains:');
     for (const d of dead) {
       console.log(`  ${d.domain} (${d.status}) → ${d.file}`);
     }
+
+    if (autoDelete) {
+      console.log('\n🗑️ Auto-delete is enabled. Checking for files to remove...');
+      
+      // Group dead domains by file
+      const deadByFile = dead.reduce((acc, curr) => {
+        acc[curr.file] = acc[curr.file] || [];
+        acc[curr.file].push(curr.domain);
+        return acc;
+      }, {} as Record<string, string[]>);
+
+      // Group total domains by file
+      const totalByFile = bypasses.reduce((acc, curr) => {
+        acc[curr.file] = curr.domains;
+        return acc;
+      }, {} as Record<string, string[]>);
+
+      // Delete file only if ALL its domains are dead
+      for (const [file, deadDomains] of Object.entries(deadByFile)) {
+        const totalDomains = totalByFile[file];
+        if (deadDomains.length === totalDomains.length) {
+          try {
+            fs.unlinkSync(path.join(__dirname, '..', file));
+            console.log(`  [DELETED] ${file} (all ${deadDomains.length} domains dead)`);
+            deletedFiles.push(file);
+          } catch (err: any) {
+            console.error(`  [ERROR] Failed to delete ${file}: ${err.message}`);
+          }
+        } else {
+          console.log(`  [SKIPPED] ${file} (only ${deadDomains.length}/${totalDomains.length} domains dead)`);
+        }
+      }
+    }
   } else {
     console.log('🎉 All domains are alive!');
   }
+
+  // If running in CI with auto-delete and files were deleted, we want to exit 0 so the workflow can create a PR
+  // If we want it to fail CI on dead links when not auto-deleting, we could exit 1. But let's keep it 0 to avoid red X's unless requested.
 }
 
 main().catch(console.error);

@@ -33,15 +33,20 @@ var privPEM string
 var pubPEM string
 
 func parseEnv() {
-	envVars := []string{"port", "privPEM", "pubPEM", "dbName", "dbUser", "dbPassword"}
+	envVars := []string{"port", "privPEM", "pubPEM"}
+	if os.Getenv("DATABASE_URL") == "" {
+		envVars = append(envVars, "dbName", "dbUser", "dbPassword")
+	}
 	for _, evar := range envVars {
-		os.LookupEnv(evar)
 		_, set := os.LookupEnv(evar)
 		if !set {
-			log.Fatalln("Environment variable " + evar + " is not set")
+			log.Println("WARNING: Environment variable " + evar + " is not set")
 		}
 	}
 	port = os.Getenv("port")
+	if port == "" {
+		port = "5000" // Default port for Heroku compatibility if missing
+	}
 	privPEM = os.Getenv("privPEM")
 	pubPEM = os.Getenv("pubPEM")
 	ipList = strings.Split(os.Getenv("banned_ip_list"), "\n")

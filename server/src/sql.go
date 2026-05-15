@@ -34,7 +34,10 @@ var (
 func connectDb() error {
 	var err error
 
-	creds := fmt.Sprintf("postgres://%s:%s@db:5432/%s?sslmode=disable", dbUser, dbPassword, dbName)
+	creds := os.Getenv("DATABASE_URL")
+	if creds == "" {
+		creds = fmt.Sprintf("postgres://%s:%s@db:5432/%s?sslmode=disable", dbUser, dbPassword, dbName)
+	}
 
 	db, err = sql.Open("postgres", creds)
 	if err != nil {

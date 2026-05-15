@@ -124,20 +124,16 @@ function preflight(details) {
   if (url.hostname !== 'api.sitedrift.2tech.studio' && url.hostname !== 'sitedrift.team') {
     return;
   }
-  //navigate
   if (url.pathname === '/bypassed') {
-    const ext_url = new URL(brws.runtime.getURL(''));
-    url.hostname = ext_url.hostname;
-    url.protocol = ext_url.protocol;
-    if (url.searchParams.get('crowd') === 'true') {
-      url.pathname = '/src/html/crowd-bypassed.html';
-    } else {
-      url.pathname = '/src/html/before-navigate.html';
-    }
-
-    brws.tabs.update(details.tabId, {
-      url: url.href,
+    const page = url.searchParams.get('crowd') === 'true'
+      ? 'src/html/crowd-bypassed.html'
+      : 'src/html/before-navigate.html';
+    const extUrl = new URL(brws.runtime.getURL(page));
+    // Copy search params to extension URL
+    url.searchParams.forEach((value, key) => {
+      extUrl.searchParams.set(key, value);
     });
+    brws.tabs.update(details.tabId, { url: extUrl.href });
   }
 }
 
@@ -171,6 +167,7 @@ brws.alarms.onAlarm.addListener((alarm) => {
 });
 
 brws.runtime.onInstalled.addListener(firstrun);
+brws.webNavigation.onBeforeNavigate.addListener(preflight);
 brws.runtime.onStartup.addListener(() => {
   ffclipboardClear();
   clearCrowdIgnoredURLs();

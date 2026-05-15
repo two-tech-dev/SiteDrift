@@ -21,6 +21,7 @@ export default defineManifest(async (env) => ({
     "scripting",
     "storage",
     "tabs",
+    "webNavigation",
     "declarativeNetRequestWithHostAccess"
   ],
   host_permissions: [

@@ -55,7 +55,7 @@ function clearCrowdIgnoredURLs() {
 
 function firstrun(details) {
   if (details.reason == 'install' || details.reason == 'update') {
-    brws.tabs.create({ url: 'https://api.sitedrift.2tech.studio/firstrun' });
+    brws.tabs.create({ url: 'https://sitedrift.2tech.studio/firstrun' });
     ffclipboardClear();
     brws.storage.local.set({ tempDisableCrowd: 'false' });
     brws.storage.local.set({ version: brws.runtime.getManifest().version });

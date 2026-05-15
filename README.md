@@ -14,7 +14,8 @@
 
 SiteDrift is an open-source, Manifest V3 compliant browser extension that automatically skips annoying link shorteners, countdown timers, and ad-walls. Save your time and privacy by letting SiteDrift do the heavy lifting.
 
-*SiteDrift is a modernized continuation of the popular FastForward project, rebuilt from the ground up and maintained by **2Tech Studio**.*
+### 📜 Heritage & Credits
+*SiteDrift is a modernized fork and continuation of the [FastForward](https://github.com/FastForwardTeam/FastForward) project (which itself was a continuation of Universal Bypass). We are deeply grateful to the original FastForward and Universal Bypass maintainers and contributors for their foundational work. SiteDrift is now actively developed and maintained by **2Tech Studio**.*
 
 ### ✨ Key Features
 

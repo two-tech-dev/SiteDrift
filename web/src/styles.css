@@ -41,6 +41,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -49,7 +55,6 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-dark);
   background-attachment: fixed;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -309,7 +314,8 @@ html {
 @media (max-width: 768px) {
   .md\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .page-wrapper { padding-top: 4rem; padding-bottom: 4rem; }
+  .container { width: min(100% - 2rem, 1200px); }
+  .page-wrapper { padding-top: 9.5rem; padding-bottom: 4rem; }
 }
 
 /* Scrollbar */

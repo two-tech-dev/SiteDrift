@@ -612,10 +612,36 @@ const formatEstimatedTimeSaved = (totalBypasses?: number) => {
   }
   
   @media (max-width: 768px) {
-    .hero-actions {
-      flex-direction: column;
+    .hero-section {
+      width: 100%;
+      overflow: hidden;
     }
-    
+
+    .hero-title {
+      font-size: clamp(3rem, 17vw, 4rem);
+    }
+
+    .hero-lead {
+      max-width: 100%;
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .browser-mockup {
+      max-width: 100%;
+    }
+
     .stats-row {
       flex-direction: column;
       gap: 2rem;

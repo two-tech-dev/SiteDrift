@@ -264,8 +264,40 @@ const filteredSites = computed(() => {
 }
 
 @media (max-width: 768px) {
+  .header-section {
+    margin-bottom: 2rem;
+  }
+
+  .header-section h1 {
+    font-size: clamp(2.5rem, 14vw, 4rem);
+  }
+
+  .directory-intro {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   .directory-stats,
   .support-flow {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .directory-stat {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .directory-stat strong {
+    font-size: 1.25rem;
+  }
+
+  .support-flow {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .sites-grid {
     grid-template-columns: 1fr;
   }
 }

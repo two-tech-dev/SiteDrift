@@ -117,12 +117,30 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 
 @media (max-width: 768px) {
   .nav-header {
-    padding: 1rem 0;
+    padding: 1rem 0 0.75rem;
   }
-  
+
   .nav-container {
+    width: min(100% - 2rem, 1200px);
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    font-size: 1.35rem;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-links {
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    padding: 0.45rem 0.85rem;
   }
 }
 </style>

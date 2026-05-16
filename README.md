@@ -1,7 +1,7 @@
 <div align="center">
   <img src="web/public/icon128.png" width="128" alt="SiteDrift Logo" />
   <h1>SiteDrift</h1>
-  <p><strong>Skip the wait. Drift past link shorteners, ad-walls, and trackers.</strong></p>
+  <p><strong>Skip the wait. SiteDrift past link shorteners, ad-walls, and trackers.</strong></p>
 
   <a href="https://github.com/two-tech-dev/SiteDrift/actions"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/two-tech-dev/SiteDrift/main.yml?branch=main&label=Build&style=for-the-badge&logo=githubactions"></a>
   <a href="https://discord.gg/DYeCKWP3jB"><img alt="Discord" src="https://img.shields.io/discord/1448225921373966521?label=Discord&logo=discord&style=for-the-badge"></a>

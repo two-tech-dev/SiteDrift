@@ -32,19 +32,12 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
         >
           Supported
         </router-link>
-        <router-link 
-          to="/community" 
+        <router-link
+          to="/community"
           class="nav-link"
           :class="{ active: route.path === '/community' }"
         >
           Community
-        </router-link>
-        <router-link 
-          to="/admin/login" 
-          class="nav-link"
-          :class="{ active: route.path.startsWith('/admin') }"
-        >
-          Admin
         </router-link>
       </nav>
     </div>

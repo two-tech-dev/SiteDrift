@@ -4,12 +4,14 @@ import { getStats, type StatsSummary } from '../api';
 
 const stats = ref<StatsSummary | null>(null);
 const loading = ref(true);
+const error = ref('');
 
 onMounted(async () => {
   try {
     stats.value = await getStats();
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
+    error.value = 'Live community stats are temporarily unavailable. Please check back soon.';
   } finally {
     loading.value = false;
   }
@@ -28,6 +30,15 @@ onMounted(async () => {
       >
         <span class="eyebrow">Public Transparency</span>
         <h1>Network Pulse</h1>
+        <p class="pulse-intro text-muted">
+          Aggregate activity from the SiteDrift community network. These counters describe shared bypass usage,
+          not individual browsing history, and may lag behind real-time traffic.
+        </p>
+      </div>
+
+      <div v-if="error" class="error-card glass-panel">
+        <h2>Stats are offline</h2>
+        <p class="text-muted">{{ error }}</p>
       </div>
 
       <div class="dashboard-grid">
@@ -38,7 +49,7 @@ onMounted(async () => {
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }"
         >
-          <div class="metric-label">Total Bypasses</div>
+          <div class="metric-label">Community-recorded bypasses</div>
           <div class="metric-value text-glow">
             {{ loading ? '...' : (stats?.total_bypasses?.toLocaleString() || '0') }}
           </div>
@@ -50,7 +61,7 @@ onMounted(async () => {
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 200 } }"
         >
-          <div class="metric-label">Today</div>
+          <div class="metric-label">Recorded today</div>
           <div class="metric-value text-glow">
              {{ loading ? '...' : (stats?.today_bypasses?.toLocaleString() || '0') }}
           </div>
@@ -63,9 +74,11 @@ onMounted(async () => {
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
         >
-          <h2 style="margin-bottom: 2rem; font-size: 1.5rem;">Top Domains</h2>
-          
+          <h2 class="leaderboard-title">Most active supported domains</h2>
+          <p class="leaderboard-note text-muted">Ranked by aggregate recorded bypasses from the public stats endpoint.</p>
+
           <div v-if="loading" class="text-muted text-center py-4">Loading stats...</div>
+          <div v-else-if="error" class="text-muted text-center py-4">Domain activity will return when live stats recover.</div>
           <div v-else-if="!stats?.top_domains?.length" class="text-muted text-center py-4">No data available</div>
           
           <div v-else class="domain-list">
@@ -98,6 +111,24 @@ onMounted(async () => {
 .header-section {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+.pulse-intro {
+  max-width: 700px;
+  margin: 1.25rem auto 0;
+  font-size: 1.1rem;
+}
+
+.error-card {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border-color: rgba(255, 180, 171, 0.25);
+}
+
+.error-card h2 {
+  color: var(--accent-red);
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
 }
 
 .dashboard-grid {
@@ -134,6 +165,15 @@ onMounted(async () => {
   grid-column: 1 / -1;
   padding: 2.5rem;
   margin-top: 1rem;
+}
+
+.leaderboard-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.leaderboard-note {
+  margin-bottom: 2rem;
 }
 
 .domain-list {

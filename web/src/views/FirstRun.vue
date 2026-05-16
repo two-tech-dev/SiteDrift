@@ -17,38 +17,45 @@ const finish = () => {
         </div>
         
         <h1 class="title">
-          <span class="gradient-text">Welcome to SiteDrift</span>
+          <span class="gradient-text">SiteDrift is ready</span>
         </h1>
-        
+
         <p class="subtitle">
-          You've successfully installed SiteDrift. You're now ready to drift past link shorteners and ad-walls across the web.
+          You're set up to skip supported shortener waits, clean noisy tracking links, and use community bypass results when they are available.
         </p>
 
-        <button class="btn btn-primary cta-btn" @click="finish">
-          Start Browsing
-        </button>
+        <div class="cta-row">
+          <button class="btn btn-primary cta-btn" @click="finish">
+            Start Browsing
+          </button>
+          <router-link to="/supported" class="btn btn-secondary cta-btn">
+            View Supported Sites
+          </router-link>
+        </div>
+
+        <p class="trust-note">Bypass availability depends on each site and link. SiteDrift is open source, so you can review how it works.</p>
       </div>
 
       <div class="features glass-panel">
         <div class="feature-item">
-          <div class="feature-icon">🚀</div>
+          <div class="feature-icon">01</div>
           <div class="feature-text">
-            <h3>Instant Bypasses</h3>
-            <p>We automatically skip countdowns and ad-walls.</p>
+            <h3>Visit a supported shortener</h3>
+            <p>SiteDrift watches for domains listed in the supported directory.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🛡️</div>
+          <div class="feature-icon">02</div>
           <div class="feature-text">
-            <h3>Privacy First</h3>
-            <p>Block IP loggers and intrusive trackers instantly.</p>
+            <h3>SiteDrift checks for a bypass</h3>
+            <p>The extension runs domain-specific logic and can use crowd results when available.</p>
           </div>
         </div>
         <div class="feature-item">
-          <div class="feature-icon">🌍</div>
+          <div class="feature-icon">03</div>
           <div class="feature-text">
-            <h3>Crowd Sourced</h3>
-            <p>Help others bypass custom links automatically.</p>
+            <h3>Continue when a destination is found</h3>
+            <p>If a bypass is available, you move forward without the artificial waiting flow.</p>
           </div>
         </div>
       </div>
@@ -116,11 +123,23 @@ const finish = () => {
   margin: 0;
 }
 
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .cta-btn {
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  margin-top: 1rem;
+}
+
+.trust-note {
+  max-width: 500px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 .features {
@@ -149,14 +168,18 @@ const finish = () => {
 }
 
 .feature-icon {
-  font-size: 2rem;
   width: 56px;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(76, 215, 246, 0.1);
+  border: 1px solid rgba(76, 215, 246, 0.28);
   border-radius: var(--radius-md);
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   flex-shrink: 0;
 }
 
@@ -183,6 +206,10 @@ const finish = () => {
   
   .welcome-content {
     align-items: center;
+  }
+
+  .cta-row {
+    justify-content: center;
   }
 
   .title {

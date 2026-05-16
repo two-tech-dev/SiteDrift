@@ -14,6 +14,22 @@ onMounted(async () => {
 });
 
 const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
+
+const formatEstimatedTimeSaved = (totalBypasses?: number) => {
+  if (!totalBypasses) return '...';
+
+  const seconds = totalBypasses * 10;
+  const minutes = Math.round(seconds / 60);
+  const hours = Math.round(seconds / 3600);
+  const days = Math.round(seconds / 86400);
+  const years = Math.round(seconds / 31536000);
+
+  if (seconds < 60) return `${seconds}s`;
+  if (minutes < 60) return `${minutes.toLocaleString()}m`;
+  if (hours < 24) return `${hours.toLocaleString()}h`;
+  if (days < 365) return `${days.toLocaleString()}d`;
+  return `${years.toLocaleString()}y`;
+};
 </script>
 
 <template>
@@ -37,9 +53,9 @@ const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
           </h1>
           
           <p class="hero-lead text-muted">
-            <strong style="color: var(--text-main);">Bypass shorteners, Reclaim your time.</strong><br/>
-            The community-driven browser extension that instantly skips irritating link shorteners, 
-            removes trackers, and takes you straight to your destination. No waiting, no clicking "Next".
+            <strong style="color: var(--text-main);">Skip artificial waits with open-source transparency.</strong><br/>
+            SiteDrift helps you move past supported shorteners, clean noisy tracking parameters,
+            and use community-powered bypass data without hiding how the system works.
           </p>
           
           <div class="hero-actions">
@@ -92,23 +108,25 @@ const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
         :initial="{ opacity: 0, scale: 0.8 }"
         :visible-once="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 120, damping: 15, delay: 200 } }"
       >
-        <p class="section-label">Trusted by the community to bypass</p>
+        <p class="section-label">Aggregate community activity</p>
         <div class="stats-row">
           <div class="stat-block">
             <h3>{{ stats?.total_bypasses?.toLocaleString() || '...' }}</h3>
-            <p>Total Links Bypassed</p>
+            <p>Community-recorded bypasses</p>
           </div>
           <div class="divider"></div>
           <div class="stat-block">
             <h3>{{ stats?.today_bypasses?.toLocaleString() || '...' }}</h3>
-            <p>Bypassed Today</p>
+            <p>Bypasses recorded today</p>
           </div>
           <div class="divider"></div>
           <div class="stat-block">
-            <h3>{{ stats?.total_bypasses ? Math.max(1, Math.round((stats.total_bypasses * 10) / 31536000)).toLocaleString() : '...' }}</h3>
-            <p>Years of Time Saved</p>
+            <h3>{{ formatEstimatedTimeSaved(stats?.total_bypasses) }}</h3>
+            <p>Estimated time saved</p>
           </div>
         </div>
+        <p class="stats-note text-muted">Estimated from roughly 10 seconds saved per successful bypass.</p>
+        <p v-if="statsError" class="stats-note error-note">Live stats are temporarily unavailable.</p>
       </section>
 
       <!-- Bento-box style features -->
@@ -165,6 +183,32 @@ const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
               <h3>Universal Support</h3>
               <p class="text-muted">Engineered to handle over 50+ of the most stubborn and annoying link monetization services on the internet (Linkvertise, AdFly, OuO, and dozens more). Works on Chrome, Firefox, and Edge.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy & Trust Section -->
+      <section class="trust-section">
+        <div class="bento-header text-center">
+          <span class="eyebrow">Trust Model</span>
+          <h2>Transparent by design.</h2>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card glass-panel">
+            <span class="trust-kicker">Audit</span>
+            <h3>Open source codebase</h3>
+            <p class="text-muted">The extension, bypass modules, and backend are designed to be reviewed rather than trusted blindly.</p>
+          </div>
+          <div class="trust-card glass-panel">
+            <span class="trust-kicker">Clean</span>
+            <h3>Tracker cleanup</h3>
+            <p class="text-muted">Supported URL patterns can be cleaned before navigation so unnecessary tracking noise does not follow you around.</p>
+          </div>
+          <div class="trust-card glass-panel">
+            <span class="trust-kicker">Crowd</span>
+            <h3>Community-powered results</h3>
+            <p class="text-muted">Crowd bypass data helps repeated links resolve faster while keeping the public stats focused on aggregate activity.</p>
           </div>
         </div>
       </section>
@@ -276,7 +320,7 @@ const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 12rem; /* Pushed down so the terminal doesn't appear immediately */
+  margin-bottom: 5rem;
 }
 
 .btn-large {
@@ -411,6 +455,15 @@ const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
   font-size: 0.875rem;
 }
 
+.stats-note {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.error-note {
+  color: var(--accent-red);
+}
+
 .divider {
   width: 1px;
   height: 40px;
@@ -462,7 +515,39 @@ const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
     line-height: 1.6;
     font-size: 0.95rem;
   }
-  
+
+  .trust-section {
+    padding: 0 0 8rem;
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .trust-card {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .trust-kicker {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    color: var(--accent-cyan);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .trust-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
   /* How it Works Section */
   .how-it-works-section {
     margin: 4rem 0 8rem;
@@ -541,7 +626,11 @@ const installUrl = 'https://github.com/two-tech-dev/SiteDrift';
       height: 1px;
     }
     
-    .bento-grid, .steps-grid {
+    .hero-actions {
+      margin-bottom: 3rem;
+    }
+
+    .bento-grid, .steps-grid, .trust-grid {
       grid-template-columns: 1fr;
     }
     

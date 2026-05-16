@@ -1,44 +1,29 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
+import { supportedSites } from '../data/supportedSites';
 
 const supportedSearch = ref('');
+const currentPage = ref(1);
+const pageSize = 24;
 const repositoryUrl = 'https://github.com/two-tech-dev/SiteDrift';
-
-const supportedSites = [
-  "1link.club", "1shortlink.com", "4shared.com", "5play.ru", "admiregirls-byme.com", "akoam.to", 
-  "akw.to", "akwam.org", "all-fans.online", "an1.com", "androidtop.net", "anonym.ninja", 
-  "apkhubs.com", "apkmos.com", "badgirlsdrop.com", "blitly.io", "bluetechno.net", "boost.ink", 
-  "brpaper.com", "bstlar.com", "cb.click", "cb.run", "cemendemons.com", "cheatsquad.gg", 
-  "cpmlink.net", "curseforge.com", "depravityweb.co", "dl.pcgamestorrents.org", "dlandroid.com", 
-  "download.modsofapk.com", "earnme.club", "emulator.games", "fansmega.com", "favpng.com", 
-  "fc-lc.com", "fex.net", "filedm.com", "filehorse.com", "filepuma.com", "firefaucet.win", 
-  "forex-gold.net", "forex1pro.com", "forexit.online", "free-leaks.com", "fssquad.com", 
-  "gamalk-sehetk.com", "gamesmega.net", "getwallpapers.com", "goldmega.online", "healdad.com", 
-  "healthy4pepole.com", "hotstars-leaks.com", "icerik.site", "idnation.net", "indishare.org", 
-  "k2s.cc", "leakutopia.site", "leitup.com", "letsboost.net", "liblink.pl", "linegee.net", 
-  "link-to.net", "links-loot.com", "links.shortenbuddy.com", "linksht.com", "linksloot.net", 
-  "linkspy.cc", "linkvertise.com", "linkvertise.net", "lkc21.net", "lnk.parts", "lnk2.cc", 
-  "longfiles.com", "loot-link.com", "loot-links.com", "lootdest.com", "lootdest.info", 
-  "lootdest.org", "lootlink.org", "lootlinks.co", "mangalist.org", "manualsbooks.com", 
-  "mega-guy.com", "megadropz.com", "megadumpz.com", "mobi2c.com", "mobilemodsapk.com", 
-  "mobitaak.com", "mydramalist.com", "newforex.online", "newsociety0.co", "ofpacksmega.com", 
-  "oko.sh", "onepieceex.net", "only-fun.xyz", "onlymega.co", "oracle.com", "ouo.io", 
-  "ouo.press", "oxy.cloud", "pirateproxy.wtf", "pnp-drops.me", "portableapps.com", 
-  "premiumstashdrop.com", "ps4linux.com", "rareofhub.com", "rekonise.com", "ryn.cc", 
-  "sammobile.com", "secret-links.com", "secretpack-links.com", "sfile.mobi", "sfile.xyz", 
-  "sfirmware.com", "shopforex.online", "shortly.xyz", "shortmoz.link", "softpedia.com", 
-  "solvetube.site", "srt.am", "sub2unlock.com", "sub4unlock.com", "syosetu.org", "tavernleaks.com", 
-  "thepremium.online", "tii.la", "tik.lat", "tl.gd", "tlkm.id", "tomxcontent.com", "u.to", 
-  "uiz.app", "uiz.io", "uploadking.net", "uploadrar.com", "uploadrar.net", "uptomega.me", 
-  "usanewstoday.club", "ux9.de", "wadooo.com", "work.ink", "workink.click", "world-trips.net", 
-  "world2our.com", "www.adtival.network", "www.clictune.com", "www.dlink2.com", "www.dlink2.net", 
-  "www.dlink4.com", "xprmpacks.com", "ydfile.com", "ytsubme.com", "zedge.net"
-];
 
 const filteredSites = computed(() => {
   const query = supportedSearch.value.trim().toLowerCase();
   if (!query) return supportedSites;
   return supportedSites.filter((site) => site.toLowerCase().includes(query));
+});
+
+const totalPages = computed(() => Math.max(1, Math.ceil(filteredSites.value.length / pageSize)));
+const pageStart = computed(() => filteredSites.value.length ? (currentPage.value - 1) * pageSize + 1 : 0);
+const pageEnd = computed(() => Math.min(currentPage.value * pageSize, filteredSites.value.length));
+const paginatedSites = computed(() => filteredSites.value.slice(pageStart.value - 1, pageEnd.value));
+
+watch(supportedSearch, () => {
+  currentPage.value = 1;
+});
+
+watch(totalPages, (pages) => {
+  if (currentPage.value > pages) currentPage.value = pages;
 });
 </script>
 
@@ -88,7 +73,7 @@ const filteredSites = computed(() => {
             </svg>
           </div>
         </div>
-        <p class="result-count text-muted">Showing {{ filteredSites.length }} of {{ supportedSites.length }} domains</p>
+        <p class="result-count text-muted">Showing {{ pageStart }}–{{ pageEnd }} of {{ filteredSites.length }} matching domains · {{ supportedSites.length }} total</p>
       </div>
       
       <section class="support-flow glass-panel">
@@ -115,19 +100,14 @@ const filteredSites = computed(() => {
         :initial="{ opacity: 0 }"
         :enter="{ opacity: 1, transition: { duration: 600, delay: 200 } }"
       >
-        <transition-group name="fade">
-          <div
-            v-for="site in filteredSites"
-            :key="site"
-            class="site-card glass-panel glass-panel-hover"
-            v-motion
-            :initial="{ opacity: 0, scale: 0.96 }"
-            :enter="{ opacity: 1, scale: 1, transition: { duration: 220 } }"
-          >
-            <div class="site-dot"></div>
-            {{ site }}
-          </div>
-        </transition-group>
+        <div
+          v-for="site in paginatedSites"
+          :key="site"
+          class="site-card glass-panel glass-panel-hover"
+        >
+          <div class="site-dot"></div>
+          {{ site }}
+        </div>
 
         <div v-if="filteredSites.length === 0" class="no-results glass-panel">
           <h2>No matching domain yet</h2>
@@ -135,7 +115,13 @@ const filteredSites = computed(() => {
           <a :href="repositoryUrl" class="btn btn-secondary">Request support on GitHub</a>
         </div>
       </div>
-      
+
+      <div v-if="filteredSites.length > pageSize" class="pagination glass-panel">
+        <button class="btn btn-secondary" :disabled="currentPage === 1" @click="currentPage -= 1">Previous</button>
+        <span class="pagination-status">Page {{ currentPage }} of {{ totalPages }}</span>
+        <button class="btn btn-secondary" :disabled="currentPage === totalPages" @click="currentPage += 1">Next</button>
+      </div>
+
     </div>
   </main>
 </template>
@@ -263,6 +249,21 @@ const filteredSites = computed(() => {
   margin: 0 auto 1.5rem;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.pagination-status {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .header-section {
     margin-bottom: 2rem;
@@ -299,6 +300,14 @@ const filteredSites = computed(() => {
 
   .sites-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pagination {
+    flex-direction: column;
+  }
+
+  .pagination .btn {
+    width: 100%;
   }
 }
 </style>

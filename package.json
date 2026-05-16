@@ -26,6 +26,7 @@
     "preview": "vite preview",
     "lint": "eslint 'src/**/*.{ts,vue}'",
     "new-bypass": "npx tsx scripts/new-bypass.ts",
-    "health-check": "npx tsx scripts/health-check.ts"
+    "health-check": "npx tsx scripts/health-check.ts",
+    "sync-supported-sites": "npx tsx scripts/sync-supported-sites.ts"
   }
 }

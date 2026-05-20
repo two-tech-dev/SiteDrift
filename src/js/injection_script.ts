@@ -1,4 +1,4 @@
-import * as domHelpers from '../helpers/dom';
+import domHelpers from '../helpers/dom';
 
 const bypassModules = import.meta.glob('../bypasses/**/*.ts', { eager: true });
 

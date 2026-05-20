@@ -7,12 +7,15 @@ export default class Lnk2 extends BypassDefinition {
   }
 
   execute() {
-    //If the url doesn't contain /go/, use the insertInfoBox
-    if (window.location.href.includes('/go/')) {
-      document.getElementById('getLink').removeAttribute('disabled');
-      (document.getElementById('getLink') as HTMLElement | null)?.click();
+    if (window.location.pathname.startsWith('/go/')) {
+      const form = document.querySelector('form') as HTMLFormElement | null;
+      if (form) form.submit();
     } else {
-      this.helpers.insertInfoBox('Please complete the captcha, then we can bypass you');
+      const btn = document.getElementById('getLink');
+      if (btn) btn.removeAttribute('disabled');
+      this.helpers.insertInfoBox(
+        'Please complete the captcha, then we can bypass you'
+      );
     }
   }
 }

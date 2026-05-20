@@ -32,7 +32,8 @@ destinationElement.innerHTML = brws.i18n.getMessage(
 );
 
 brws.storage.local.get('options', (result) => {
-  if (!result.options.navigationDelayToggle) {
+  if (!result.options || !result.options.navigationDelayToggle) {
+    window.location.href = targetUrl;
     return;
   }
   const delay = result.options.navigationDelay;

@@ -3,6 +3,8 @@
   <h1>SiteDrift</h1>
   <p><strong>Skip the wait. SiteDrift past link shorteners, ad-walls, and trackers.</strong></p>
 
+  <a href="https://chromewebstore.google.com/detail/sitedrift/omfceoggegbdgijlpnmppphjpkapkham"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white"></a>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/sitedrift/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefoxbrowser&logoColor=white"></a>
   <a href="https://github.com/two-tech-dev/SiteDrift/actions"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/two-tech-dev/SiteDrift/main.yml?branch=main&label=Build&style=for-the-badge&logo=githubactions"></a>
   <a href="https://discord.gg/DYeCKWP3jB"><img alt="Discord" src="https://img.shields.io/discord/1448225921373966521?label=Discord&logo=discord&style=for-the-badge"></a>
   <a href="https://sitedrift.2tech.studio"><img alt="Website" src="https://img.shields.io/badge/Website-sitedrift.2tech.studio-blue?style=for-the-badge"></a>
@@ -39,19 +41,14 @@ SiteDrift operates across three unified components in this monorepo:
 
 ## 📦 Installation
 
-> SiteDrift is currently in active development. Please follow the manual installation guide to load it locally.
-
 ### Chrome / Edge / Brave
-1. Download the latest `dist.zip` from Releases or [build from source](#-building-from-source).
-2. Extract the folder.
-3. Open `chrome://extensions/` and enable **Developer Mode** (top right).
-4. Click **Load unpacked** and select the extracted `dist` folder.
+Install from the [Chrome Web Store](https://chromewebstore.google.com/detail/sitedrift/omfceoggegbdgijlpnmppphjpkapkham).
 
 ### Firefox
-1. Open `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on** and select any file inside the `dist` folder.
+Install from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/sitedrift/).
 
-See the full guide in [docs/INSTALLING.md](./docs/INSTALLING.md).
+### Manual Installation
+If you prefer to load from source, see [docs/INSTALLING.md](./docs/INSTALLING.md).
 
 ---
 

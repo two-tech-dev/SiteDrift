@@ -14,19 +14,19 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 </script>
 
 <template>
-  <header 
+  <header
     class="nav-header"
-    :class="{ 'scrolled glass-panel': scrolled }"
+    :class="{ scrolled }"
   >
     <div class="nav-container">
       <router-link to="/" class="brand">
         <img src="/favicon.png" alt="SiteDrift" class="brand-icon" />
         SiteDrift
       </router-link>
-      
+
       <nav class="nav-links">
-        <router-link 
-          to="/supported" 
+        <router-link
+          to="/supported"
           class="nav-link"
           :class="{ active: route.path === '/supported' }"
         >
@@ -46,21 +46,24 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 
 <style scoped>
 .nav-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
-  padding: 1.5rem 0;
-  transition: all 0.3s ease;
+  padding: 1rem 0;
+  background: transparent;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base),
+    padding var(--transition-base);
 }
 
 .nav-header.scrolled {
-  padding: 1rem 0;
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
 }
 
 .nav-container {
@@ -75,72 +78,70 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 900;
-  letter-spacing: 0.02em;
-  color: var(--text-main);
+  letter-spacing: 0.01em;
+  color: var(--color-text-primary);
 }
 
 .brand-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 }
 
 .nav-links {
   display: flex;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.25rem;
+  gap: 0.25rem;
+  padding: 0.2rem;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
 
 .nav-link {
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 1rem;
   border-radius: var(--radius-full);
   font-weight: 500;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
 }
 
 .nav-link:hover {
-  color: var(--text-main);
+  color: var(--color-text-primary);
 }
 
 .nav-link.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-main);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
 }
 
 @media (max-width: 768px) {
   .nav-header {
-    padding: 1rem 0 0.75rem;
+    padding: 0.75rem 0;
   }
 
   .nav-container {
     width: min(100% - 2rem, 1200px);
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
   }
 
   .brand {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
 
   .brand-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .nav-links {
-    gap: 0.25rem;
+    width: 24px;
+    height: 24px;
   }
 
   .nav-link {
-    padding: 0.45rem 0.85rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
   }
 }
 </style>

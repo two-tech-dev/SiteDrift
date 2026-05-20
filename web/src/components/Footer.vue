@@ -8,11 +8,11 @@ const currentYear = new Date().getFullYear();
       <div class="footer-content">
         <div class="brand-section">
           <div class="brand">SiteDrift</div>
-          <p class="text-muted tag-line">
+          <p class="footer-tagline">
             The community-driven extension that instantly skips irritating link shorteners.
           </p>
         </div>
-        
+
         <div class="links-section">
           <div class="link-group">
             <h4>Product</h4>
@@ -20,18 +20,18 @@ const currentYear = new Date().getFullYear();
             <router-link to="/supported">Supported Sites</router-link>
             <router-link to="/community">Community Stats</router-link>
           </div>
-          
+
           <div class="link-group">
             <h4>Open Source</h4>
-            <a href="https://github.com/2Technologysolutions/SiteDrift" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-            <a href="https://github.com/2Technologysolutions/SiteDrift/issues" target="_blank" rel="noopener noreferrer">Report an Issue</a>
+            <a href="https://github.com/two-tech-dev/SiteDrift" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            <a href="https://github.com/two-tech-dev/SiteDrift/issues" target="_blank" rel="noopener noreferrer">Report an Issue</a>
           </div>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
-        <p class="text-muted">
-          &copy; {{ currentYear }} SiteDrift, Powered by 
+        <p>
+          &copy; {{ currentYear }} SiteDrift, Powered by
           <a href="https://2tech.studio" target="_blank" rel="noopener noreferrer" class="studio-link">2Tech Studio</a>
         </p>
         <div class="legal-links">
@@ -45,30 +45,32 @@ const currentYear = new Date().getFullYear();
 <style scoped>
 .site-footer {
   margin-top: auto;
-  border-top: 1px solid var(--border-light);
-  background: var(--bg-navy);
-  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-overlay);
+  padding: 3.5rem 0 1.5rem;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   gap: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .brand-section {
-  max-width: 320px;
+  max-width: 300px;
 }
 
 .brand {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 900;
-  color: var(--text-main);
-  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
 }
 
-.tag-line {
+.footer-tagline {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 
@@ -80,70 +82,68 @@ const currentYear = new Date().getFullYear();
 .link-group {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .link-group h4 {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-main);
-  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
 }
 
 .link-group a {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  transition: color var(--transition-fast);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
 }
 
 .link-group a:hover {
-  color: var(--accent-cyan);
+  color: var(--color-brand);
 }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-light);
-  font-size: 0.875rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
 }
 
 .legal-links a {
-  color: var(--text-muted);
-  transition: color var(--transition-fast);
+  color: var(--color-text-muted);
 }
 
 .legal-links a:hover {
-  color: var(--text-main);
+  color: var(--color-text-primary);
 }
 
 .studio-link {
-  color: var(--text-main);
+  color: var(--color-text-primary);
   font-weight: 500;
-  transition: color var(--transition-fast);
 }
 
 .studio-link:hover {
-  color: var(--accent-cyan);
+  color: var(--color-brand);
 }
 
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    gap: 3rem;
-  }
-  
-  .links-section {
-    flex-direction: column;
     gap: 2.5rem;
   }
-  
+
+  .links-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 }
 </style>

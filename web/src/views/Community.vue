@@ -20,9 +20,9 @@ onMounted(async () => {
 
 <template>
   <main class="page-wrapper">
-    <div class="container" style="max-width: 1000px;">
-      
-      <div 
+    <div class="container" style="max-width: 960px;">
+
+      <div
         class="header-section"
         v-motion
         :initial="{ opacity: 0, y: 20 }"
@@ -30,71 +30,69 @@ onMounted(async () => {
       >
         <span class="eyebrow">Public Transparency</span>
         <h1>Network Pulse</h1>
-        <p class="pulse-intro text-muted">
+        <p class="pulse-intro">
           Aggregate activity from the SiteDrift community network. These counters describe shared bypass usage,
           not individual browsing history, and may lag behind real-time traffic.
         </p>
       </div>
 
-      <div v-if="error" class="error-card glass-panel">
+      <div v-if="error" class="error-card card">
         <h2>Stats are offline</h2>
-        <p class="text-muted">{{ error }}</p>
+        <p>{{ error }}</p>
       </div>
 
       <div class="dashboard-grid">
-        <!-- Top Metrics -->
-        <div 
-          class="metric-card glass-panel"
+        <div
+          class="metric-card card"
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 100 } }"
         >
           <div class="metric-label">Community-recorded bypasses</div>
-          <div class="metric-value text-glow">
+          <div class="metric-value">
             {{ loading ? '...' : (stats?.total_bypasses?.toLocaleString() || '0') }}
           </div>
         </div>
-        
-        <div 
-          class="metric-card glass-panel"
+
+        <div
+          class="metric-card card"
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 200 } }"
         >
           <div class="metric-label">Recorded today</div>
-          <div class="metric-value text-glow">
+          <div class="metric-value">
              {{ loading ? '...' : (stats?.today_bypasses?.toLocaleString() || '0') }}
           </div>
         </div>
 
-        <!-- Top Domains Leaderboard -->
-        <div 
-          class="leaderboard-card glass-panel"
+        <div
+          class="leaderboard-card card"
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
         >
           <h2 class="leaderboard-title">Most active supported domains</h2>
-          <p class="leaderboard-note text-muted">Ranked by aggregate recorded bypasses from the public stats endpoint.</p>
+          <p class="leaderboard-note">Ranked by aggregate recorded bypasses from the public stats endpoint.</p>
 
           <div v-if="loading" class="text-muted text-center py-4">Loading stats...</div>
           <div v-else-if="error" class="text-muted text-center py-4">Domain activity will return when live stats recover.</div>
           <div v-else-if="!stats?.top_domains?.length" class="text-muted text-center py-4">No data available</div>
-          
+
           <div v-else class="domain-list">
-            <div 
-              v-for="(domain, index) in stats.top_domains" 
+            <div
+              v-for="(domain, index) in stats.top_domains"
               :key="domain.domain"
               class="domain-item"
             >
               <div class="domain-rank">{{ index + 1 }}</div>
               <div class="domain-name">{{ domain.domain }}</div>
               <div class="domain-count">
-                <span class="badge badge-blue">{{ domain.count.toLocaleString() }}</span>
+                <span class="badge badge-brand">{{ domain.count.toLocaleString() }}</span>
               </div>
               <div class="domain-bar-bg">
-                <div 
-                  class="domain-bar-fill" 
+                <div
+                  class="domain-bar-fill"
                   :style="{ width: `${(domain.count / stats.top_domains[0].count) * 100}%` }"
                 ></div>
               </div>
@@ -102,7 +100,7 @@ onMounted(async () => {
           </div>
         </div>
       </div>
-      
+
     </div>
   </main>
 </template>
@@ -114,72 +112,76 @@ onMounted(async () => {
 }
 
 .pulse-intro {
-  max-width: 700px;
-  margin: 1.25rem auto 0;
-  font-size: 1.1rem;
+  max-width: 640px;
+  margin: 1rem auto 0;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
 }
 
 .error-card {
-  padding: 2rem;
+  padding: 1.75rem;
   margin-bottom: 1.5rem;
-  border-color: rgba(255, 180, 171, 0.25);
+  border-color: hsl(0, 60%, 85%);
 }
 
 .error-card h2 {
-  color: var(--accent-red);
-  font-size: 1.3rem;
-  margin-bottom: 0.75rem;
+  color: var(--color-danger);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.error-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .metric-card {
-  padding: 3rem;
+  padding: 2.5rem;
   text-align: center;
 }
 
 .metric-label {
-  color: var(--text-muted);
-  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .metric-value {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-}
-
-.text-glow {
-  color: var(--accent-cyan);
-  text-shadow: 0 0 30px rgba(76, 215, 246, 0.4);
+  color: var(--color-text-primary);
 }
 
 .leaderboard-card {
   grid-column: 1 / -1;
-  padding: 2.5rem;
-  margin-top: 1rem;
+  padding: 2.25rem;
+  margin-top: 0.5rem;
 }
 
 .leaderboard-title {
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
 }
 
 .leaderboard-note {
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
 }
 
 .domain-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .domain-item {
@@ -192,14 +194,15 @@ onMounted(async () => {
 }
 
 .domain-rank {
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
 
 .domain-name {
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  color: var(--color-text-primary);
 }
 
 .domain-bar-bg {
@@ -207,15 +210,15 @@ onMounted(async () => {
   bottom: 0;
   left: 3rem;
   right: 0;
-  height: 4px;
-  background: rgba(173, 198, 255, 0.1);
+  height: 3px;
+  background: var(--color-overlay);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
 
 .domain-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  background: var(--color-brand);
   border-radius: var(--radius-full);
   transition: width 1s ease-out;
 }

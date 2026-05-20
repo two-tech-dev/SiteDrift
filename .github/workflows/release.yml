@@ -78,13 +78,27 @@ jobs:
           git tag ${{ needs.check.outputs.version }}
           git push origin ${{ needs.check.outputs.version }}
 
+      - name: Read changelog
+        id: changelog
+        run: |
+          VERSION="${{ needs.check.outputs.version }}"
+          # Strip leading 'v' to match filename (e.g. v26.0.1 -> 26.0.1)
+          FILE="changelogs/${VERSION#v}.md"
+          if [ -f "$FILE" ]; then
+            echo "body<<CHANGELOG_EOF" >> $GITHUB_OUTPUT
+            cat "$FILE" >> $GITHUB_OUTPUT
+            echo "CHANGELOG_EOF" >> $GITHUB_OUTPUT
+          else
+            echo "body=No changelog found for $VERSION." >> $GITHUB_OUTPUT
+          fi
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.check.outputs.version }}
           name: SiteDrift ${{ needs.check.outputs.version }}
           prerelease: ${{ needs.check.outputs.prerelease }}
-          generate_release_notes: true
+          body: ${{ steps.changelog.outputs.body }}
           files: |
             SiteDrift_${{ needs.check.outputs.version }}_chromium.zip
             SiteDrift_${{ needs.check.outputs.version }}_firefox.xpi

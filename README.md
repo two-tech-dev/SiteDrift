@@ -6,7 +6,7 @@
   <a href="https://chromewebstore.google.com/detail/sitedrift/omfceoggegbdgijlpnmppphjpkapkham"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white"></a>
   <a href="https://addons.mozilla.org/en-US/firefox/addon/sitedrift/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-Install-FF7139?style=for-the-badge&logo=firefoxbrowser&logoColor=white"></a>
   <a href="https://github.com/two-tech-dev/SiteDrift/actions"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/two-tech-dev/SiteDrift/main.yml?branch=main&label=Build&style=for-the-badge&logo=githubactions"></a>
-  <a href="https://discord.gg/DYeCKWP3jB"><img alt="Discord" src="https://img.shields.io/discord/1448225921373966521?label=Discord&logo=discord&style=for-the-badge"></a>
+  <a href="https://discord.com/invite/5CXeX3uZJm"><img alt="Discord" src="https://img.shields.io/discord/1448225921373966521?label=Discord&logo=discord&style=for-the-badge"></a>
   <a href="https://sitedrift.2tech.studio"><img alt="Website" src="https://img.shields.io/badge/Website-sitedrift.2tech.studio-blue?style=for-the-badge"></a>
   <a href="https://ko-fi.com/X8X61ZH3YC"><img alt="Ko-fi" src="https://ko-fi.com/img/githubbutton_sm.svg"></a>
 </div>
@@ -18,7 +18,7 @@
 SiteDrift is an open-source, Manifest V3 compliant browser extension that automatically skips annoying link shorteners, countdown timers, and ad-walls. Save your time and privacy by letting SiteDrift do the heavy lifting.
 
 ### 📜 Heritage & Credits
-*SiteDrift is a modernized fork and continuation of the [FastForward](https://github.com/FastForwardTeam/FastForward) project (which itself was a continuation of Universal Bypass). We are deeply grateful to the original FastForward and Universal Bypass maintainers and contributors for their foundational work. SiteDrift is now actively developed and maintained by **2Tech Studio**.*
+*SiteDrift is a modernized fork and continuation of the [FastForward](https://github.com/FastForwardTeam/FastForward) project (which itself was a continuation of Universal Bypass). We are deeply grateful to the original FastForward and Universal Bypass maintainers and contributors for their foundational work. SiteDrift is now actively developed and maintained by [**2Tech Studio**](https://2tech.studio).*
 
 ### ✨ Key Features
 
@@ -85,7 +85,7 @@ We welcome community contributions! Whether you're adding new bypasses, fixing b
 
 1. Check the [CONTRIBUTING.md](./CONTRIBUTING.md) guide.
 2. See [docs/Bypassed.md](./docs/Bypassed.md) for the current list of supported sites.
-3. Join our [Discord](https://discord.gg/DYeCKWP3jB) to discuss major changes before submitting a PR.
+3. Join our [Discord](https://discord.com/invite/5CXeX3uZJm) to discuss major changes before submitting a PR.
 
 ---
 

@@ -124,7 +124,6 @@ export const supportedSites = [
   'tavernleaks.com',
   'thepremium.online',
   'tii.la',
-  'tik.lat',
   'tlkm.id',
   'tomxcontent.com',
   'u.to',
